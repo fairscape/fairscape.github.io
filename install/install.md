@@ -44,7 +44,7 @@ kubectl exec stardog -- bash -c "/opt/stardog/bin/stardog-admin db create -o sea
 kubectl exec minio  -- ash -c "mkdir -p data/breakfast"
 ```
 
-## Test Services Functioning as Expected
+## Step 5: Test Services 
 
 With all the pods up and running and the databases created we can run test script to confirm all the services are acting as expected.
 
