@@ -1,0 +1,1106 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>FAIRSCAPE API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-e033bdd3.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;python&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="python">python</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#install" class="toc-h1 toc-link" data-title="Install">Install</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#prerequisites" class="toc-h2 toc-link" data-title="Prerequisites">Prerequisites</a>
+                  </li>
+                  <li>
+                    <a href="#clone-fairscape-deployment-repo" class="toc-h2 toc-link" data-title="Clone FAIRSCAPE deployment repo">Clone FAIRSCAPE deployment repo</a>
+                  </li>
+                  <li>
+                    <a href="#create-all-pods-and-services" class="toc-h2 toc-link" data-title="Create all pods and services">Create all pods and services</a>
+                  </li>
+                  <li>
+                    <a href="#create-required-database-and-buckets" class="toc-h2 toc-link" data-title="Create required database and buckets">Create required database and buckets</a>
+                  </li>
+                  <li>
+                    <a href="#test-services-functioning-as-expected" class="toc-h2 toc-link" data-title="Test Services Functioning as Expected">Test Services Functioning as Expected</a>
+                  </li>
+                  <li>
+                    <a href="#try-the-fairscape-demos" class="toc-h2 toc-link" data-title="Try the FAIRSCAPE Demos">Try the FAIRSCAPE Demos</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#mds" class="toc-h1 toc-link" data-title="MDS">MDS</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#endpoints" class="toc-h2 toc-link" data-title="Endpoints">Endpoints</a>
+                  </li>
+                  <li>
+                    <a href="#mds-ark-prefix-get" class="toc-h2 toc-link" data-title="/mds/ark:{prefix} GET">/mds/ark:{prefix} GET</a>
+                  </li>
+                  <li>
+                    <a href="#mds-ark-prefix-post" class="toc-h2 toc-link" data-title="/mds/ark:{prefix} POST">/mds/ark:{prefix} POST</a>
+                  </li>
+                  <li>
+                    <a href="#mds-ark-prefix-put" class="toc-h2 toc-link" data-title="/mds/ark:{prefix} PUT">/mds/ark:{prefix} PUT</a>
+                  </li>
+                  <li>
+                    <a href="#mds-shoulder-ark-prefix-post" class="toc-h2 toc-link" data-title="/mds/shoulder/ark:{prefix} POST">/mds/shoulder/ark:{prefix} POST</a>
+                  </li>
+                  <li>
+                    <a href="#mds-ark-prefix-suffix-get" class="toc-h2 toc-link" data-title="/mds/ark:{prefix}/{suffix} GET">/mds/ark:{prefix}/{suffix} GET</a>
+                  </li>
+                  <li>
+                    <a href="#mds-ark-prefix-suffix-post" class="toc-h2 toc-link" data-title="/mds/ark:{prefix}/{suffix} POST">/mds/ark:{prefix}/{suffix} POST</a>
+                  </li>
+                  <li>
+                    <a href="#mds-ark-prefix-suffix-put" class="toc-h2 toc-link" data-title="/mds/ark:{prefix}/{suffix} PUT">/mds/ark:{prefix}/{suffix} PUT</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#transfer" class="toc-h1 toc-link" data-title="Transfer">Transfer</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#endpoints-2" class="toc-h2 toc-link" data-title="Endpoints">Endpoints</a>
+                  </li>
+                  <li>
+                    <a href="#transfer-data-post" class="toc-h2 toc-link" data-title="/transfer/data POST">/transfer/data POST</a>
+                  </li>
+                  <li>
+                    <a href="#transfer-data-pid-get" class="toc-h2 toc-link" data-title="/transfer/data/{PID} GET">/transfer/data/{PID} GET</a>
+                  </li>
+                  <li>
+                    <a href="#transfer-data-pid-put" class="toc-h2 toc-link" data-title="/transfer/data/{PID} PUT">/transfer/data/{PID} PUT</a>
+                  </li>
+                  <li>
+                    <a href="#transfer-data-pid-delete" class="toc-h2 toc-link" data-title="/transfer/data/{PID} DELETE">/transfer/data/{PID} DELETE</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#compute" class="toc-h1 toc-link" data-title="Compute">Compute</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#endpoints-3" class="toc-h2 toc-link" data-title="Endpoints">Endpoints</a>
+                  </li>
+                  <li>
+                    <a href="#compute-job-get" class="toc-h2 toc-link" data-title="/compute/job GET">/compute/job GET</a>
+                  </li>
+                  <li>
+                    <a href="#compute-job-post" class="toc-h2 toc-link" data-title="/compute/job POST">/compute/job POST</a>
+                  </li>
+                  <li>
+                    <a href="#compute-nypipe-post" class="toc-h2 toc-link" data-title="/compute/nypipe POST">/compute/nypipe POST</a>
+                  </li>
+                  <li>
+                    <a href="#compute-spark-post" class="toc-h2 toc-link" data-title="/compute/spark POST">/compute/spark POST</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#evidence-graph" class="toc-h1 toc-link" data-title="Evidence Graph">Evidence Graph</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#eg-pid-get" class="toc-h2 toc-link" data-title="/eg/{PID} GET">/eg/{PID} GET</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#visualization" class="toc-h1 toc-link" data-title="Visualization">Visualization</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#viz-pid-get" class="toc-h2 toc-link" data-title="/viz/{PID} GET">/viz/{PID} GET</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#search" class="toc-h1 toc-link" data-title="Search">Search</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#search-query-get" class="toc-h2 toc-link" data-title="/search/{query} GET">/search/{query} GET</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='#'>Become a User</a></li>
+            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>FAIRSCAPE is a reusable computational framework, enabling simplified access to modern scalable cloud-based components. It fully implements the FAIR data principles and extends them to provide FAIR Evidence, including provenance of datasets, software and computations,as metadata for all computed results.</p>
+<h1 id='install'>Install</h1>
+<p>This section will cover how to setup and install a <strong>FAIRSCAPE</strong> cluster and cover some of the basic API calls.  </p>
+<h2 id='prerequisites'>Prerequisites</h2>
+<table><thead>
+<tr>
+<th>Tool</th>
+<th>Installation</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Kubernetes Cluster or Minikube</td>
+<td><a href="https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster">Cluster</a> <a href="https://minikube.sigs.k8s.io/docs/start/">Minikube</a></td>
+</tr>
+<tr>
+<td>kubectl</td>
+<td><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">Instructions</a></td>
+</tr>
+<tr>
+<td>FAIRSCAPE deployment</td>
+<td><a href="https://github.com/fairscape/deployment">Download</a></td>
+</tr>
+</tbody></table>
+<h2 id='clone-fairscape-deployment-repo'>Clone FAIRSCAPE deployment repo</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>git clone https://github.com/fairscape/deployment
+<span class="nb">cd </span>deployment
+</code></pre></div>
+<p>Clone the deployment repository for all the required kubernetes manifest files. </p>
+<h2 id='create-all-pods-and-services'>Create all pods and services</h2>
+<blockquote>
+<p>To create all the Kubernetes resources use the command below:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>kubectl create <span class="nt">-f</span> fairscape.yaml
+</code></pre></div>
+<p>Create all necessary pods with simple kubectl create command</p>
+<h2 id='create-required-database-and-buckets'>Create required database and buckets</h2>
+<blockquote>
+<p>With all the resources up time to create the default databases:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>kubectl <span class="nb">exec </span>stardog <span class="nt">--</span> bash <span class="nt">-c</span> <span class="s2">"/opt/stardog/bin/stardog-admin db create -o search.enabled=true -n ors"</span>
+kubectl <span class="nb">exec </span>minio  <span class="nt">--</span> ash <span class="nt">-c</span> <span class="s2">"mkdir -p data/breakfast"</span>
+</code></pre></div>
+<p>Create stardog database and buckets in minio required by MDS and Transfer services.</p>
+<h2 id='test-services-functioning-as-expected'>Test Services Functioning as Expected</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>kubectl <span class="nb">exec </span>testing-pod  <span class="nt">--</span> bash <span class="nt">-c</span> <span class="s2">"python3 deployment-tests.py"</span>
+</code></pre></div>
+<p>Command below execs into pod within cluster and runs deployment tests to make sure all services are properly up and running.</p>
+<h2 id='try-the-fairscape-demos'>Try the FAIRSCAPE Demos</h2>
+<p>Once all the tests pass play around with the FAIRSCAPE demos (available <a href="https://github.com/fairscape/demo">HERE</a>) to learn more about the basic commands.</p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">FAIR</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="s">'your-JWT'</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: JWT"</span>
+</code></pre></div>
+<blockquote>
+<p>Make sure to replace `JWT with your web token.</p>
+</blockquote>
+
+<p>FAIRSCAPE uses json web tokens to authenticate users. Please our <a href="https://clarklab.uvarc.io/auth/login">LOGIN</a> to receive your web token.</p>
+
+<p>FAIRSACPE expects the web token to be included in all API requests to the server in a header that looks like the following:</p>
+
+<p><code>Authorization: your-web-token</code></p>
+
+<aside class="notice">
+You must replace <code>your-web-token</code> with your personal json web token.
+</aside>
+<h1 id='mds'>MDS</h1><h2 id='endpoints'>Endpoints</h2>
+<ul>
+<li><strong>/ark:{prefix}</strong></li>
+<li><strong>/shoulder/ark:{namespace}</strong></li>
+<li><strong>/ark:{namespace}/{Identifier}</strong></li>
+</ul>
+<h3 id='ark-prefix-namespace-handling'><strong>/ark:{prefix}</strong> <strong>Namespace Handling</strong></h3>
+<p>Handles creating and editing namespaces to store identifiers.
+{prefix} is 5 digit ark namespace prefix</p>
+<h3 id='shoulder-ark-namespace'><strong>/shoulder/ark:{namespace}</strong></h3>
+<p>Handles <strong>Identifier Minting</strong></p>
+<h3 id='ark-namespace-identifier'><strong>/ark:{namespace}/{Identifier}</strong></h3>
+<p><strong>Identifier Handling</strong> Resolves, updates and deletes identifiers.</p>
+<h2 id='mds-ark-prefix-get'>/mds/ark:{prefix} GET</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">upload_response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="s">'http://clarklab.uvarc.io/mds/ark:{prefix}'</span><span class="p">,</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="n">token</span><span class="p">}</span>
+    <span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl http://clarklab.uvarc.io/ark:99999
+</code></pre></div>
+<blockquote>
+<p>The above returns the json-ld metadata of the given namespace. May look like below:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="s2">"Example Namespace"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Get namespace description. Returns metadata describing requested namespace.</p>
+<h2 id='mds-ark-prefix-post'>/mds/ark:{prefix} POST</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl <span class="nt">--request</span> POST <span class="se">\</span>
+  <span class="nt">--url</span> https://clarklab.uvarc.io/mds/ark:99999 <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Authorization: Bearer YOUR_JWT'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{"name":"Test","description":"Test Namespace"}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'name'</span><span class="p">:</span><span class="s">'Example Namespace'</span><span class="p">,</span>
+    <span class="s">'description'</span><span class="p">:</span><span class="s">'Sample'</span>
+    <span class="p">}</span>
+<span class="n">ns_response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="s">'http://clarklab.uvarc.io/mds/ark:99999'</span><span class="p">,</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">metadata</span><span class="p">),</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="n">token</span><span class="p">}</span>
+    <span class="p">)</span>
+</code></pre></div>
+<p>Create a namespace. Prefix is a 5 digit number representing your institution.</p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>false</td>
+<td>Name of object.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>false</td>
+<td>Description of object</td>
+</tr>
+</tbody></table>
+<h2 id='mds-ark-prefix-put'>/mds/ark:{prefix} PUT</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl <span class="nt">--request</span> PUT <span class="se">\</span>
+  <span class="nt">--url</span> https://clarklab.uvarc.io/mds/ark:99999 <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Authorization: Bearer YOUR_JWT'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{"name":"New Name","description":"Updated Namespace"}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'name'</span><span class="p">:</span><span class="s">'Updated Example Namespace'</span><span class="p">,</span>
+    <span class="s">'description'</span><span class="p">:</span><span class="s">'New Sample'</span>
+    <span class="p">}</span>
+<span class="n">ns_response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">put</span><span class="p">(</span>
+        <span class="s">'http://clarklab.uvarc.io/mds/ark:99999'</span><span class="p">,</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">metadata</span><span class="p">),</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="n">token</span><span class="p">}</span>
+    <span class="p">)</span>
+</code></pre></div>
+<p>Update a namespace.</p>
+<h3 id='parameters-2'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>false</td>
+<td>Name of object.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>false</td>
+<td>Description of object</td>
+</tr>
+</tbody></table>
+<h2 id='mds-shoulder-ark-prefix-post'>/mds/shoulder/ark:{prefix} POST</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl <span class="nt">--request</span> POST <span class="se">\</span>
+  <span class="nt">--url</span> https://clarklab.uvarc.io/mds/shoulder/ark:99999 <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Authorization: Bearer YOUR_JWT'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{"name":"Example Dataset", "@type":"Datatset", "description":"Example made up data"}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'name'</span><span class="p">:</span><span class="s">'Example Dataset'</span><span class="p">,</span>
+    <span class="s">'@type'</span><span class="p">:</span><span class="s">'Dataset'</span><span class="p">,</span>
+    <span class="s">'author'</span><span class="p">:</span><span class="s">'Madeup Person'</span><span class="p">,</span>
+    <span class="s">'description'</span><span class="p">:</span><span class="s">'Sample'</span>
+    <span class="p">}</span>
+<span class="n">upload_response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="s">'http://clarklab.uvarc.io/mds/shoulder/ark:99999'</span><span class="p">,</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">metadata</span><span class="p">),</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="n">token</span><span class="p">}</span>
+    <span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns json like below:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"created"</span><span class="p">:</span><span class="s2">"ark:99999/123-abc"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='identifier-minting'><strong>Identifier Minting</strong></h3>
+<p>Mint an Identifier with associated json-ld metadata. Returns minted PID.</p>
+<h3 id='parameters-3'>Parameters</h3>
+<p>None required post json-ld metadata.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>false</td>
+<td>Name of object.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>false</td>
+<td>Description of object</td>
+</tr>
+<tr>
+<td>@type</td>
+<td>false</td>
+<td>Schema.org type</td>
+</tr>
+</tbody></table>
+<h2 id='mds-ark-prefix-suffix-get'>/mds/ark:{prefix}/{suffix} GET</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">mds_response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="s">'http://clarklab.uvarc.io/mds/{pid}'</span><span class="p">,</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="n">token</span><span class="p">}</span>
+    <span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl http://clarklab.uvarc.io/ark:99999/<span class="o">{</span>PID<span class="o">}</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns the json-ld metadata of the given identifier. May look like below:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"@type"</span><span class="p">:</span><span class="s2">"Dataset"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="s2">"Example Dataset"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Author"</span><span class="p">:</span><span class="s2">"Me"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieve metadata for given identifier.</p>
+<h2 id='mds-ark-prefix-suffix-post'>/mds/ark:{prefix}/{suffix} POST</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl <span class="nt">--request</span> POST <span class="se">\</span>
+  <span class="nt">--url</span> https://clarklab.uvarc.io/mds/ark:99999/test-id <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Authorization: Bearer YOUR_JWT'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{"name":"Example Dataset", "@type":"Datatset", "description":"Example made up data"}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'name'</span><span class="p">:</span><span class="s">'Example Dataset'</span><span class="p">,</span>
+    <span class="s">'@type'</span><span class="p">:</span><span class="s">'Dataset'</span><span class="p">,</span>
+    <span class="s">'author'</span><span class="p">:</span><span class="s">'Madeup Person'</span><span class="p">,</span>
+    <span class="s">'description'</span><span class="p">:</span><span class="s">'Sample'</span>
+    <span class="p">}</span>
+<span class="n">upload_response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="s">'http://clarklab.uvarc.io/mds/ark:99999/wanted-id'</span><span class="p">,</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">metadata</span><span class="p">),</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="n">token</span><span class="p">}</span>
+    <span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"created"</span><span class="p">:</span><span class="s2">"ark:99999/123-abc"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Mint an Identifier with specified PID and json-ld metadata.</p>
+<h3 id='parameters-4'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>false</td>
+<td>Name of object.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>false</td>
+<td>Description of object</td>
+</tr>
+<tr>
+<td>@type</td>
+<td>false</td>
+<td>Schema.org type</td>
+</tr>
+</tbody></table>
+<h2 id='mds-ark-prefix-suffix-put'>/mds/ark:{prefix}/{suffix} PUT</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl <span class="nt">--request</span> PUT <span class="se">\</span>
+  <span class="nt">--url</span> https://clarklab.uvarc.io/mds/ark:99999/test-id <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Authorization: Bearer YOUR_JWT'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{"name":"Example Dataset", "@type":"Datatset", "description":"Example made up data"}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"updated"</span><span class="p">:</span><span class="s2">"ark:99999/123-abc"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Update metadata of a previously minted identifier.</p>
+<h3 id='parameters-5'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>false</td>
+<td>Name of object.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>false</td>
+<td>Description of object</td>
+</tr>
+<tr>
+<td>@type</td>
+<td>false</td>
+<td>Schema.org type</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Remember — All calls just have json web token!
+</aside>
+<h1 id='transfer'>Transfer</h1>
+<p>Takes data from the user and uploads the given file to minio and mints an identifier in mongo associated with the file.</p>
+<h2 id='endpoints-2'>Endpoints</h2><h3 id='data'><strong>/data</strong></h3>
+<p>Handles uploading of new data.</p>
+<h3 id='data-pid'><strong>/data/{PID}</strong></h3>
+<p>Endpoint for download, updating, or deleting previously uploaded file.</p>
+<h2 id='transfer-data-post'>/transfer/data POST</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl <span class="nt">--request</span> POST <span class="se">\</span>
+  <span class="nt">--url</span> https://clarklab.uvarc.io/data <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Authorization: Bearer YOUR_JWT'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{metadata:{"name":"Example Dataset", "@type":"Datatset", "description":"Example made up data"},
+  "files":@myfile,
+  "sha256":"sampple-sha"
+}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'name'</span><span class="p">:</span><span class="s">'Example Dataset'</span><span class="p">,</span>
+    <span class="s">'@type'</span><span class="p">:</span><span class="s">'Dataset'</span><span class="p">,</span>
+    <span class="s">'author'</span><span class="p">:</span><span class="s">'Madeup Person'</span><span class="p">,</span>
+    <span class="s">'description'</span><span class="p">:</span><span class="s">'Sample'</span>
+    <span class="p">}</span>
+<span class="n">upload_response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="s">'http://clarklab.uvarc.io/transfer/data'</span><span class="p">,</span>
+        <span class="n">files</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">'files'</span><span class="p">:</span><span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span><span class="s">'rb'</span><span class="p">),</span>
+            <span class="s">'metadata'</span><span class="p">:</span><span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">metadata</span><span class="p">),</span>
+            <span class="s">'sha-256'</span><span class="p">:</span><span class="s">'abcdefghi'</span>
+        <span class="p">},</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="n">token</span><span class="p">}</span>
+    <span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns json like below:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"upload"</span><span class="p">:</span><span class="s2">"True"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Minted Identifier"</span><span class="p">:[</span><span class="s2">"ark:99999/abd-123"</span><span class="p">]</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The user passes in a file to upload as well as json-ld metadata. The service uploads the file to minio and mints an identifier with the given metadata as well as a distribution tag tying the file to the identifier. The service returns the minted identifier to the user.</p>
+<h3 id='parameters-6'>Parameters</h3>
+<ul>
+<li><strong>Files</strong>
+
+<ul>
+<li><strong>Metadata</strong></li>
+<li><strong>Files</strong></li>
+<li><strong>sha-256</strong></li>
+</ul></li>
+</ul>
+<h2 id='transfer-data-pid-get'>/transfer/data/{PID} GET</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl http://clarklab.uvarc.io/data/<span class="o">{</span>pid<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">upload_response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="s">'http://clarklab.uvarc.io/data/{pid}'</span><span class="p">,</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="n">token</span><span class="p">}</span>
+    <span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>Commands above return the file in content.</p>
+</blockquote>
+
+<p>Download file associated with given PID.</p>
+<h2 id='transfer-data-pid-put'>/transfer/data/{PID} PUT</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl <span class="nt">--request</span> PUT <span class="se">\</span>
+  <span class="nt">--url</span> https://clarklab.uvarc.io/data/<span class="o">{</span>PID<span class="o">}</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Authorization: Bearer YOUR_JWT'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{metadata:{"name":"Example Dataset", "@type":"Datatset", "description":"Example made up data"},
+  "files":@myfile,
+  "sha256":"sampple-sha"
+}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">update_response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">put</span><span class="p">(</span>
+        <span class="s">'http://clarklab.uvarc.io/transfer/data/{pid}'</span><span class="p">,</span>
+        <span class="n">files</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">'files'</span><span class="p">:</span><span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span><span class="s">'rb'</span><span class="p">),</span>
+            <span class="s">'sha-256'</span><span class="p">:</span><span class="s">'abcdehgia'</span>
+        <span class="p">},</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="n">token</span><span class="p">}</span>
+    <span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns json like below:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"upload"</span><span class="p">:</span><span class="s2">"True"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Minted Identifier"</span><span class="p">:[</span><span class="s2">"ark:99999/abd-123"</span><span class="p">]</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint is used to upload a new version of a previously uploaded file. The user passes in a file to upload.  The service uploads the file to minio and mints a new distribution tag tying the file to the identifier. The service returns the minted identifier to the user.</p>
+<h3 id='parameters-7'>Parameters</h3>
+<ul>
+<li><strong>Files</strong>
+
+<ul>
+<li><strong>Files</strong> (can be list or single file)</li>
+<li><strong>sha-256</strong></li>
+</ul></li>
+</ul>
+<h2 id='transfer-data-pid-delete'>/transfer/data/{PID} DELETE</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl <span class="nt">--request</span> DELETE
+       <span class="nt">--url</span> http://clarklab.uvarc.io/data/<span class="o">{</span>pid<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">delete_response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span>
+        <span class="s">'http://clarklab.uvarc.io/data/{pid}'</span><span class="p">,</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="n">token</span><span class="p">}</span>
+    <span class="p">)</span>
+</code></pre></div>
+<p>Delete a file associated with given PID from FAIRSCAPE.</p>
+<h1 id='compute'>Compute</h1>
+<p>The compute service handles creating and tracking of user uploaded jobs. The service has 3 options: a custom nypipe container with detailed provenance tracking, spark on kubernetes, and option to input the container of your choice.</p>
+<h2 id='endpoints-3'>Endpoints</h2>
+<ul>
+<li><strong>/job</strong></li>
+<li><strong>/nypipe</strong></li>
+<li><strong>/spark</strong></li>
+</ul>
+<h3 id='job'><strong>/job</strong></h3>
+<p>Handles tracking running jobs and creating jobs with arbitrary containers.</p>
+<h3 id='nypipe'><strong>/nypipe</strong></h3>
+<p>Handles creating jobs with custom nypipe container for tracking detailed provenance.</p>
+<h3 id='spark'><strong>/spark</strong></h3>
+<p>Handles creating spark jobs.</p>
+<h2 id='compute-job-get'>/compute/job GET</h2>
+<blockquote>
+<p>The command below returns all running jobs:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl http://clarklab.uvarc.io/compute/job
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">jobs</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="s">'http://clarklab.uvarc.io/compute/job'</span><span class="p">,</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="n">token</span><span class="p">}</span>
+    <span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns json like below:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"jobs"</span><span class="p">:[</span><span class="s2">"nypipe-99999/abd-123"</span><span class="p">,</span><span class="s2">"spark-9999/tests-job"</span><span class="p">]</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>List all running jobs.</p>
+<h2 id='compute-job-post'>/compute/job POST</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl <span class="nt">--request</span> POST <span class="se">\</span>
+  <span class="nt">--url</span> https://clarklab.uvarc.io/job <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Authorization: Bearer YOUR_JWT'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{"datasetID":"ark:99999/data", "scriptID": "ark:99999/script", "containerID":"ark:99999/dockerID"}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">job_response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="s">'http://clarklab.uvarc.io/compute/job'</span><span class="p">,</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">({</span>
+            <span class="s">'scriptID'</span><span class="p">:</span><span class="s">"ark:99999/script"</span><span class="p">,</span>
+            <span class="s">"datasetID"</span><span class="p">:</span><span class="s">"ark:99999/data"</span><span class="p">,</span>
+            <span class="s">"containerID"</span><span class="p">:</span><span class="s">"ark:99999/dockerID"</span>
+        <span class="p">}),</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="n">token</span><span class="p">}</span>
+    <span class="p">)</span>
+</code></pre></div>
+<p>Starts a new job computing the given script on the requested data. Returns identifier of running job.</p>
+<h3 id='parameters-8'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datasetID</td>
+<td>True</td>
+<td>List of IDs of data to be computed on.</td>
+</tr>
+<tr>
+<td>scriptID</td>
+<td>True</td>
+<td>ID of script to run on given data.</td>
+</tr>
+<tr>
+<td>containerID</td>
+<td>True</td>
+<td>ID of container in which to run the computation</td>
+</tr>
+</tbody></table>
+<h2 id='compute-nypipe-post'>/compute/nypipe POST</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl <span class="nt">--request</span> POST <span class="se">\</span>
+  <span class="nt">--url</span> https://clarklab.uvarc.io/nypipe <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Authorization: Bearer YOUR_JWT'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{"datasetID":"ark:99999/data", "scriptID": "ark:99999/script"}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">job_response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="s">'http://clarklab.uvarc.io/compute/nypipe'</span><span class="p">,</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">({</span>
+            <span class="s">'scriptID'</span><span class="p">:</span><span class="s">"ark:99999/script"</span><span class="p">,</span>
+            <span class="s">"datasetID"</span><span class="p">:</span><span class="s">"ark:99999/data"</span>
+        <span class="p">}),</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="n">token</span><span class="p">}</span>
+    <span class="p">)</span>
+</code></pre></div>
+<p>Starts a new job computing the given script on the requested data. Returns identifier of running job.</p>
+<h3 id='parameters-9'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datasetID</td>
+<td>True</td>
+<td>List of IDs of data to be computed on.</td>
+</tr>
+<tr>
+<td>scriptID</td>
+<td>True</td>
+<td>ID of script to run on given data.</td>
+</tr>
+</tbody></table>
+<h2 id='compute-spark-post'>/compute/spark POST</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl <span class="nt">--request</span> POST <span class="se">\</span>
+  <span class="nt">--url</span> https://clarklab.uvarc.io/spark <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Authorization: Bearer YOUR_JWT'</span> <span class="se">\</span>
+  <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">--data</span> <span class="s1">'{"datasetID":"ark:99999/data", "scriptID": "ark:99999/script"}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">job_response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="s">'http://clarklab.uvarc.io/compute/spark'</span><span class="p">,</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">({</span>
+            <span class="s">'scriptID'</span><span class="p">:</span><span class="s">"ark:99999/script"</span><span class="p">,</span>
+            <span class="s">"datasetID"</span><span class="p">:</span><span class="s">"ark:99999/data"</span>
+        <span class="p">}),</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="n">token</span><span class="p">}</span>
+    <span class="p">)</span>
+</code></pre></div>
+<p>Starts a new job computing the given script on the requested data. This endpoint utlizes spark on kubernetes to allow for processing of large data. Returns identifier of running job.</p>
+<h3 id='parameters-10'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datasetID</td>
+<td>True</td>
+<td>List of IDs of data to be computed on.</td>
+</tr>
+<tr>
+<td>scriptID</td>
+<td>True</td>
+<td>ID of script to run on given data.</td>
+</tr>
+</tbody></table>
+<h1 id='evidence-graph'>Evidence Graph</h1>
+<p>The evidence graph service creates a detailed provenance trace of the requested identifier. The returned evidence graph is a json-ld representation of the computations and inputs that went into creating the requested object.</p>
+<h2 id='eg-pid-get'>/eg/{PID} GET</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">jobs</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="s">'http://clarklab.uvarc.io/eg/{PID}'</span><span class="p">,</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="n">token</span><span class="p">}</span>
+    <span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl http://clarklab.uvarc.io/eg/<span class="o">{</span>PID<span class="o">}</span>
+</code></pre></div>
+<p>Returns evidence graph for requested PID</p>
+<h1 id='visualization'>Visualization</h1>
+<p>The visualization service takes the evidence graph of a PID and displays an html graph of the evidence graph.</p>
+<h2 id='viz-pid-get'>/viz/{PID} GET</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">jobs</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="s">'http://clarklab.uvarc.io/viz/{PID}'</span><span class="p">,</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="n">token</span><span class="p">}</span>
+    <span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl http://clarklab.uvarc.io/ark:99999/viz/<span class="o">{</span>PID<span class="o">}</span>
+</code></pre></div>
+<p>Visualizes evidence graph of requested PID using cytoscape.</p>
+<h1 id='search'>Search</h1>
+<p>The search service runs string match searches over the metadata store and returns matches in order by search fit.</p>
+<h2 id='search-query-get'>/search/{query} GET</h2>
+<blockquote>
+<p>Search metadata for identifiers containing test</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code>
+<span class="n">search_request</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"http:/clarklab.uvarc.io/search/test"</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl http://clarklab.uvarc.io/search/test
+</code></pre></div>
+<blockquote>
+<p>The above returns json like below:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"matches"</span><span class="p">:[</span><span class="w">
+    </span><span class="s2">"ark:99999:abc-231"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ark:99999:abfjks-343hgh"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ark:99999:ver-2343"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Searches the metadata store for literals matching the requested query. Search is based off Lucene 7.4 and supports all the same modifiers as Lucene .</p>
+<h1 id='errors'>Errors</h1>
+<p>The FAIRSCAPE API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The service requested is for administrators only.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="python">python</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
