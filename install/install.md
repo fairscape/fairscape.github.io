@@ -6,7 +6,7 @@ This section will cover how to setup and install a **FAIRSCAPE** cluster and go 
 
 Tool | Installation
 --------- | -------
-Kubernetes Cluster or Minikube | [Cluster](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster) [Minikube](https://minikube.sigs.k8s.io/docs/start/)
+Kubernetes Cluster or Minikube | [Cluster](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster), [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 kubectl | [Instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 FAIRSCAPE deployment | [Download](https://github.com/fairscape/deployment)
 
