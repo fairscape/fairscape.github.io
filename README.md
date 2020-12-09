@@ -4,6 +4,6 @@
 
 ## [Installation Instructions](https://fairscape.github.io/install/install.html)
 
-## [FAIRSCAPE Demos](https://github.com/fairscape/demo)
+## [FAIRSCAPE Demos](https://fairscape.github.io/demo/demo.html)
 
 ## [Service Documentation](https://fairscape.github.io/docs/#introduction)
