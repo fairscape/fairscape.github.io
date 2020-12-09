@@ -313,7 +313,10 @@
             <a href="#install" class="toc-h1 toc-link" data-title="Install">Install</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#requirements" class="toc-h2 toc-link" data-title="Requirements">Requirements</a>
+                    <a href="#prerequisites" class="toc-h2 toc-link" data-title="Prerequisites">Prerequisites</a>
+                  </li>
+                  <li>
+                    <a href="#clone-fairscape-deployment-repo" class="toc-h2 toc-link" data-title="Clone FAIRSCAPE deployment repo">Clone FAIRSCAPE deployment repo</a>
                   </li>
                   <li>
                     <a href="#create-all-pods-and-services" class="toc-h2 toc-link" data-title="Create all pods and services">Create all pods and services</a>
@@ -441,12 +444,30 @@
 <p>FAIRSCAPE is a reusable computational framework, enabling simplified access to modern scalable cloud-based components. It fully implements the FAIR data principles and extends them to provide FAIR Evidence, including provenance of datasets, software and computations,as metadata for all computed results.</p>
 <h1 id='install'>Install</h1>
 <p>This section will cover how to setup and install a <strong>FAIRSCAPE</strong> cluster and cover some of the basic API calls.  </p>
-<h2 id='requirements'>Requirements</h2>
-<ul>
-<li>Kubernetes Cluster (<a href="https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster">HOW TO HERE</a>)</li>
-<li>Kubectl installed and configured with cluster</li>
-<li>FAIRSCAPE Kubernetes Manifest (<a href="https://github.com/fairscape/deployment">Avaiable HERE</a>)</li>
-</ul>
+<h2 id='prerequisites'>Prerequisites</h2>
+<table><thead>
+<tr>
+<th>Tool</th>
+<th>Installation</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Kubernetes Cluster or Minikube</td>
+<td><a href="https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster">Cluster</a> <a href="https://minikube.sigs.k8s.io/docs/start/">Minikube</a></td>
+</tr>
+<tr>
+<td>kubectl</td>
+<td><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">Instructions</a></td>
+</tr>
+<tr>
+<td>FAIRSCAPE deployment</td>
+<td><a href="https://github.com/fairscape/deployment">Download</a></td>
+</tr>
+</tbody></table>
+<h2 id='clone-fairscape-deployment-repo'>Clone FAIRSCAPE deployment repo</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>git clone https://github.com/fairscape/deployment
+<span class="nb">cd </span>deployment
+</code></pre></div>
+<p>Clone the deployment repository for all the required kubernetes manifest files. </p>
 <h2 id='create-all-pods-and-services'>Create all pods and services</h2>
 <blockquote>
 <p>To create all the Kubernetes resources use the command below:</p>
@@ -466,7 +487,7 @@ kubectl <span class="nb">exec </span>minio  <span class="nt">--</span> ash <span
 </code></pre></div>
 <p>Command below execs into pod within cluster and runs deployment tests to make sure all services are properly up and running.</p>
 <h2 id='try-the-fairscape-demos'>Try the FAIRSCAPE Demos</h2>
-<p>Once all the tests pass play around with the FAIRSCAPE demos (available <a href="https://github.com/fairscape/demo">HERE</a>) to learn more about the basic commands. </p>
+<p>Once all the tests pass play around with the FAIRSCAPE demos (available <a href="https://github.com/fairscape/demo">HERE</a>) to learn more about the basic commands.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
