@@ -310,29 +310,6 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
-            <a href="#install" class="toc-h1 toc-link" data-title="Install">Install</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#prerequisites" class="toc-h2 toc-link" data-title="Prerequisites">Prerequisites</a>
-                  </li>
-                  <li>
-                    <a href="#clone-fairscape-deployment-repo" class="toc-h2 toc-link" data-title="Clone FAIRSCAPE deployment repo">Clone FAIRSCAPE deployment repo</a>
-                  </li>
-                  <li>
-                    <a href="#create-all-pods-and-services" class="toc-h2 toc-link" data-title="Create all pods and services">Create all pods and services</a>
-                  </li>
-                  <li>
-                    <a href="#create-required-database-and-buckets" class="toc-h2 toc-link" data-title="Create required database and buckets">Create required database and buckets</a>
-                  </li>
-                  <li>
-                    <a href="#test-services-functioning-as-expected" class="toc-h2 toc-link" data-title="Test Services Functioning as Expected">Test Services Functioning as Expected</a>
-                  </li>
-                  <li>
-                    <a href="#try-the-fairscape-demos" class="toc-h2 toc-link" data-title="Try the FAIRSCAPE Demos">Try the FAIRSCAPE Demos</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
@@ -442,52 +419,6 @@
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
 <p>FAIRSCAPE is a reusable computational framework, enabling simplified access to modern scalable cloud-based components. It fully implements the FAIR data principles and extends them to provide FAIR Evidence, including provenance of datasets, software and computations,as metadata for all computed results.</p>
-<h1 id='install'>Install</h1>
-<p>This section will cover how to setup and install a <strong>FAIRSCAPE</strong> cluster and cover some of the basic API calls.  </p>
-<h2 id='prerequisites'>Prerequisites</h2>
-<table><thead>
-<tr>
-<th>Tool</th>
-<th>Installation</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Kubernetes Cluster or Minikube</td>
-<td><a href="https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster">Cluster</a> <a href="https://minikube.sigs.k8s.io/docs/start/">Minikube</a></td>
-</tr>
-<tr>
-<td>kubectl</td>
-<td><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">Instructions</a></td>
-</tr>
-<tr>
-<td>FAIRSCAPE deployment</td>
-<td><a href="https://github.com/fairscape/deployment">Download</a></td>
-</tr>
-</tbody></table>
-<h2 id='clone-fairscape-deployment-repo'>Clone FAIRSCAPE deployment repo</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>git clone https://github.com/fairscape/deployment
-<span class="nb">cd </span>deployment
-</code></pre></div>
-<p>Clone the deployment repository for all the required kubernetes manifest files. </p>
-<h2 id='create-all-pods-and-services'>Create all pods and services</h2>
-<blockquote>
-<p>To create all the Kubernetes resources use the command below:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>kubectl create <span class="nt">-f</span> fairscape.yaml
-</code></pre></div>
-<p>Create all necessary pods with simple kubectl create command</p>
-<h2 id='create-required-database-and-buckets'>Create required database and buckets</h2>
-<blockquote>
-<p>With all the resources up time to create the default databases:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>kubectl <span class="nb">exec </span>stardog <span class="nt">--</span> bash <span class="nt">-c</span> <span class="s2">"/opt/stardog/bin/stardog-admin db create -o search.enabled=true -n ors"</span>
-kubectl <span class="nb">exec </span>minio  <span class="nt">--</span> ash <span class="nt">-c</span> <span class="s2">"mkdir -p data/breakfast"</span>
-</code></pre></div>
-<p>Create stardog database and buckets in minio required by MDS and Transfer services.</p>
-<h2 id='test-services-functioning-as-expected'>Test Services Functioning as Expected</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>kubectl <span class="nb">exec </span>testing-pod  <span class="nt">--</span> bash <span class="nt">-c</span> <span class="s2">"python3 deployment-tests.py"</span>
-</code></pre></div>
-<p>Command below execs into pod within cluster and runs deployment tests to make sure all services are properly up and running.</p>
-<h2 id='try-the-fairscape-demos'>Try the FAIRSCAPE Demos</h2>
-<p>Once all the tests pass play around with the FAIRSCAPE demos (available <a href="https://github.com/fairscape/demo">HERE</a>) to learn more about the basic commands.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
