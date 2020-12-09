@@ -4,8 +4,6 @@ FAIRSCAPE is a reusable computational framework, enabling simplified access to m
 
 ## [Installation Instructions](https://fairscape.github.io/install/install.html)
 
+## [FAIRSCAPE Demos](https://github.com/fairscape/demo)
 
 ## [Service Documentation](https://fairscape.github.io/docs/#introduction)
-
-
-## [FAIRSCAPE Demos](https://github.com/fairscape/demo)
