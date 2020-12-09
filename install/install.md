@@ -1,6 +1,6 @@
 # Installation
 
-This section will cover how to setup and install a **FAIRSCAPE** cluster and cover some of the basic API calls.  
+This section will cover how to setup and install a **FAIRSCAPE** cluster and go over some of the basic API calls.  
 
 ## Prerequisites
 
