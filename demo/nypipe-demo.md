@@ -6,7 +6,7 @@
 
 [Deepnote Published Notebook](https://deepnote.com/publish/d3abcf79-1d49-4217-a389-e10494e60812)
 
-#Services
+# Services
 
 ## Microservices Model
 
@@ -32,7 +32,7 @@ Image(filename="./Microservice Framework v6.png")
     Compute Service: Runs nipype wf's spark jobs on uploaded data
     Evidence Graph Service: Queries Stardog to build Evidence Graph tracking object proveance
 
-#Outline
+# Outline
 
     1.) Upload data to the framework
     2.) Retreive metadata of an uploaded object using MDS
