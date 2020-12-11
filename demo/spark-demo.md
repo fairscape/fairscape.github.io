@@ -1,11 +1,12 @@
+# Spark Demo
+
+## Also Available
+[Demo Github](https://github.com/fairscape/Nipype-Demo)
+
+[Deepnote Published Notebook](https://deepnote.com/publish/d3abcf79-1d49-4217-a389-e10494e60812)
+
 ## Microservices Model
 
-© 2020 By The Rector And Visitors Of The University Of Virginia
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 ```python
@@ -16,15 +17,15 @@ Image(filename="../Microservice Framework v6.png")
 
 
 
-    
+
 ![png](output_2_0.png)
-    
+
 
 
 
 
 ```python
-import requests 
+import requests
 import json
 import FAIR
 ```
@@ -48,7 +49,7 @@ Upload a file to minio via the upload_file function.
 <br>
 <br>
 upload_file takes:
-        - file_path: path to local file 
+        - file_path: path to local file
         - metadata: describes the file to be uploaded
 returns:
     - PID representing object
@@ -151,15 +152,15 @@ software_id
 Run a the uploaded script on the uploaded data by calling compute
 <br>
 <br>
-FAIR.compute takes: 
-    - data pid 
+FAIR.compute takes:
+    - data pid
     - software pid
     - type of job ie spark,nipype,custom  
 compute then launches kubernetes pods to run the given script on the provided data using specialized pods
 <br>
 <br>
 compute returns:
-    - job_PID 
+    - job_PID
 
 
 ```python
@@ -196,7 +197,7 @@ FAIR.list_running_jobs(token = token)
 ## Get Job outputs from job metadata
 
 Upon completion of a job the compute service updates the job id metadata to include properties:
-    - evi:supports: list of output PIDs 
+    - evi:supports: list of output PIDs
     - logs: logs from job
 
 
@@ -220,7 +221,7 @@ Metadata for the two created outputs is shown below
 
 
 ```python
-output_metadata = [ 
+output_metadata = [
    FAIR.retrieve_metadata(out['@id'],token = token) for out in output_ids
 ]
 output_metadata
@@ -429,15 +430,15 @@ download_file returns:<br>
 ```python
 from IPython.display import Image
 FAIR.download_file(image_id,'Created Image.png',token = token)
-Image(filename='Created Image.png') 
+Image(filename='Created Image.png')
 ```
 
 
 
 
-    
+
 ![png](output_42_0.png)
-    
+
 
 
 

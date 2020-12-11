@@ -1,6 +1,6 @@
 # FAIRSCAPE Demos
 
-[Spark](https://github.com/fairscape/Spark-Demo) and [Nypipe](https://github.com/fairscape/Nipype-Demo).
+[Spark](https://fairscape.github.io/demo/spark-demo.html) and [Nypipe](https://fairscape.github.io/demo/nypipe-demo.html).
 Both demos cover the basic principles of FAIRSCAPE such as uploading data, viewing metadata, and running computations.
 
 ## Outline
@@ -18,4 +18,4 @@ Below is the topics covered in both demos.
 ## Differences
 
 The demos cover two different use cases one utilizes spark on kubernetes to perform analysis on large amounts of data, the nypipe demo covers how to run a nypipe
-workflow and visualize the proveance of outputs from the workflow. 
+workflow and visualize the proveance of outputs from the workflow.
