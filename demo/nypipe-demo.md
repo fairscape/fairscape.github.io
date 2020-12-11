@@ -1,10 +1,12 @@
 # Nipype Full Framework Demo
 
-## Also Available
+### Also Available
 
 [Code Here](https://github.com/fairscape/Nipype-Demo)
 
 [Deepnote Published Notebook](https://deepnote.com/publish/d3abcf79-1d49-4217-a389-e10494e60812)
+
+#Services
 
 ## Microservices Model
 
@@ -30,14 +32,16 @@ Image(filename="./Microservice Framework v6.png")
     Compute Service: Runs nipype wf's spark jobs on uploaded data
     Evidence Graph Service: Queries Stardog to build Evidence Graph tracking object proveance
 
-## This Demo demonstrates
+#Outline
+
     1.) Upload data to the framework
     2.) Retreive metadata of an uploaded object using MDS
     3.) Run a nipype workflow on uploaded data
     4.) View evidence graph of output from the workflow
     5.) Visualize evidence graph of an ouput from a workflow
 
-## Use Transfer Service to Upload Data with Metadata
+# Demo
+## Step1 :Use Transfer Service to Upload Data with Metadata
 Transfer Service: Uploads (raw) data into MinIO and the metadata into MondoDB
 
 
