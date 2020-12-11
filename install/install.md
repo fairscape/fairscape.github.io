@@ -10,6 +10,8 @@ Kubernetes Cluster or Minikube | [Cluster](https://cloud.google.com/kubernetes-e
 kubectl | [Instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 FAIRSCAPE deployment | [Download](https://github.com/fairscape/deployment)
 
+> **_NOTE:_**  For local cluster 4 or more cpus are recommended.
+
 ## Step 1: Check Prerequisites
 
 With everything installed it is time to check that kubectl is connected to your cluster (local or cloud). Run the following to confirm it is configured properly:
@@ -44,7 +46,7 @@ kubectl exec stardog -- bash -c "/opt/stardog/bin/stardog-admin db create -o sea
 kubectl exec minio  -- ash -c "mkdir -p data/breakfast"
 ```
 
-## Step 5: Test Services 
+## Step 5: Test Services
 
 With all the pods up and running and the databases created we can run test script to confirm all the services are acting as expected.
 
