@@ -1,9 +1,9 @@
 # Spark Demo
 
 ## Also Available
-[Demo Github](https://github.com/fairscape/Nipype-Demo)
+[Code Here](https://github.com/fairscape/Nipype-Demo)
 
-[Deepnote Published Notebook](https://deepnote.com/publish/d3abcf79-1d49-4217-a389-e10494e60812)
+[Deepnote Published Notebook](https://deepnote.com/publish/bc340822-0e82-4268-b78e-75ff37f19837)
 
 ## Microservices Model
 
