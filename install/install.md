@@ -29,7 +29,7 @@ docker-desktop   Ready    master   4d    v1.18.8
 
 ## Step 2: Clone FAIRSCAPE deployment repo
 
-With kubectl properly configured it is time to download the necessary kubernetes manifest files.
+With kubectl properly configured it is time to download the necessary kubernetes manifest files (instructions for kuberentes cluster to build correct resources). We will change directories to the newly cloned directory.   
 
 ```shell
 git clone https://github.com/fairscape/deployment
@@ -44,6 +44,24 @@ In the deployment folder run the single command below to launch all the required
 kubectl create -f fairscape.yaml
 ```
 
+Run below to confirm all pods have started.
+```shell
+kubectl get pods
+NAME                        READY   STATUS    RESTARTS   AGE
+auth-84546d445c-2tvxm       1/1     Running   1          4d
+compute                     2/2     Running   2          4d
+eg-7f7548c889-hwtcc         1/1     Running   1          4d
+mds-6f55c986f8-vtzgb        1/1     Running   1          4d
+minio                       1/1     Running   1          4d
+mongo                       1/1     Running   1          4d
+object-service              1/1     Running   1          4d
+search                      1/1     Running   1          4d
+stardog                     1/1     Running   1          4d
+testing-pod                 1/1     Running   1          4d
+transfer-85c7577987-2mbzb   1/1     Running   1          4d
+visual                      1/1     Running   1          4d
+```
+> Note: Pods may remain in ContainerCreating for several minutes.
 ## Step 4: Create required database and buckets
 
 Once all the pods have started we must create the necessary databases to begin making service calls.
