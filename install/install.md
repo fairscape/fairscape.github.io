@@ -62,6 +62,7 @@ transfer-85c7577987-2mbzb   1/1     Running   1          4d
 visual                      1/1     Running   1          4d
 ```
 > Note: Pods may remain in ContainerCreating for several minutes.
+
 ## Step 4: Create required database and buckets
 
 Once all the pods have started we must create the necessary databases to begin making service calls.
