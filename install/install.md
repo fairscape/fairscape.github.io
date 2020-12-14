@@ -20,6 +20,13 @@ With everything installed it is time to check that kubectl is connected to your 
 kubectl get nodes
 ```
 
+Output from above should look something like below:
+```shell
+NAME             STATUS   ROLES    AGE   VERSION
+docker-desktop   Ready    master   4d    v1.18.8
+```
+> Note: Name will change depending on how you have installed kubernetes. Most important is a node is Ready.
+
 ## Step 2: Clone FAIRSCAPE deployment repo
 
 With kubectl properly configured it is time to download the necessary kubernetes manifest files.
