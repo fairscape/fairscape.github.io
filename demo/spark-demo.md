@@ -2,7 +2,7 @@
 
 # Introduction
 
-#### Service Defintions
+**Service Defintions**
 
     Metadata Service (MDS): Handles minting identifiers...
     Transfer Service: Used to upload data with associated metadata to framework
