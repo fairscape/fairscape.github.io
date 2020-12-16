@@ -2,7 +2,7 @@
 
 # Introduction
 
-## Service Defintions
+#### Service Defintions
 
     Metadata Service (MDS): Handles minting identifiers...
     Transfer Service: Used to upload data with associated metadata to framework
@@ -459,9 +459,4 @@ Image(filename='Created Image.png')
 ```python
 r = requests.post('https://clarklab.uvarc.io/auth/logout',headers = {"Authorization":token })
 r.content.decode()
-```
-
-
-```python
-
 ```
