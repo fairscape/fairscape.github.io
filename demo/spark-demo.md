@@ -25,8 +25,7 @@ Image(filename="../Microservice Framework v6.png")
 
 
 ```python
-import requests
-import json
+import requests, json, jwt
 import FAIR
 ```
 
@@ -36,11 +35,11 @@ Visit:
 <br>
 https://clarklab.uvarc.io/auth/login
 <br>
-And copy and paste access token below
+And copy and paste access token below. If local create test webtoken with below.
 
 
 ```python
-token = 	"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL2ZhaXJzY2FwZS5vcmciLCJleHAiOjE2MDYwNTY3NDYsImdyb3VwcyI6WyJ0ZXN0MjIiLCJiMTc3MzczYy0yMDViLTExZWItYTU3MS1mNjMxN2U2NTFkMTUiXSwiaWF0IjoxNjA1ODgzOTQ2LCJuYW1lIjoiSnVzdGluIEFkbWluIiwicm9sZSI6ImFkbWluIiwic3ViIjoiYzVjMGM4ZDgtNjU2Yi00MTg5LTk5NjctNDRjNDU2MjRkMjgzIn0.t9Mft_J3rjJYq0sR5_43YtCz8kZlLNkC33QVh0tUWvc"
+token = jwt.encode({'name': 'Admin','role':'admin','sub':'admin-id','groups':['test'],'aud':'https://fairscape.org'}, 'test secret', algorithm='HS256')
 ```
 
 ## Using Transfer Service upload data with metadata
