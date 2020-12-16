@@ -25,7 +25,7 @@ Output from above should look something like below:
 NAME             STATUS   ROLES    AGE   VERSION
 docker-desktop   Ready    master   4d    v1.18.8
 ```
-> Note: Name will change depending on how you have installed kubernetes. Most important is a node is Ready.
+> Note: Name will change depending on how you have installed kubernetes. A "Ready" node is what is required.
 
 ## Step 2: Clone FAIRSCAPE deployment repo
 
@@ -44,7 +44,10 @@ In the deployment folder run the single command below to launch all the required
 kubectl create -f fairscape.yaml
 ```
 
-Run below to confirm all pods have started.
+After running above, check with kubectl get pods to check status of created pods. Do not move onto step 4 until all pods have status running like below:
+
+> Note: Pods may remain in ContainerCreating for several minutes.
+
 ```shell
 kubectl get pods
 NAME                        READY   STATUS    RESTARTS   AGE
@@ -61,7 +64,7 @@ testing-pod                 1/1     Running   1          4d
 transfer-85c7577987-2mbzb   1/1     Running   1          4d
 visual                      1/1     Running   1          4d
 ```
-> Note: Pods may remain in ContainerCreating for several minutes.
+
 
 ## Step 4: Create required database and buckets
 
@@ -75,6 +78,8 @@ kubectl exec minio  -- ash -c "mkdir -p data/breakfast"
 ## Step 5: Test Services
 
 With all the pods up and running and the databases created we can run test script to confirm all the services are acting as expected.
+
+> Note: Older computers may be overwhelmed by the tests and
 
 ```shell
 kubectl exec testing-pod  -- bash -c "python3 deployment-tests.py"
