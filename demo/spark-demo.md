@@ -1,12 +1,23 @@
 # Spark Demo
 
-## Also Available
-[Code Here](https://github.com/fairscape/Nipype-Demo)
+# Introduction
 
-[Deepnote Published Notebook](https://deepnote.com/publish/bc340822-0e82-4268-b78e-75ff37f19837)
+## Service Defintions
+
+    Metadata Service (MDS): Handles minting identifiers...
+    Transfer Service: Used to upload data with associated metadata to framework
+    Compute Service: Runs compuations on uploaded data.
+    Evidence Graph Service: Queries Stardog to build Evidence Graph tracking object proveance
+
+## Outline
+
+    1.) Upload data to the framework
+    2.) Retreive metadata of an uploaded object using MDS
+    3.) Run a spark job on the uploaded data
+    4.) Create a graphic from the job output
+    5.) Visualize evidence graph of the image
 
 ## Microservices Model
-
 
 
 ```python
@@ -15,33 +26,34 @@ Image(filename="../Microservice Framework v6.png")
 ```
 
 
-
-
-
 ![png](output_2_0.png)
 
 
+### Also Available
+[Code Here](https://github.com/fairscape/Nipype-Demo)
+
+[Deepnote Published Notebook](https://deepnote.com/publish/bc340822-0e82-4268-b78e-75ff37f19837)
 
 
+# Step 1: Setup
+
+## Import required libraries
 
 ```python
 import requests, json, jwt
 import FAIR
 ```
 
-## First get authorized
+## Get Authorized
 
-Visit:
-<br>
-https://clarklab.uvarc.io/auth/login
-<br>
-And copy and paste access token below. If local create test webtoken with below.
+If testing out the Fairscape cluster on Openstack visis [HERE](https://clarklab.uvarc.io/auth/login) tp get your token and paste it below. Otherwise if running locally generate a fake token by running the command below.
 
 
 ```python
 token = jwt.encode({'name': 'Admin','role':'admin','sub':'admin-id','groups':['test'],'aud':'https://fairscape.org'}, 'test secret', algorithm='HS256')
 ```
 
+# Step 2: Upload Data/Script
 ## Using Transfer Service upload data with metadata
 
 Upload a file to minio via the upload_file function.
@@ -80,7 +92,38 @@ data_id
 
     'ark:99999/bd3d2e2b-3bc1-49b4-8b2e-fc2c0000b715'
 
+## Upload Spark Script to run on newly uploaded data
 
+
+```python
+spark_code_meta = {
+    "@context":{
+        "@vocab":"http://schema.org/"
+    },
+    "@type":"SoftwareSourceCode",
+    "name":"Processing  Script",
+    "description":"Sample Source Code for HCTSA test on spark",
+    "author":[
+        {
+            "name":"Justin Niestroy",
+            "@id": "https://orcid.org/0000-0002-1103-3882",
+            "affiliation":"University of Virginia"
+      }
+    ]
+}
+software_id = FAIR.upload_file('run_algos.py',spark_code_meta,token = token)
+software_id
+```
+
+
+
+
+      'ark:99999/34d26e0d-48e4-422b-b21f e178cdeae71e'
+
+
+
+
+# Step 3: Retrieve Metadata
 
 ## Check MDS to make sure metadata was uploaded correctly
 
@@ -116,36 +159,7 @@ FAIR.retrieve_metadata(data_id,token = token)
 
 
 
-## Upload Spark Script to run on newly uploaded data
-
-
-```python
-spark_code_meta = {
-    "@context":{
-        "@vocab":"http://schema.org/"
-    },
-    "@type":"SoftwareSourceCode",
-    "name":"Processing  Script",
-    "description":"Sample Source Code for HCTSA test on spark",
-    "author":[
-        {
-            "name":"Justin Niestroy",
-            "@id": "https://orcid.org/0000-0002-1103-3882",
-            "affiliation":"University of Virginia"
-      }
-    ]
-}
-software_id = FAIR.upload_file('run_algos.py',spark_code_meta,token = token)
-software_id
-```
-
-
-
-
-    'ark:99999/34d26e0d-48e4-422b-b21f-e178cdeae71e'
-
-
-
+# Step 4: Launch Spark Job
 ## Submit Spark Job Using Compute Service
 
 Run a the uploaded script on the uploaded data by calling compute
@@ -192,7 +206,7 @@ FAIR.list_running_jobs(token = token)
     ['sparkjob-cd6b791f-b256-44aa-836a-53f988bfdf2d']
 
 
-
+# Step 5: Checkout Job Outputs
 ## Get Job outputs from job metadata
 
 Upon completion of a job the compute service updates the job id metadata to include properties:
@@ -259,7 +273,7 @@ output_metadata
       'url': 'http://ors.uvadcos.io/ark:99999/7a7b5fd4-ddd0-49bd-bb00-7aaed255ba6c'}]
 
 
-
+# Step 6: Create Visual from Job Outputs
 ## Upload Image Code
 
 
@@ -345,7 +359,7 @@ FAIR.retrieve_metadata(image_id,token = token)
      'url': 'http://ors.uvadcos.io/ark:99999/cba40fcd-c191-4183-b036-41d63f61d911'}
 
 
-
+# Step 7: View Evidence Graph
 ### Build Evidence graph of created image using the evidence graph service
 
 Evidence Graph Service builds an json-ld evidence graph representing the provenance (datasets, software, and computations that support the PID)
@@ -398,7 +412,7 @@ FAIR.evidence_graph(image_id,token = token)
 
 
 
-## View Visualization of the Evidence Graph
+### View Visualization of the Evidence Graph
 
 
 ```python
@@ -412,7 +426,7 @@ FAIR.evidence_graph(image_id,token = token)
 
 
 
-## Download Created Image
+### Download Created Image
 
 Download output files from computations using download_file
 <br>
