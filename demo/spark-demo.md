@@ -43,6 +43,7 @@ If running the demo locally exec into the testing container to access the servic
 
 ```shell
 kubectl exec -it testing-pod bash
+python3
 ```
 
 **Import required libraries**
