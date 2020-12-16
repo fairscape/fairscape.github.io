@@ -20,12 +20,6 @@
 **Microservices Model**
 
 
-```python
-from IPython.display import Image
-Image(filename="../Microservice Framework v6.png")
-```
-
-
 ![png](output_2_0.png)
 
 
@@ -430,6 +424,7 @@ FAIR.evidence_graph(image_id,token = token)
 
 
 **View Visualization of the Evidence Graph**
+
 
 
 ```python
