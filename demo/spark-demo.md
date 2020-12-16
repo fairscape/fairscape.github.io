@@ -30,12 +30,26 @@ Image(filename="../Microservice Framework v6.png")
 
 
 **Also Available**
+<br>
 [Code Here](https://github.com/fairscape/Nipype-Demo)
 
 [Deepnote Published Notebook](https://deepnote.com/publish/bc340822-0e82-4268-b78e-75ff37f19837)
 
 
 # Step 1: Setup
+
+**Create Required Service Account for Spark**
+
+```shell
+kubectl create serviceaccount -n default spark
+kubectl create clusterrolebinding spark-role  --clusterrole=edit  --serviceaccount=default:spark  --namespace=default
+```
+
+If running the demo locally exec into the testing container to access the services.
+
+```shell
+kubectl exec -it testing-pod bash
+```
 
 **Import required libraries**
 
@@ -45,7 +59,8 @@ import FAIR
 ```
 
 **Get Authorized**
-
+<br>
+<br>
 If testing out the Fairscape cluster on Openstack visis [HERE](https://clarklab.uvarc.io/auth/login) tp get your token and paste it below. Otherwise if running locally generate a fake token by running the command below.
 
 
@@ -54,8 +69,8 @@ token = jwt.encode({'name': 'Admin','role':'admin','sub':'admin-id','groups':['t
 ```
 
 # Step 2: Upload Data/Script
-## Using Transfer Service upload data with metadata
-
+**Using Transfer Service upload data with metadata**
+<br>
 Upload a file to minio via the upload_file function.
 <br>
 <br>
@@ -92,7 +107,7 @@ data_id
 
     'ark:99999/bd3d2e2b-3bc1-49b4-8b2e-fc2c0000b715'
 
-## Upload Spark Script to run on newly uploaded data
+**Upload Spark Script to run on newly uploaded data**
 
 
 ```python
@@ -125,8 +140,8 @@ software_id
 
 # Step 3: Retrieve Metadata
 
-## Check MDS to make sure metadata was uploaded correctly
-
+**Check MDS to make sure metadata was uploaded correctly**
+<br>
 retrieve_metadata calls MDS to get the metadata for the newly minted id.
 <br>
 <br>
@@ -160,8 +175,8 @@ FAIR.retrieve_metadata(data_id,token = token)
 
 
 # Step 4: Launch Spark Job
-## Submit Spark Job Using Compute Service
-
+**Submit Spark Job Using Compute Service**
+<br>
 Run a the uploaded script on the uploaded data by calling compute
 <br>
 <br>
@@ -188,13 +203,13 @@ job_id
 
 
 
-## Watch Running Job
+**Watch Running Job**
+<br>
 list_running_jobs takes:
 <br>
 <br>
 list_running_jobs returns:
     - list of running job PIDs
-
 
 ```python
 FAIR.list_running_jobs(token = token)
@@ -207,8 +222,8 @@ FAIR.list_running_jobs(token = token)
 
 
 # Step 5: Checkout Job Outputs
-## Get Job outputs from job metadata
-
+**Get Job outputs from job metadata**
+<br>
 Upon completion of a job the compute service updates the job id metadata to include properties:
     - evi:supports: list of output PIDs
     - logs: logs from job
@@ -274,7 +289,8 @@ output_metadata
 
 
 # Step 6: Create Visual from Job Outputs
-## Upload Image Code
+
+**Upload Image Code**
 
 
 ```python
@@ -296,7 +312,7 @@ spark_graphic_meta = {
 graphic_code_id = FAIR.upload_file('make_graphic.py',spark_graphic_meta,token = token)
 ```
 
-## Run Spark Job to create Image
+**Run Spark Job to create Image**
 
 
 ```python
@@ -311,7 +327,7 @@ image_job_id
 
 
 
-## Check on running jobs
+**Check on running jobs**
 
 
 ```python
@@ -325,7 +341,7 @@ FAIR.list_running_jobs(token = token)
 
 
 
-### Get image ID from Updated Job ID
+**Get image ID from Updated Job ID**
 
 
 ```python
@@ -333,7 +349,7 @@ image_job_meta = FAIR.retrieve_metadata(image_job_id,token = token)
 image_id = image_job_meta['evi:supports'][0]['@id']
 ```
 
-## Get the image metadata
+**Get the image metadata**
 
 
 ```python
@@ -360,7 +376,8 @@ FAIR.retrieve_metadata(image_id,token = token)
 
 
 # Step 7: View Evidence Graph
-### Build Evidence graph of created image using the evidence graph service
+**Build Evidence graph of created image using the evidence graph service**
+<br>
 
 Evidence Graph Service builds an json-ld evidence graph representing the provenance (datasets, software, and computations that support the PID)
 <br>
@@ -412,7 +429,7 @@ FAIR.evidence_graph(image_id,token = token)
 
 
 
-### View Visualization of the Evidence Graph
+**View Visualization of the Evidence Graph**
 
 
 ```python
@@ -426,7 +443,7 @@ FAIR.evidence_graph(image_id,token = token)
 
 
 
-### Download Created Image
+**Download Created Image**
 
 Download output files from computations using download_file
 <br>
