@@ -9,7 +9,7 @@
     Compute Service: Runs compuations on uploaded data.
     Evidence Graph Service: Queries Stardog to build Evidence Graph tracking object proveance
 
-## Outline
+**Outline**
 
     1.) Upload data to the framework
     2.) Retreive metadata of an uploaded object using MDS
@@ -17,7 +17,7 @@
     4.) Create a graphic from the job output
     5.) Visualize evidence graph of the image
 
-## Microservices Model
+**Microservices Model**
 
 
 ```python
@@ -29,7 +29,7 @@ Image(filename="../Microservice Framework v6.png")
 ![png](output_2_0.png)
 
 
-### Also Available
+**Also Available**
 [Code Here](https://github.com/fairscape/Nipype-Demo)
 
 [Deepnote Published Notebook](https://deepnote.com/publish/bc340822-0e82-4268-b78e-75ff37f19837)
@@ -37,14 +37,14 @@ Image(filename="../Microservice Framework v6.png")
 
 # Step 1: Setup
 
-## Import required libraries
+**Import required libraries**
 
 ```python
 import requests, json, jwt
 import FAIR
 ```
 
-## Get Authorized
+**Get Authorized**
 
 If testing out the Fairscape cluster on Openstack visis [HERE](https://clarklab.uvarc.io/auth/login) tp get your token and paste it below. Otherwise if running locally generate a fake token by running the command below.
 
