@@ -215,6 +215,8 @@ FAIR.list_running_jobs(token = token)
     ['sparkjob-cd6b791f-b256-44aa-836a-53f988bfdf2d']
 
 
+**Do not move on until job is completed and running job is completed**
+
 # Step 5: Checkout Job Outputs
 **Get Job outputs from job metadata**
 <br>
