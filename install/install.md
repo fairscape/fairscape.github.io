@@ -79,7 +79,7 @@ kubectl exec minio  -- ash -c "mkdir -p data/breakfast"
 
 With all the pods up and running and the databases created we can run test script to confirm all the services are acting as expected.
 
-> Note: Older computers may be overwhelmed by the tests and
+> Note: Older computers may be overwhelmed by the tests and give connection errors.
 
 ```shell
 kubectl exec testing-pod  -- bash -c "python3 deployment-tests.py"
