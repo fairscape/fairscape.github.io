@@ -87,14 +87,4 @@ kubectl exec testing-pod  -- bash -c "python3 deployment-tests.py"
 
 ## Try the FAIRSCAPE Demos
 
-Once all the tests pass play around with the FAIRSCAPE demos (available [HERE](https://github.com/fairscape/demo)) to learn more about the basic commands.
-
-
-## Spark Jobs
-
-Running Spark Jobs requires adding a spark service account. Can be created running the commands below:
-
-```shell
-kubectl create serviceaccount -n default spark
-kubectl create clusterrolebinding spark-role  --clusterrole=edit  --serviceaccount=default:spark  --namespace=default
-```
+You are all setup! To learn more about the basic API calls and capabilities of FAIRSCAPE run the locl spark demo. Instructions available [HERE](https://github.com/fairscape/demo/spark-demo.html). 
