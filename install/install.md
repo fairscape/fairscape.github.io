@@ -87,4 +87,4 @@ kubectl exec testing-pod  -- bash -c "python3 deployment-tests.py"
 
 ## Try the FAIRSCAPE Demos
 
-You are all setup! To learn more about the basic API calls and capabilities of FAIRSCAPE run the locl spark demo. Instructions available [HERE](https://github.com/fairscape/demo/spark-demo.html). 
+You are all setup! To learn more about the basic API calls and capabilities of FAIRSCAPE run the locl spark demo. Instructions available [HERE](https://fairscape.github.io/demo/spark-demo.html).
