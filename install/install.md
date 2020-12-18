@@ -8,14 +8,14 @@ This page describes the step-by-step instructions for installing the FAIRSCAPE f
 Tool | Installation
 --------- | -------
 kubectl | [Instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-Kubernetes Cluster | Cloud: <a href="https://cloud.google.com/kubernetes-engine">Google Kubernetes Engine</a> <br> Local instance: <a href="https://minikube.sigs.k8s.io/docs/start/">Minikube</a> / <a href="https://www.docker.com/products/docker-desktop">docker-desktop</a> 
+Kubernetes Cluster | Cloud: <a href="https://cloud.google.com/kubernetes-engine">Google Kubernetes Engine</a> <br> Local instance: <a href="https://minikube.sigs.k8s.io/docs/start/">Minikube</a> / <a href="https://www.docker.com/products/docker-desktop">docker-desktop</a>
 Git | [Install](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 > **_NOTE:_**  For local cluster 4 or more cpus are recommended.
 
 ## Step 1: Check Prerequisites
 
-Once all the tools are installed and configured properly start the cluster and make sure <pre>kubectl<\pre> is connected to the cluster.
+Once all the tools are installed and configured properly start the cluster and make sure **kubectl** is connected to the cluster.
 Run the following command to check the status of the cluster:
 
 ```shell
@@ -31,7 +31,8 @@ docker-desktop   Ready    master   4d    v1.18.8
 
 ## Step 2: Clone FAIRSCAPE deployment repo
 
-With kubectl properly configured it is time to download the necessary kubernetes manifest files (instructions for kuberentes cluster to build correct resources). We will change directories to the newly cloned directory.   
+Clone the FAIRSCAPE deployment directory containing the Kubernetes manifests (fairscape.yaml file for creating Kubernetes resources such as pods).
+
 
 ```shell
 git clone https://github.com/fairscape/deployment
@@ -40,13 +41,13 @@ cd deployment
 
 ## Step 3: Create all pods and services
 
-In the deployment folder run the single command below to launch all the required pods and services in your cluster.
+Run the command below to launch all the required pods and services in your cluster.
 
 ```shell
 kubectl create -f fairscape.yaml
 ```
 
-After running above, check with kubectl get pods to check status of created pods. Do not move onto step 4 until all pods have status running like below:
+Run the following command every few seconds to check the status of all the pods. We want STATUS of all the pods as Running as shown in the output below. Until then, some of the pods will show ContainerCreating STATUS. Once all are Running, move on the next step.
 
 > Note: Pods may remain in ContainerCreating for several minutes.
 
@@ -70,7 +71,7 @@ visual                      1/1     Running   1          4d
 
 ## Step 4: Create required database and buckets
 
-Once all the pods have started we must create the necessary databases to begin making service calls.
+The commands below will create a database 'ors' in Stardog  and the default bucket 'breakfast' in MinIO.
 
 ```shell
 kubectl exec stardog -- bash -c "/opt/stardog/bin/stardog-admin db create -o search.enabled=true -n ors"
@@ -79,7 +80,7 @@ kubectl exec minio  -- ash -c "mkdir -p data/breakfast"
 
 ## Step 5: Test Services
 
-With all the pods up and running and the databases created we can run test script to confirm all the services are acting as expected.
+The python script python3 deployment-tests.py runs a total of 43 tests. These tests ensure that the service orchestration works flawlessly with dummy data. 
 
 > Note: Older computers may be overwhelmed by the tests and give connection errors.
 
