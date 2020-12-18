@@ -19,7 +19,7 @@ Once all the tools are installed and configured properly start the cluster and m
 Run the following command to check the status of the cluster:
 
 ```shell
-kubectl get nodes
+$ kubectl get nodes
 ```
 
 For docker-desktop, the following output should be displayed:
@@ -35,8 +35,8 @@ Clone the FAIRSCAPE deployment directory containing the Kubernetes manifests (fa
 
 
 ```shell
-git clone https://github.com/fairscape/deployment
-cd deployment
+$ git clone https://github.com/fairscape/deployment
+$ cd deployment
 ```
 
 ## Step 3: Create all pods and services
@@ -44,15 +44,16 @@ cd deployment
 Run the command below to launch all the required pods and services in your cluster.
 
 ```shell
-kubectl create -f fairscape.yaml
+$ kubectl create -f fairscape.yaml
 ```
 
-Run the following command every few seconds to check the status of all the pods. We want STATUS of all the pods as Running as shown in the output below. Until then, some of the pods will show ContainerCreating STATUS. Once all are Running, move on the next step.
+Run the following command every few seconds to check the status of all the pods. We want STATUS of all the pods as Running as shown in the output below. Until then, some of the pods will show ContainerCreating STATUS. Once all pods are Running, move on to the next step.
 
-> Note: Pods may remain in ContainerCreating for several minutes.
+> Note: Pods may remain in ContainerCreating STATUS for several minutes.
 
 ```shell
-kubectl get pods
+$ kubectl get pods
+
 NAME                        READY   STATUS    RESTARTS   AGE
 auth-84546d445c-2tvxm       1/1     Running   1          4d
 compute                     2/2     Running   2          4d
@@ -74,8 +75,8 @@ visual                      1/1     Running   1          4d
 The commands below will create a database 'ors' in Stardog  and the default bucket 'breakfast' in MinIO.
 
 ```shell
-kubectl exec stardog -- bash -c "/opt/stardog/bin/stardog-admin db create -o search.enabled=true -n ors"
-kubectl exec minio  -- ash -c "mkdir -p data/breakfast"
+$ kubectl exec stardog -- bash -c "/opt/stardog/bin/stardog-admin db create -o search.enabled=true -n ors"
+$ kubectl exec minio  -- ash -c "mkdir -p data/breakfast"
 ```
 
 ## Step 5: Test Services
@@ -85,7 +86,7 @@ The python script python3 deployment-tests.py runs a total of 43 tests. These te
 > Note: Older computers may be overwhelmed by the tests and services may give connection errors. Please run the tests again if this occurs.
 
 ```shell
-kubectl exec testing-pod  -- bash -c "python3 deployment-tests.py"
+$ kubectl exec testing-pod  -- bash -c "python3 deployment-tests.py"
 ```
 If all the tests pass is
 **FAIRSCAPE Installed Correctly!**
