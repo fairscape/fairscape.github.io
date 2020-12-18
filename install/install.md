@@ -11,7 +11,7 @@ kubectl | [Instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/
 Kubernetes Cluster | Cloud: <a href="https://cloud.google.com/kubernetes-engine">Google Kubernetes Engine</a> <br> Local instance: <a href="https://minikube.sigs.k8s.io/docs/start/">Minikube</a> / <a href="https://www.docker.com/products/docker-desktop">docker-desktop</a>
 Git | [Install](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-> **_NOTE:_**  For local cluster 4 or more cpus are recommended.
+> **_NOTE:_**  For local cluster 4 or more cpus are recommended. If using minikube use --cpus=4 or more. To adjust in docker desktop goto docker preferences then edit the number of cpus.
 
 ## Step 1: Check Prerequisites
 
@@ -80,14 +80,16 @@ kubectl exec minio  -- ash -c "mkdir -p data/breakfast"
 
 ## Step 5: Test Services
 
-The python script python3 deployment-tests.py runs a total of 43 tests. These tests ensure that the service orchestration works flawlessly with dummy data. 
+The python script python3 deployment-tests.py runs a total of 43 tests. These tests ensure that the service orchestration works flawlessly with dummy data.
 
-> Note: Older computers may be overwhelmed by the tests and give connection errors.
+> Note: Older computers may be overwhelmed by the tests and services may give connection errors. Please run tests again if this occurs.
 
 ```shell
 kubectl exec testing-pod  -- bash -c "python3 deployment-tests.py"
 ```
+If all the tests pass
+**FAIRSCAPE Installed Correctly!**
 
 ## Try the FAIRSCAPE Demos
 
-You are all setup! To learn more about the basic API calls and capabilities of FAIRSCAPE run the locl spark demo. Instructions available [HERE](https://fairscape.github.io/demo/spark-demo.html).
+To learn more about the basic API calls and capabilities of FAIRSCAPE run the local spark demo. Instructions for running the demo are available [HERE](https://fairscape.github.io/demo/spark-demo.html).
