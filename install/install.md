@@ -1,31 +1,33 @@
 # Installation
 
-This section will cover how to setup and install a **FAIRSCAPE** cluster and go over some of the basic API calls.  
+This page describes the step-by-step instructions for installing the FAIRSCAPE framework on a kubernetes cluster either on a cloud environment such as <a href="https://cloud.google.com/kubernetes-engine">Google Kubernetes Engine</a> or a local kubernetes instance such as <a href="https://minikube.sigs.k8s.io/docs/start/">Minikube</a> or <a href="https://www.docker.com/products/docker-desktop">docker-desktop</a>.
+
 
 ## Prerequisites
 
 Tool | Installation
 --------- | -------
 kubectl | [Instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-Kubernetes Cluster or Minikube/Docker-Desktop | [Cluster](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster), [Minikube](https://minikube.sigs.k8s.io/docs/start/)
-GIT | [Install](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+Kubernetes Cluster |   <p>Cloud: <a href="https://cloud.google.com/kubernetes-engine">Google Kubernetes Engine</a> <br> Local instance: <a href="https://minikube.sigs.k8s.io/docs/start/">Minikube</a> / <a href="https://www.docker.com/products/docker-desktop">docker-desktop</a></p>    [Minikube](https://minikube.sigs.k8s.io/docs/start/)
+Git | [Install](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 > **_NOTE:_**  For local cluster 4 or more cpus are recommended.
 
 ## Step 1: Check Prerequisites
 
-With everything installed it is time to check that kubectl is connected to your cluster (local or cloud). Run the following to confirm it is configured properly:
+Once all the tools are installed and configured properly start the cluster and make sure <pre>kubectl<\pre> is connected to the cluster.
+Run the following command to check the status of the cluster:
 
 ```shell
 kubectl get nodes
 ```
 
-Output from above should look something like below:
+For docker-desktop, the following output should be displayed:
 ```shell
 NAME             STATUS   ROLES    AGE   VERSION
 docker-desktop   Ready    master   4d    v1.18.8
 ```
-> Note: Name will change depending on how you have installed kubernetes. A "Ready" node is what is required.
+>Note: A "Ready" STATUS is what is expected from the node which has the master ROLE. The NAME, AGE, and VERSION of the node may vary.
 
 ## Step 2: Clone FAIRSCAPE deployment repo
 
