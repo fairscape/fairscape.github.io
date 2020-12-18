@@ -8,7 +8,7 @@ This page describes the step-by-step instructions for installing the FAIRSCAPE f
 Tool | Installation
 --------- | -------
 kubectl | [Instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-Kubernetes Cluster |   <p>Cloud: <a href="https://cloud.google.com/kubernetes-engine">Google Kubernetes Engine</a> <br> Local instance: <a href="https://minikube.sigs.k8s.io/docs/start/">Minikube</a> / <a href="https://www.docker.com/products/docker-desktop">docker-desktop</a></p>    [Minikube](https://minikube.sigs.k8s.io/docs/start/)
+Kubernetes Cluster | Cloud: <a href="https://cloud.google.com/kubernetes-engine">Google Kubernetes Engine</a> <br> Local instance: <a href="https://minikube.sigs.k8s.io/docs/start/">Minikube</a> / <a href="https://www.docker.com/products/docker-desktop">docker-desktop</a>  [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 Git | [Install](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 > **_NOTE:_**  For local cluster 4 or more cpus are recommended.
