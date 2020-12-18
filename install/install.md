@@ -82,7 +82,7 @@ kubectl exec minio  -- ash -c "mkdir -p data/breakfast"
 
 The python script python3 deployment-tests.py runs a total of 43 tests. These tests ensure that the service orchestration works flawlessly with dummy data.
 
-> Note: Older computers may be overwhelmed by the tests and services may give connection errors. Please run tests again if this occurs.
+> Note: Older computers may be overwhelmed by the tests and services may give connection errors. Please run the tests again if this occurs.
 
 ```shell
 kubectl exec testing-pod  -- bash -c "python3 deployment-tests.py"
