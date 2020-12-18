@@ -87,7 +87,7 @@ The python script python3 deployment-tests.py runs a total of 43 tests. These te
 ```shell
 kubectl exec testing-pod  -- bash -c "python3 deployment-tests.py"
 ```
-If all the tests pass
+If all the tests pass is
 **FAIRSCAPE Installed Correctly!**
 
 ## Try the FAIRSCAPE Demos
