@@ -869,6 +869,11 @@ Remember — All calls just have json web token!
 <td>True</td>
 <td>ID of container in which to run the computation</td>
 </tr>
+<tr>
+<td>parameters</td>
+<td>False</td>
+<td>Dictionary containing parameter names as keys and parameter value as value</td>
+</tr>
 </tbody></table>
 <h2 id='compute-nypipe-post'>/compute/nypipe POST</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl <span class="nt">--request</span> POST <span class="se">\</span>
   <span class="nt">--url</span> https://clarklab.uvarc.io/nypipe <span class="se">\</span>
@@ -903,6 +908,11 @@ Remember — All calls just have json web token!
 <td>True</td>
 <td>ID of script to run on given data.</td>
 </tr>
+<tr>
+<td>parameters</td>
+<td>False</td>
+<td>Dictionary containing parameter names as keys and parameter value as value</td>
+</tr>
 </tbody></table>
 <h2 id='compute-spark-post'>/compute/spark POST</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl <span class="nt">--request</span> POST <span class="se">\</span>
   <span class="nt">--url</span> https://clarklab.uvarc.io/spark <span class="se">\</span>
@@ -936,6 +946,11 @@ Remember — All calls just have json web token!
 <td>scriptID</td>
 <td>True</td>
 <td>ID of script to run on given data.</td>
+</tr>
+<tr>
+<td>parameters</td>
+<td>False</td>
+<td>Dictionary containing parameter names as keys and parameter value as value</td>
 </tr>
 </tbody></table>
 <h1 id='evidence-graph'>Evidence Graph</h1>
