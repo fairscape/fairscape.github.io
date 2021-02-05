@@ -29,14 +29,15 @@ docker-desktop   Ready    master   4d    v1.18.8
 ```
 >Note: A "Ready" STATUS is what is expected from the node which has the master ROLE. The NAME, AGE, and VERSION of the node may vary.
 
-## Step 2: Clone FAIRSCAPE deployment repo
 
-Clone the FAIRSCAPE deployment directory containing the Kubernetes manifests (fairscape.yaml file for creating Kubernetes resources such as pods).
+## Step 2: Clone FAIRSCAPE mono repo
+
+Clone the FAIRSCAPE mono directory containing the Kubernetes manifests (fairscape.yaml file for creating Kubernetes resources such as pods).
 
 
 ```shell
-$ git clone https://github.com/fairscape/deployment
-$ cd deployment
+$ git clone https://github.com/fairscape/fairscape
+$ cd fairscape
 ```
 
 ## Step 3: Create all pods and services
