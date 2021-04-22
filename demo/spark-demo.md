@@ -42,7 +42,7 @@ kubectl create clusterrolebinding spark-role  --clusterrole=edit  --serviceaccou
 
 # Step 2: Port Forward
 
-To run the demo locally you need to access the notebook within the testing pod. To do this simply forward the testing-pod port using below:
+To run the demo locally you need to access the notebook within the testing pod. To do this simply forward the testing-pod port using below (add & if you'd prefer to run the command in background):
 
 ```shell
 kubectl port-forward testing-pod 8888:8888
