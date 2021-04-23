@@ -20,7 +20,7 @@
 **Microservices Model**
 
 
-![png](output_2_0.png)
+![png](fairscape.png)
 
 
 **Also Available**
@@ -56,3 +56,4 @@ kubectl port-forward visual 5000:5000
 # Step 3: Visit localhost:8888
 The demo is now being hosted locally at [HERE](http://localhost:8888)
 **Open the Spark-Demo.ipynb and get started!**
+Note: If the demo fails unexpectedly try increasing the docker desktop/minikubes virtual memory. 
