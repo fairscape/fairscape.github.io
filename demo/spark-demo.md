@@ -56,4 +56,4 @@ kubectl port-forward visual 5000:5000
 # Step 3: Visit localhost:8888
 The demo is now being hosted locally at [HERE](http://localhost:8888)
 **Open the Spark-Demo.ipynb and get started!**
-Note: If the demo fails unexpectedly try increasing the docker desktop/minikubes virtual memory. 
+Be aware that the default minikube configuration is not enough for running Spark applications. We recommend 3 CPUs and 4g of memory to be able to start a simple Spark application with a single executor. 
