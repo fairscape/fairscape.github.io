@@ -94,4 +94,4 @@ If all the tests pass is
 
 ## Try the FAIRSCAPE Demos
 
-To learn more about the basic API calls and capabilities of FAIRSCAPE run the local spark demo. Instructions for running the demo are available [HERE](https://fairscape.github.io/demo/spark-demo.html).
+To learn more about the basic API calls and capabilities of FAIRSCAPE run the simple python demo. Instructions for running the demo are available [HERE](https://fairscape.github.io/demo/python.html).
