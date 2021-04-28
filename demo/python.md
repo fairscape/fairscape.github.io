@@ -2,7 +2,7 @@
 
 # Introduction
 
-In this demo we will upload some sample data to FAIRSCAPE, upload a script that takes the sum of the uploaded data, and run the script on the data. This demo will cover registering a container with FAIRSCAPE that can then be used to perform the computation.
+In this demo we will upload some sample data to FAIRSCAPE, upload a script that takes the sum of the uploaded data, and run the script on the data. This demo will cover registering a container with FAIRSCAPE that can then be used to perform the computation. For instructions about how to write a script that can run on FAIRSCAPE visit the [Sample Script](https://github.com/fairscape/computation/blob/master/Sample%20Job/sample-script.py).
 
 **Service Defintions**
 
