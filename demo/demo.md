@@ -5,7 +5,7 @@ All demos cover the basic principles of FAIRSCAPE such as uploading data, viewin
 
 ## Outline
 
-Below is the topics covered in both demos.
+Below is the topics covered in all demos.
 
  1. Upload data to the FAIRSCAPE framework
  2. Check metadata for an uploaded object
