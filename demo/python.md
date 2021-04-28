@@ -2,7 +2,7 @@
 
 # Introduction
 
-In this demo we will upload some sample data to FAIRSCAPE, upload a script that takes the sum of the uploaded data, and run the script on the data. This demo will cover registering a container with FAIRSCAPE that can then be used to perform the computation. 
+In this demo we will upload some sample data to FAIRSCAPE, upload a script that takes the sum of the uploaded data, and run the script on the data. This demo will cover registering a container with FAIRSCAPE that can then be used to perform the computation.
 
 **Service Defintions**
 
@@ -17,8 +17,8 @@ In this demo we will upload some sample data to FAIRSCAPE, upload a script that 
     2.) Retreive metadata of an uploaded object using MDS
     3.) Create identifier for container to run script
     4.) Run script on data using choosen container
-    4.) Create a graphic from the job output
-    5.) Visualize evidence graph of the image
+    5.) Download the created text file
+    6.) Visualize evidence graph of the created file
 
 **Microservices Model**
 
