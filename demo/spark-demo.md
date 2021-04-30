@@ -28,7 +28,7 @@
 [Code Here](https://github.com/fairscape/Nipype-Demo)
 
 [Deepnote Published Notebook](https://deepnote.com/publish/bc340822-0e82-4268-b78e-75ff37f19837)
-
+To execute the notebook yourself the notebook must be duplicated via the button on the left hand side of the notebook.
 
 # Step 1: **Create Required Service Account for Spark**
 
