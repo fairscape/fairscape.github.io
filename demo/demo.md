@@ -1,7 +1,7 @@
 # FAIRSCAPE Demos
 [Python (using custom container)](https://fairscape.github.io/demo/python.html),
 [Spark](https://fairscape.github.io/demo/spark-demo.html) and [Nypipe](https://fairscape.github.io/demo/nypipe-demo.html).
-All demos cover the basic principles of FAIRSCAPE such as uploading data, viewing metadata, and running computations.
+All demos cover the basic principles of FAIRSCAPE such as uploading data, viewing metadata, and running computations. The python example demo is published at deepnote and may be viewed and run [HERE](https://deepnote.com/@justin-niestroy/Python-Sample-Demo-HGkR1ke1RXiEmtxJ-1HIEw).
 
 ## Outline
 
