@@ -44,3 +44,6 @@ kubectl port-forward visual 5000:5000
 # Step 2: Visit localhost:8888
 The demo is now being hosted locally at [HERE](http://localhost:8888)
 **Open the Custom-Container-Demo.ipynb and get started!**
+
+# Other Options:
+This demo is also published at deepnote and may be run by duplicating this [notebook](https://deepnote.com/@justin-niestroy/Python-Sample-Demo-HGkR1ke1RXiEmtxJ-1HIEw)
