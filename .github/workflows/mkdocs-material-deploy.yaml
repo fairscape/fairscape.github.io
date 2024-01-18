@@ -2,6 +2,7 @@ name: mkdocs-material-deploy
 on:
     push:
         branches:
+            # Select the branch to deploy
             - docs-dev
 permissions:
     contents: write
