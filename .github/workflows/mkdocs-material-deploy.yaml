@@ -3,6 +3,7 @@ on:
     push:
         branches:
             # Select the branch to deploy
+            # Ensure Github repository Settings/Pages are updated for the branch
             - docs-dev
 permissions:
     contents: write
