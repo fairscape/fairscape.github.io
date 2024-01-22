@@ -1,1 +1,57 @@
-site_name: My Docs
+site_name: FAIRSCAPE
+site_description: A Framework for FAIR and Reproducible Biomedical Analytics
+strict: true
+site_url: https://fairscape.github.io/
+copyright: Copyright &copy; University of Virginia
+
+repo_name: fairscape/fairscape.github.io
+repo_url: https://github.com/fairscape/fairscape.github.io
+
+theme:
+  name: 'material'
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: blue
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: blue
+
+  features:
+    - content.tabs.link
+    - content.code.annotate
+    - content.code.copy
+    - announce.dismiss
+    - navigation.tabs
+
+
+nav:
+  - Getting Started:
+      - Welcome to FAIRSCAPE: index.md
+      - Installation: install.md
+      - Configuration: config.md
+  - Examples:
+      - Operations with users: examples/user.md
+      - Operations with groups: examples/group.md
+      - Operations with organizations: examples/organization.md
+      - Operations with projects: examples/project.md
+      - Operations with datasets: examples/dataset.md
+      - Operations with software: examples/software.md
+      - Operations with computations: examples/computation.md
+      - Operations with evidencegraphs: examples/evidencegraph.md
+      - Operations with rocrates: examples/rocrate.md
+  - API Reference:
+      - Users: api/user.md
+      - Groups: api/group.md
+      - Organizations: api/organization.md
+      - Projects: api/project.md
+      - Datasets: api/dataset.md
+      - Software: api/software.md
+      - Computations: api/computation.md
+      - EvidenceGraphs: api/evidencegraph.md
+      - RO-Crates: api/rocrate.md
+
