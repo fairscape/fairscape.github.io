@@ -54,16 +54,7 @@ nav:
       - Operations with evidencegraphs: examples/evidencegraph.md
       - Operations with rocrates: examples/rocrate.md
   - API Reference:
-      - Users: api/api.md
-      - Groups: api/group.md
-      - Organizations: api/organization.md
-      - Projects: api/project.md
-      - Datasets: api/dataset.md
-      - Software: api/software.md
-      - Computations: api/computation.md
-      - EvidenceGraphs: api/evidencegraph.md
-      - RO-Crates: api/rocrate.md
-
+      - RESTful endpoints: api/api.md
 
 plugins:
   - search
