@@ -1,17 +1,12 @@
-# Welcome to MkDocs
+# Welcome to FAIRSCAPE
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+"This article describes FAIRSCAPE, a reusable computational framework, enabling simplified access to modern scalable 
+cloud-based components. FAIRSCAPE fully implements the FAIR data principles and extends them to provide fully FAIR 
+Evidence, including machine-interpretable provenance of datasets, software and computations, as metadata for all 
+computed results. The FAIRSCAPE microservices framework creates a complete Evidence Graph for every computational 
+result, including persistent identifiers with metadata, resolvable to the software, computations, and datasets used in 
+the computation; and stores a URI to the root of the graph in the result’s metadata. An ontology for Evidence Graphs, 
+EVI ([https://w3id.org/EVI](https://w3id.org/EVI)), supports inferential reasoning over the evidence."
 
-## Commands
+Add <mark>notes</mark> about RO-Crates and schema validation.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.

@@ -1,25 +1,33 @@
+# Project Information
 site_name: FAIRSCAPE
 site_description: A Framework for FAIR and Reproducible Biomedical Analytics
-strict: true
 site_url: https://fairscape.github.io/
 copyright: Copyright &copy; University of Virginia
 
+# Repository
 repo_name: fairscape/fairscape.github.io
 repo_url: https://github.com/fairscape/fairscape.github.io
 
+# Configuration
 theme:
   name: 'material'
-
   palette:
+    # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: blue
-      accent: blue
-
+      primary: green
+      accent: green
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: blue
       accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
 
   features:
     - content.tabs.link
@@ -29,13 +37,14 @@ theme:
     - navigation.tabs
 
 
+# Docs Navigation
 nav:
   - Getting Started:
       - Welcome to FAIRSCAPE: index.md
       - Installation: install.md
       - Configuration: config.md
   - Examples:
-      - Operations with users: examples/user.md
+      - Operations with users: examples/api.md
       - Operations with groups: examples/group.md
       - Operations with organizations: examples/organization.md
       - Operations with projects: examples/project.md
@@ -45,7 +54,7 @@ nav:
       - Operations with evidencegraphs: examples/evidencegraph.md
       - Operations with rocrates: examples/rocrate.md
   - API Reference:
-      - Users: api/user.md
+      - Users: api/api.md
       - Groups: api/group.md
       - Organizations: api/organization.md
       - Projects: api/project.md
@@ -54,4 +63,36 @@ nav:
       - Computations: api/computation.md
       - EvidenceGraphs: api/evidencegraph.md
       - RO-Crates: api/rocrate.md
+
+
+plugins:
+  - search
+  - render_swagger:
+      allow_arbitrary_locations : true
+
+# Extensions
+markdown_extensions:
+  - tables
+  - toc:
+      permalink: true
+      title: Page contents
+  - admonition
+  - pymdownx.details
+  - pymdownx.snippets:
+      check_paths: true
+      url_download: true
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      pygments_lang_class: true
+  - pymdownx.extra
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+
+# Customization
+extra:
+  social:
+    - icon: fontawesome/brands/github
 
