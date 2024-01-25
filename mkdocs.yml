@@ -39,22 +39,24 @@ theme:
 
 # Docs Navigation
 nav:
+  - index.md
   - Getting Started:
-      - Welcome to FAIRSCAPE: index.md
-      - Installation: install.md
-      - Configuration: config.md
-  - Examples:
-      - Operations with users: examples/api.md
-      - Operations with groups: examples/group.md
-      - Operations with organizations: examples/organization.md
-      - Operations with projects: examples/project.md
-      - Operations with datasets: examples/dataset.md
-      - Operations with software: examples/software.md
-      - Operations with computations: examples/computation.md
-      - Operations with evidencegraphs: examples/evidencegraph.md
-      - Operations with rocrates: examples/rocrate.md
+      - Installation: getting-started/installation.md
+      - Configuration: getting-started/configuration.md
+  - Tutorial:
+      - Operations with users: tutorial/user.md
+      - Operations with groups: tutorial/group.md
+      - Operations with organizations: tutorial/organization.md
+      - Operations with projects: tutorial/project.md
+      - Operations with datasets: tutorial/dataset.md
+      - Operations with software: tutorial/software.md
+      - Operations with computations: tutorial/computation.md
+      - Operations with evidencegraphs: tutorial/evidencegraph.md
+      - Operations with rocrates: tutorial/rocrate.md
   - API Reference:
-      - RESTful endpoints: api/api.md
+      - FAIRSCAPE API: api/index.md
+      - REST API Reference: https://fairscape.pods.uvarc.io/redoc
+      - RESTful endpoints: api/resultful.md
 
 plugins:
   - search

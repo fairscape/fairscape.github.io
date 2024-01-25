@@ -1,11 +1,14 @@
-# Welcome to FAIRSCAPE
+---
+description: Explore FAIRSCAPE's auto-generated reference documentation.
+tags:
+    - REST API
+---
 
-FAIRSCAPE is a ...
 
-- **[FAIRSACPE CLI - A Validation and Packaging Command Line Tool](https://fairscape.github.io/fairscape-cli/)**: A data 
-validation and packaging utility for the FAIRSCAPE ecosystem. provides a command line interface that allows the client 
-side remote teams to create [RO-Crate](https://www.researchobject.org/ro-crate/) and [BagIt](https://datatracker.ietf.org/doc/html/rfc8493).
-- **[Schema Validation]()**: ...
+
+FAIRSCAPE auto-generates reference documentation using [FastAPI](https://fastapi.tiangolo.com/), the modern Web framework for building APIs with 
+Python 3.8+ based on standard Python type hints. The API is published in two interactive forms:
+
 - **[FAIRSCAPE REST docs UI](https://fairscape.pods.uvarc.io/docs)**: It is provided by 
 [Swagger UI](https://github.com/swagger-api/swagger-ui) and allows a client to use `Try it out` button to run operations
 on the endpoints.
