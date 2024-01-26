@@ -33,6 +33,7 @@ theme:
     - content.tabs.link
     - content.code.annotate
     - content.code.copy
+    - content.footnote.tooltips
     - announce.dismiss
     - navigation.tabs
 
