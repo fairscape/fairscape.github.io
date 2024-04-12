@@ -46,9 +46,6 @@ nav:
       - Configuration: getting-started/configuration.md
   - Tutorial:
       - Operations with users: tutorial/user.md
-      - Operations with groups: tutorial/group.md
-      - Operations with organizations: tutorial/organization.md
-      - Operations with projects: tutorial/project.md
       - Operations with datasets: tutorial/dataset.md
       - Operations with software: tutorial/software.md
       - Operations with computations: tutorial/computation.md

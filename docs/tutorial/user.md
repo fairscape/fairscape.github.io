@@ -1,6 +1,5 @@
 
-
-## Create a user 
+## Create a user
 
 === "python"
 
@@ -16,8 +15,6 @@
         "type": "Person",
         "email": "testuser@example.org",
         "password": "test",
-        "organizations": [],
-        "projects": [],
         "datasets": [],
         "software": [],
         "computations": [],
@@ -44,8 +41,6 @@
       "@type": "Person",
       "email": "string",
       "password": "string",
-      "organizations": [],
-      "projects": [],
       "datasets": [],
       "rocrates": [],
       "software": [],
@@ -55,7 +50,7 @@
     }'
     ```
 
-## Fetch a user 
+## Fetch a user
 
 === "python"
 
@@ -77,7 +72,7 @@
          -H 'accept: application/json'
     ```
 
-## Update a user 
+## Update a user
 
 === "python"
 
@@ -93,14 +88,12 @@
         "type": "Person",
         "email": "testuser@example.org",
         "password": "test",
-        "organizations": [],
-        "projects": [],
         "datasets": [],
         "software": [],
         "computations": [],
         "evidencegraphs": []
-	}
-    
+     }
+
     # update user
     update_user = requests.put(root_url + "user", data=json.dumps(updated_user_data))
     update_user.json()
@@ -121,8 +114,6 @@
       "@type": "Person",
       "email": "string",
       "password": "string",
-      "organizations": [],
-      "projects": [],
       "datasets": [],
       "rocrates": [],
       "software": [],
@@ -130,26 +121,4 @@
       "evidencegraphs": [],
       "additionalProp1": {}
     }'
-    ```
-
-## Delete a user 
-
-=== "python"
-
-    ``` python
-    import json
-    import requests
-     
-    root_url = "https://fairscape.pods.uvarc.io/"
-
-    # delete user
-    delete_user = requests.delete(root_url + f"user/{user_data['@id']}")
-    delete_user.json()
-    ```
-
-=== "curl"
-
-    ``` shell
-    curl -X 'DELETE' 'https://fairscape.pods.uvarc.io/user/ark:99999/test-user' \
-         -H 'accept: application/json'
     ```

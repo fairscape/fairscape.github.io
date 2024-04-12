@@ -1,22 +1,4 @@
-## Install using pip
-
-```bash 
-pip install fairscape_mds
-fairscape-mds start
-```
-
-## Install locally
-
-```bash 
-pip install fairscape_mds
-fairscape-mds start
-```
-- set up mongo 
-    - run with docker
-    - local run refer to mongo docs
-- set up minio 
-    - run with docker
-    - local refer to mongo docs
+# Installation Options
 
 ## Install using docker compose
 
@@ -30,11 +12,23 @@ docker-compose up compose-dev.yaml
 ```bash
 wget https://raw.githubusercontent.com/fairscape/mds_python/main/k8s-manifest-local.yml
 kubectl create -f k8s-manifest-local.yml
-``` 
+```
 
 ## Install from repository
-   
+  
 ```bash
 git clone https://github.com/fairscape/mds_python.git
-python -m build .
+pip install -r requirements.txt
+cd src/
+uvicorn fairscape_mds.mds.app:app --host 0.0.0.0 --config PATH_TO_YOUR.env
 ```
+
+set up mongo
+
+- run with docker
+- local run refer to mongo docs<br><br>
+
+set up minio
+
+- run with docker
+- local refer to mongo docs
