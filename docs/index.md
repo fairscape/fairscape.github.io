@@ -2,7 +2,7 @@
 
 FAIRSCAPE[^1] is a computational framework written in Python that implements the FAIR[^2] data principles on components such as datasets, software, computations, runtime parameters, environment and personnel involved in a computational analysis. It generates fully FAIR evidence of correctness of the analysis by recording formal representations of the components and their interactions in the form of a graph called Evidence Graph. For every computational result, FAIRSCAPE creates a machine interpretable Evidence Graph whose nodes and edges may contain persistent identifiers with metadata resolvable to the underling components.
 
-FAIRSCAPE provides a command line client tool to package and validate the components with metadata, a schema generation and validation component for the datasets, and a REST API to perform various operations on the server-side.
+FAIRSCAPE provides a command line client tool to package and validate the components with metadata, a schema generation and validation component for the datasets, a graphical user interface (GUI) for creating RO-Crate packages, and a REST API to perform various operations on the server-side. Together, these tools enable users to interact with FAIRSCAPE in ways that best suit their workflow and technical preferences.
 
 ## FAIRSCAPE Server
 
