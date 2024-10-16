@@ -10,7 +10,7 @@ repo_url: https://github.com/fairscape/fairscape.github.io
 
 # Configuration
 theme:
-  name: 'material'
+  name: "material"
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
@@ -37,15 +37,19 @@ theme:
     - announce.dismiss
     - navigation.tabs
 
-
 # Docs Navigation
 nav:
   - index.md
+  # - Fairscape Server:
+  #     - Code: https://github.com/fairscape/mds_python
+  #     - API Docs: https://fairscape.net/api/docs
+  # - Fairscape CLI:
+  #     - Code: https://github.com/fairscape/fairscape-cli/
+  #     - Docs: https://fairscape.github.io/fairscape-cli/
   - Getting Started:
       - Installation: getting-started/installation.md
       - Configuration: getting-started/configuration.md
   - Tutorial:
-      - Operations with users: tutorial/user.md
       - Operations with datasets: tutorial/dataset.md
       - Operations with software: tutorial/software.md
       - Operations with computations: tutorial/computation.md
@@ -53,13 +57,13 @@ nav:
       - Operations with rocrates: tutorial/rocrate.md
   - API Reference:
       - FAIRSCAPE API: api/index.md
-      - REST API Reference: https://fairscape.pods.uvarc.io/redoc
+      - REST API Reference: https://fairscape.net/api/docs
       - RESTful endpoints: api/resultful.md
 
 plugins:
   - search
   - render_swagger:
-      allow_arbitrary_locations : true
+      allow_arbitrary_locations: true
 
 # Extensions
 markdown_extensions:
@@ -86,4 +90,3 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github
-

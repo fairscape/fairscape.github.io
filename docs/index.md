@@ -10,18 +10,15 @@ resolvable to the underling components.
 FAIRSCAPE provides a command line client tool to package and validate the components with metadata, a schema generation
 and validation component for the datasets, and a REST API to perform various operations on the server-side.
 
+- **[FAIRSCAPE Server - MDS](https://github.com/fairscape/mds_python)**:The Metadata Service (MDS) of the FAIRSCAPE application, is the core backend service responsible for metadata managment. MDS is a RESTfull API implemented in python with the fastAPI framework. This service provides persitant globally unique identifiers (guids) as ARKS for many types of digital objects and maintains provenance metadata during the data science life-cycle.
 - **[FAIRSACPE CLI - A Validation and Packaging Command Line Tool](https://fairscape.github.io/fairscape-cli/)**: A data validation and packaging utility for
-the FAIRSCAPE ecosystem. provides a command line interface that allows the client side remote teams to create
-[RO-Crate](https://www.researchobject.org/ro-crate/) and [BagIt](https://datatracker.ietf.org/doc/html/rfc8493).
-- **[Schema Validation]()**: ...
-- **[FAIRSCAPE REST docs UI](https://fairscape.pods.uvarc.io/docs)**: It is provided by [Swagger UI](https://github.com/swagger-api/swagger-ui) and allows a client to use `Try it out` button
-to run operations on the endpoints.
-- **[FAIRSCAPE REST ReDoc UI](https://fairscape.pods.uvarc.io/redoc)**: It is provided by [ReDoc](https://github.com/Redocly/redoc) offering a three panel responsive layout containing
-a search bar on the left, documentation in the middle, and request and response examples on the right.
-
-<iframe src="assets/poster.pdf" width="100%" height="500px">
-    This browser does not support PDFs. Please download the PDF to view it: <a href="assets/poster.pdf">Download PDF</a>.
-</iframe>
+  the FAIRSCAPE ecosystem. provides a command line interface that allows the client side remote teams to create
+  [RO-Crate](https://www.researchobject.org/ro-crate/) and [BagIt](https://datatracker.ietf.org/doc/html/rfc8493).
+- **[FAIRSACPE GUI - An RO-Crate Packaging and Upload Tool](GUI/GUI.md)**: A data packaging utility for
+  the FAIRSCAPE ecosystem. Provides a graphical user interface that allows the client side remote teams to create
+  [RO-Crate](https://www.researchobject.org/ro-crate/).
+- **[FAIRSCAPE REST docs UI](https://fairscape.net/api/docs)**: It is provided by [Swagger UI](https://github.com/swagger-api/swagger-ui) and allows a client to use `Try it out` button
+  to run operations on the endpoints.
 
 [^1]:
     Levinson, M. A., Niestroy, J., Al Manir, S., Fairchild, K., Lake, D. E., Moorman, J. R., & Clark, T. (2022).
