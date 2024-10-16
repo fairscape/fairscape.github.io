@@ -1,4 +1,3 @@
-
 ## Upload a rocrate
 
 === "python"
@@ -7,12 +6,13 @@
     import json
     import requests
     from requests_toolbelt.multipart.encoder import MultipartEncoder
-     
-    root_url = "https://fairscape.pods.uvarc.io/"
+
+    root_url = "https://fairscape.net/api/"
     crate_path = '/Path/to/zip/file.zip'
+    token = "your_bearer_token_here"
 
     mp_encoder = MultipartEncoder(
-        fields={        
+        fields={
             'file': ('file.zip', open(crate_path, 'rb'), 'application/zip')
         }
     )
@@ -20,18 +20,18 @@
     # upload a rocrate to minio object store
     rocrate_transfer = requests.post(
         url=request_url + 'rocrate/upload',
-        data=mp_encoder,                              
+        data=mp_encoder,
         # The MultipartEncoder provides the content-type header with the boundary:
-        headers={'Content-Type': mp_encoder.content_type}
+        headers={'Authorization': f'Bearer {token}'}
     )
-        
+
     rocrate_transfer.json()
     ```
 
 === "curl"
 
     ``` shell
-    curl -X POST -F "file=@/Path/to/zip/file.zip" https://fairscape.pods.uvarc.io/rocrate/upload
+    curl -X POST -F "file=@/Path/to/zip/file.zip" https://fairscape.net/api/rocrate/upload \ -H "Authorization: Bearer your_bearer_token_here"
 
     ```
 
@@ -42,18 +42,18 @@
     ``` python
     import json
     import requests
-     
-    root_url = "https://fairscape.pods.uvarc.io/"
-    
+
+    root_url = "https://fairscape.net/api/"
+
     # fetch rocrate
-    get_rocrate = requests.get(root_url + "rocrate")
+    get_rocrate = requests.get(root_url + "rocrate", headers={'Authorization': f'Bearer {token}'})
     get_rocrate.json()
     ```
 
 === "curl"
 
     ``` shell
-    curl -X 'GET' 'https://fairscape.pods.uvarc.io/rocrate' \
+    curl -X 'GET' 'https://fairscape.net/api/rocrate' \
          -H 'accept: application/json'
     ```
 
@@ -64,18 +64,18 @@
     ``` python
     import json
     import requests
-     
-    root_url = "https://fairscape.pods.uvarc.io/"
-    
+
+    root_url = "https://fairscape.net/api/"
+
     # fetch rocrate
-    get_rocrate = requests.get(root_url + f"rocrate/{rocrate_transfer['@id']}")
+    get_rocrate = requests.get(root_url + f"rocrate/{rocrate_transfer['@id']}", headers={'Authorization': f'Bearer {token}'})
     get_rocrate.json()
     ```
 
 === "curl"
 
     ``` shell
-    curl -X 'GET' 'https://fairscape.pods.uvarc.io/rocrate/ark:99999/test-rocrate' \
+    curl -X 'GET' 'https://fairscape.net/api/rocrate/ark:99999/test-rocrate' \
          -H 'accept: application/json'
     ```
 
@@ -86,11 +86,12 @@
     ``` python
     import json
     import requests
-     
-    root_url = "https://fairscape.pods.uvarc.io/"
-    
+
+    root_url = "https://fairscape.net/api/"
+
     response = requests.get(
-        url=request_url + 'rocrate/archived/download/' + rocrate_transfer['@id']
+        url=request_url + 'rocrate/archived/download/' + rocrate_transfer['@id'],
+        headers={'Authorization': f'Bearer {token}'}
     )
 
     with open('/Path/to/output.zip', 'wb') as file:
@@ -100,6 +101,6 @@
 === "curl"
 
     ``` shell
-    curl -o /Path/to/output.zip https://fairscape.pods.uvarc.io/rocrate/archived/download/your_rocrate_id_here
+    curl -o /Path/to/output.zip https://fairscape.net/api/rocrate/archived/download/your_rocrate_id_here
 
     ```

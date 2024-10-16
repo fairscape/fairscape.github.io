@@ -50,11 +50,9 @@ nav:
       - Installation: getting-started/installation.md
       - Configuration: getting-started/configuration.md
   - Tutorial:
-      - Operations with datasets: tutorial/dataset.md
-      - Operations with software: tutorial/software.md
-      - Operations with computations: tutorial/computation.md
-      - Operations with evidencegraphs: tutorial/evidencegraph.md
+      - Logging In: tutorial/login.md
       - Operations with rocrates: tutorial/rocrate.md
+
   - API Reference:
       - FAIRSCAPE API: api/index.md
       - REST API Reference: https://fairscape.net/api/docs
