@@ -28,7 +28,7 @@ A data validation and packaging utility for the FAIRSCAPE ecosystem. It provides
 
 A data packaging utility for the FAIRSCAPE ecosystem. It provides a graphical user interface that allows client-side remote teams to create [RO-Crate](https://www.researchobject.org/ro-crate/) packages.
 
-- **[Documentation](GUI/GUI.md)**
+- **[Documentation](https://fairscape.github.io/FairscapeFrontEnd/)**
 
 ## FAIRSCAPE REST API Documentation
 
