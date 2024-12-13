@@ -46,12 +46,12 @@ nav:
   # - Fairscape CLI:
   #     - Code: https://github.com/fairscape/fairscape-cli/
   #     - Docs: https://fairscape.github.io/fairscape-cli/
-  - Getting Started:
-      - Installation: getting-started/installation.md
-      - Configuration: getting-started/configuration.md
-  - Tutorial:
-      - Logging In: tutorial/login.md
-      - Operations with rocrates: tutorial/rocrate.md
+  # - Getting Started:
+  #     - Installation: getting-started/installation.md
+  #     - Configuration: getting-started/configuration.md
+  # - Tutorial:
+  #     - Logging In: tutorial/login.md
+  #     - Operations with rocrates: tutorial/rocrate.md
 
   - API Reference:
       - FAIRSCAPE API: api/index.md
