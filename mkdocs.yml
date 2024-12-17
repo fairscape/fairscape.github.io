@@ -1,15 +1,34 @@
+# Project Information
 site_name: FAIRSCAPE
 site_description: A Framework for FAIR and Reproducible Biomedical Analytics
 site_url: https://fairscape.github.io/
 copyright: Copyright &copy; University of Virginia
-
 # Repository
 repo_name: fairscape/fairscape.github.io
 repo_url: https://github.com/fairscape/fairscape.github.io
-
 # Configuration
 theme:
   name: "material"
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: green
+      accent: green
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  navigation:
+    - expand: true
+    - tabs: true
   features:
     - content.tabs.link
     - content.code.annotate
@@ -20,7 +39,6 @@ theme:
     - navigation.sections
     - navigation.expand
     - toc.integrate
-
 # Docs Navigation
 nav:
   - Home: index.md
@@ -29,16 +47,14 @@ nav:
       - CLI: components/CLI.md
       - GUI: components/GUI.md
       - Web Server: components/webserver.md
-
 plugins:
   - search
-
 # Extensions
 markdown_extensions:
   - tables
   - toc:
       permalink: true
-      title: "Page contents"
+      title: Page contents
   - admonition
   - pymdownx.details
   - pymdownx.snippets:
@@ -53,7 +69,6 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.tabbed:
       alternate_style: true
-
 # Customization
 extra:
   social:
