@@ -1,12 +1,14 @@
-# Project Information
 site_name: FAIRSCAPE
 site_description: An Evolving AI-readiness Framework for Biomedical Research
 site_url: https://fairscape.github.io/
+
 # Repository
 repo_name: fairscape/fairscape.github.io
 repo_url: https://github.com/fairscape/fairscape.github.io
+
 # Copyright
 copyright: Copyright &copy; 2024 University of Virginia
+
 # Page tree
 nav:
   - Home: index.md
@@ -15,12 +17,14 @@ nav:
       - CLI: components/CLI.md
       - GUI: components/GUI.md
       - Web Server: components/webserver.md
+
 theme:
   name: material
   language: en
   features:
-    - navigation.tabs
+    - navigation.indexes
     - navigation.sections
+    - navigation.expand
     - toc.integrate
     - navigation.top
     - search.suggest
@@ -39,9 +43,11 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+
 plugins:
   - search:
       lang: en
+
 markdown_extensions:
   # Python Markdown
   - abbr
@@ -71,6 +77,7 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+
 extra:
   social:
     - icon: fontawesome/brands/github-alt
