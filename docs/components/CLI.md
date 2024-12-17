@@ -1,0 +1,21 @@
+# fairscape-cli
+
+A utility for packaging objects and validating metadata for FAIRSCAPE.
+
+## Features
+
+fairscape-cli provides a Command Line Interface (CLI) that allows the client side to create:
+
+- [RO-Crate](https://www.researchobject.org/ro-crate/) - a light-weight approach to packaging research data with their metadata. The CLI allows users to:
+  - Create Research Object Crates (RO-Crates)
+  - Add (transfer) digital objects to the RO-Crate
+  - Register metadata of the objects
+  - Describe the schema of tabular dataset objects as metadata and perform validation.
+
+## [Installation Intructions](https://fairscape.github.io/fairscape-cli/setup/)
+
+## [CLI Documentation](https://fairscape.github.io/fairscape-cli/getting-started/)
+
+## [Github](https://github.com/fairscape/fairscape-cli/)
+
+## [Schema Commands](https://fairscape.github.io/fairscape-cli/schema-metadata/)

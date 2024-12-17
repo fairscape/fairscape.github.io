@@ -4,37 +4,47 @@ FAIRSCAPE[^1] is a computational framework written in Python that implements the
 
 FAIRSCAPE provides a command line client tool to package and validate the components with metadata, a schema generation and validation component for the datasets, a graphical user interface (GUI) for creating RO-Crate packages, and a REST API to perform various operations on the server-side. Together, these tools enable users to interact with FAIRSCAPE in ways that best suit their workflow and technical preferences.
 
-## FAIRSCAPE Server
+## Components
 
-### FAIRSCAPE Server - MDS
+### [FAIRSCAPE Server](/components/server)
 
-The Metadata Service (MDS) of the FAIRSCAPE application is the core backend service responsible for metadata management. MDS is a RESTful API implemented in Python with the FastAPI framework. This service provides persistent globally unique identifiers (GUIDs) as ARKs for many types of digital objects and maintains provenance metadata during the data science life-cycle.
+The core backend service (MDS - Metadata Service) responsible for metadata management is implemented in Python using the FastAPI framework. The server:
 
-- **[GitHub Repository](https://github.com/fairscape/mds_python)**
+- Receives, catalogs, indexes, and stores uploaded RO-Crate packages
+- Extracts and registers components and associated metadata
+- Interpolates, reasons upon, and extends provenance graphs
+- Provides REST API access
 
-## FAIRSCAPE Client
+### [Command Line Client (CLI)](/components/CLI)
 
-### Command Line Client
+A pip-installable validation and packaging utility that allows:
 
-#### FAIRSCAPE CLI - A Validation and Packaging Command Line Tool
+- Creation and management of RO-Crates
+- Association of descriptive metadata using schema.org vocabulary
+- Direct packaging or URI referencing of data
 
-A data validation and packaging utility for the FAIRSCAPE ecosystem. It provides a command line interface that allows client-side remote teams to create [RO-Crate](https://www.researchobject.org/ro-crate/) and [BagIt](https://datatracker.ietf.org/doc/html/rfc8493) packages.
+### [Graphical User Interface (GUI)](/components/GUI)
 
-- **[Documentation](https://fairscape.github.io/fairscape-cli/)**
+A user-friendly interface based on electron, React, and javascript that provides:
 
-### GUI Client
+- Visual forms for RO-Crate creation
+- Step-by-step package creation workflow
+- Package review and validation
+- Direct upload capabilities
 
-#### FAIRSCAPE GUI - An RO-Crate Packaging and Upload Tool
+### [FAIRSCAPE Web Server](/components/webserver)
 
-A data packaging utility for the FAIRSCAPE ecosystem. It provides a graphical user interface that allows client-side remote teams to create [RO-Crate](https://www.researchobject.org/ro-crate/) packages.
+The FAIRSCAPE Web Server provides a React-based interface for viewing metadata and managing RO-Crates uploaded to FAIRSCAPE.
 
-- **[Documentation](https://fairscape.github.io/FairscapeFrontEnd/)**
+## Use Cases
 
-## FAIRSCAPE REST API Documentation
+FAIRSCAPE has been successfully deployed in various contexts:
 
-FAIRSCAPE provides a REST API documentation UI powered by [Swagger UI](https://github.com/swagger-api/swagger-ui). This interface allows clients to use the `Try it out` button to run operations on the endpoints.
+- Critical care medicine at the UVA Center for Advanced Medical Analytics
+- NIH Bridge2AI program for functional genomics and clinical applications
+- Cell Maps for Artificial Intelligence (CM4AI) project
 
-- **[API Documentation](https://fairscape.net/api/docs)**
+---
 
-[^1]: Levinson, M. A., Niestroy, J., Al Manir, S., Fairchild, K., Lake, D. E., Moorman, J. R., & Clark, T. (2022). FAIRSCAPE: a Framework for FAIR and Reproducible Biomedical Analytics. Neuroinformatics, 20(1), 187–202. <https://doi.org/10.1007/s12021-021-09529-4>
-[^2]: Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., Blomberg, N., Boiten, J. W., da Silva Santos, L. B., Bourne, P. E., Bouwman, J., Brookes, A. J., Clark, T., Crosas, M., Dillo, I., Dumon, O., Edmunds, S., Evelo, C. T., Finkers, R., Gonzalez-Beltran, A., … Mons, B. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific data, 3, 160018. <https://doi.org/10.1038/sdata.2016.18>
+[^1]: Al Manir, S., Levinson, M.A., Niestroy, J., Churas, C., Parker, J.A., & Clark, T. (2024). FAIRSCAPE: An Evolving AI-readiness Framework for Biomedical Research
+[^2]: Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific data, 3, 160018. https://doi.org/10.1038/sdata.2016.18
