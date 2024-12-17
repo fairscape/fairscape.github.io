@@ -3,6 +3,8 @@ site_name: FAIRSCAPE
 site_description: A Framework for FAIR and Reproducible Biomedical Analytics
 site_url: https://fairscape.github.io/
 
+copyright: Copyright &copy; 2024 THE RECTOR AND VISITORS OF THE UNIVERSITY OF VIRGINIA
+
 # Theme Configuration
 theme:
   name: readthedocs

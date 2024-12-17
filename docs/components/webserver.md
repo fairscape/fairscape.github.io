@@ -17,6 +17,6 @@ The FAIRSCAPE Web Server provides a React-based interface for viewing metadata a
 
 ## [Installation Instructions](/getting-started/WebServerInstall)
 
-## [Publish to Dataverse](https://fairscape.github.io/FairscapeFrontEnd/publish/)
+## [Publish to Dataverse](/tutorial/publish/)
 
 ## [Github](https://github.com/fairscape/FairscapeFrontEnd)
