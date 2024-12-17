@@ -3,11 +3,9 @@ site_name: FAIRSCAPE
 site_description: A Framework for FAIR and Reproducible Biomedical Analytics
 site_url: https://fairscape.github.io/
 copyright: Copyright &copy; University of Virginia
-
 # Repository
 repo_name: fairscape/fairscape.github.io
 repo_url: https://github.com/fairscape/fairscape.github.io
-
 # Configuration
 theme:
   name: "material"
@@ -38,21 +36,18 @@ theme:
     - navigation.sections
     - navigation.expand
     - toc.integrate
-
 # Docs Navigation
 nav:
   - Home: index.md
   - Components:
-      - Server: components/server.md
-      - CLI: components/CLI.md
-      - GUI: components/GUI.md
-      - Web Server: components/webserver.md
-
+    - Server: components/server.md
+    - CLI: components/CLI.md
+    - GUI: components/GUI.md
+    - Web Server: components/webserver.md
 plugins:
   - search
   - render_swagger:
       allow_arbitrary_locations: true
-
 # Extensions
 markdown_extensions:
   - tables
@@ -73,7 +68,6 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.tabbed:
       alternate_style: true
-
 # Customization
 extra:
   social:
