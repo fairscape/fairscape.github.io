@@ -22,13 +22,15 @@ theme:
   name: material
   language: en
   features:
-    - navigation.tabs # Enables the top navigation
-    - navigation.tabs.sticky # Makes the top navigation sticky
-    - navigation.sections # Enables sections in the left sidebar
-    - navigation.expand # Expands all collapsible sections by default
-    - navigation.indexes # Enables section index pages
-    - toc.integrate
     - navigation.top
+    - navigation.tracking
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.path
+    - navigation.footer
+    - toc.follow
+    - toc.integrate
     - search.suggest
     - search.highlight
     - content.tabs.link
