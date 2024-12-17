@@ -9,23 +9,9 @@ repo_url: https://github.com/fairscape/fairscape.github.io
 # Configuration
 theme:
   name: "material"
-  palette:
-    # Palette toggle for light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: green
-      accent: green
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    # Palette toggle for dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: blue
-      accent: blue
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+  navigation:
+    - expand: true
+    - tabs: true
   features:
     - content.tabs.link
     - content.code.annotate
@@ -40,14 +26,12 @@ theme:
 nav:
   - Home: index.md
   - Components:
-    - Server: components/server.md
-    - CLI: components/CLI.md
-    - GUI: components/GUI.md
-    - Web Server: components/webserver.md
+      - Server: components/server.md
+      - CLI: components/CLI.md
+      - GUI: components/GUI.md
+      - Web Server: components/webserver.md
 plugins:
   - search
-  - render_swagger:
-      allow_arbitrary_locations: true
 # Extensions
 markdown_extensions:
   - tables
