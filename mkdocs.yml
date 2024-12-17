@@ -2,75 +2,28 @@
 site_name: FAIRSCAPE
 site_description: A Framework for FAIR and Reproducible Biomedical Analytics
 site_url: https://fairscape.github.io/
-copyright: Copyright &copy; University of Virginia
-# Repository
-repo_name: fairscape/fairscape.github.io
-repo_url: https://github.com/fairscape/fairscape.github.io
-# Configuration
+
+# Theme Configuration
 theme:
-  name: "material"
-  palette:
-    # Palette toggle for light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: green
-      accent: green
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    # Palette toggle for dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: blue
-      accent: blue
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-  navigation:
-    - expand: true
-    - tabs: true
-  features:
-    - content.tabs.link
-    - content.code.annotate
-    - content.code.copy
-    - content.footnote.tooltips
-    - announce.dismiss
-    - navigation.tabs
-    - navigation.sections
-    - navigation.expand
-    - toc.integrate
-# Docs Navigation
-nav:
-  - Home: index.md
-  - Components:
-      - Server: components/server.md
-      - CLI: components/CLI.md
-      - GUI: components/GUI.md
-      - Web Server: components/webserver.md
-plugins:
-  - search
+  name: readthedocs
+  navigation_depth: 4
+
 # Extensions
 markdown_extensions:
-  - tables
+  - footnotes
+  - attr_list
+  - md_in_html
   - toc:
       permalink: true
-      title: Page contents
-  - admonition
-  - pymdownx.details
-  - pymdownx.snippets:
-      check_paths: true
-      url_download: true
-  - pymdownx.superfences
-  - pymdownx.highlight:
-      pygments_lang_class: true
-  - pymdownx.extra
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.tabbed:
-      alternate_style: true
-# Customization
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/fairscape
+
+# Navigation Structure
+nav:
+  - Home: index.md
+  - Packages:
+      - MDS Server: components/server.md
+      - CLI: components/CLI.md
+      - GUI: components/GUI.md
+      - Front-End Web Server: components/webserver.md
+
+plugins:
+  - search
