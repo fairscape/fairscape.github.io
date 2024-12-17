@@ -20,4 +20,5 @@ jobs:
                 key: ${{ github.ref }}
                 path: .cache
             - run: pip install mkdocs-material==9.5.41
+            - run: pip install mkdocs-render-swagger-plugin
             - run: mkdocs gh-deploy --force
