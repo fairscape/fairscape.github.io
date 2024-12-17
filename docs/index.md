@@ -15,6 +15,13 @@ The core backend service (MDS - Metadata Service) responsible for metadata manag
 - Interpolates, reasons upon, and extends provenance graphs
 - Provides REST API access
 
+Links:
+
+- [Installation Instructions](/getting-started/installation)
+- [API Documentation](https://fairscape.net/api/docs)
+- [Github](https://github.com/fairscape/mds_python)
+- [Server Configuration Documentation](https://fairscape.github.io/getting-started/configuration/)
+
 ### [Command Line Client (CLI)](/components/CLI)
 
 A pip-installable validation and packaging utility that allows:
@@ -22,6 +29,13 @@ A pip-installable validation and packaging utility that allows:
 - Creation and management of RO-Crates
 - Association of descriptive metadata using schema.org vocabulary
 - Direct packaging or URI referencing of data
+
+Links:
+
+- [Installation Intructions](https://fairscape.github.io/fairscape-cli/setup/)
+- [CLI Documentation](https://fairscape.github.io/fairscape-cli/getting-started/)
+- [Github](https://github.com/fairscape/fairscape-cli/)
+- [Schema Commands](https://fairscape.github.io/fairscape-cli/schema-metadata/)
 
 ### [Graphical User Interface (GUI)](/components/GUI)
 
@@ -32,9 +46,20 @@ A user-friendly interface based on electron, React, and javascript that provides
 - Package review and validation
 - Direct upload capabilities
 
+Links:
+
+- [Usage Documentation](https://fairscape.github.io/FairscapeFrontEnd/instructions/)
+- [Github](https://github.com/fairscape/FairscapeGUIClient/)
+
 ### [FAIRSCAPE Web Server](/components/webserver)
 
 The FAIRSCAPE Web Server provides a React-based interface for viewing metadata and managing RO-Crates uploaded to FAIRSCAPE.
+
+Links:
+
+- [Installation Instructions](/getting-started/WebServerInstall)
+- [Publish to Dataverse](https://fairscape.github.io/FairscapeFrontEnd/publish/)
+- [Github](https://github.com/fairscape/FairscapeFrontEnd)
 
 ## Use Cases
 
