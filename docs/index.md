@@ -59,5 +59,4 @@ FAIRSCAPE has been successfully deployed in various contexts:
 
 [^1]: Al Manir, S., Levinson, M.A., Niestroy, J., Churas, C., Parker, J.A., & Clark, T. (2024). FAIRSCAPE: An Evolving AI-readiness Framework for Biomedical Research
 [^2]: Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific data, 3, 160018. https://doi.org/10.1038/sdata.2016.18
-[^3]: test
-[^4]: Clark T, Schaffer LV, Obernier K, et al. Cell Maps for Artificial Intelligence: AI-Ready Maps of Human Cell Architecture from Disease-Relevant Cell Lines. Published online May 6, 2024. https://doi.org/10.1101/2024.05.21.589311
+[^3]: Clark T, Schaffer LV, Obernier K, et al. Cell Maps for Artificial Intelligence: AI-Ready Maps of Human Cell Architecture from Disease-Relevant Cell Lines. Published online May 6, 2024. https://doi.org/10.1101/2024.05.21.589311
