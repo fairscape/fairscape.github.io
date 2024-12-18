@@ -11,11 +11,12 @@ This guide will walk you through setting up a local FAIRSCAPE environment and cr
 First, let's get FAIRSCAPE running locally using Docker Compose. This will set up all necessary services including the metadata server, storage, and web interface.
 
 ```bash
-# Download the docker-compose configuration
-wget https://raw.githubusercontent.com/fairscape/mds_python/main/compose-dev.yaml
+# Pull the latest server code and compose yaml from git
+git clone https://github.com/fairscape/mds_python
+cd mds_python
 
 # Start the FAIRSCAPE services
-docker-compose up -f compose-dev.yaml
+docker-compose up -f compose.yaml
 ```
 
 When the services are running, you'll have access to:
