@@ -15,11 +15,9 @@ FAIRSCAPE provides a command line client tool to package and validate the compon
 </ul>
 </a>
 
-<div class="section-divider"></div>
-
-<div class="section-header">
-<h2>FAIRSCAPE Key Components</h2>
 </div>
+
+## FAIRSCAPE Key Components
 
 <div class="components-container">
 <a href="/components/server" class="component-card">
