@@ -29,6 +29,8 @@ markdown_extensions:
 # Navigation Structure
 nav:
   - Home: index.md
+  - Getting Started:
+      - Local Install: getting-started/getting-started.md
   - Packages:
       - MDS Server: components/server.md
       - Command Line Client: components/CLI.md
