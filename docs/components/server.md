@@ -4,12 +4,12 @@ The Metadata Service (MDS) is the core backend service of FAIRSCAPE, responsible
 
 ## Features
 
-The FAIRSCAPE server provides:
+The FAIRSCAPE server:
 
-- **Metadata Management**
-- **Persistent Identifiers**
-- **Storage Management**
-- **Provenance Tracking**
+- Receives, catalogs, indexes, and stores uploaded RO-Crate packages
+- Extracts and registers components and associated metadata
+- Interpolates, reasons upon, and extends provenance graphs
+- Provides REST API access
 
 ## [Installation Instructions](/getting-started/installation)
 

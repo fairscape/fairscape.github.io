@@ -2,19 +2,27 @@
 site_name: FAIRSCAPE
 site_description: A Framework for FAIR and Reproducible Biomedical Analytics
 site_url: https://fairscape.github.io/
-
 copyright: Copyright &copy; 2024 THE RECTOR AND VISITORS OF THE UNIVERSITY OF VIRGINIA
 
 # Theme Configuration
 theme:
   name: readthedocs
   navigation_depth: 4
+  # Add custom styling
+  custom_dir: custom_theme/
+
+# Additional CSS/JS for enhanced styling
+extra_css:
+  - css/custom.css
 
 # Extensions
 markdown_extensions:
   - footnotes
   - attr_list
   - md_in_html
+  - admonition # Enables note/warning boxes
+  - pymdownx.details # Enables collapsible sections
+  - pymdownx.superfences # Better code blocks
   - toc:
       permalink: true
 
@@ -23,8 +31,8 @@ nav:
   - Home: index.md
   - Packages:
       - MDS Server: components/server.md
-      - CLI: components/CLI.md
-      - GUI: components/GUI.md
+      - Command Line Client: components/CLI.md
+      - Electron GUI Tool: components/GUI.md
       - Front-End Web Server: components/webserver.md
 
 plugins:

@@ -4,47 +4,41 @@ FAIRSCAPE[^1] is a computational framework written in Python that implements the
 
 FAIRSCAPE provides a command line client tool to package and validate the components with metadata, a schema generation and validation component for the datasets, a graphical user interface (GUI) for creating RO-Crate packages, and a REST API to perform various operations on the server-side. Together, these tools enable users to interact with FAIRSCAPE in ways that best suit their workflow and technical preferences.
 
-## Components
+<div class="component-cards">
 
-### [FAIRSCAPE MDS Server](/components/server)
+<a href="/components/server" class="component-card">
+<h2>FAIRSCAPE MDS Server</h2>
+The core backend service (MDS - Metadata Service) responsible for metadata management, implemented in Python using FastAPI. Handles package storage, metadata extraction, provenance tracking, and provides a REST API interface.
+</a>
 
-The core backend service (MDS - Metadata Service) responsible for metadata management is implemented in Python using the FastAPI framework. The server:
+<a href="/components/CLI" class="component-card">
+<h2>Command Line Client (CLI)</h2>
+A pip-installable validation and packaging utility for creating and managing RO-Crates with descriptive metadata using schema.org vocabulary. Supports both direct packaging and URI referencing of data.
+</a>
 
-- Receives, catalogs, indexes, and stores uploaded RO-Crate packages
-- Extracts and registers components and associated metadata
-- Interpolates, reasons upon, and extends provenance graphs
-- Provides REST API access
+<a href="/components/GUI" class="component-card">
+<h2>Graphical User Interface (GUI)</h2>
+A user-friendly electron and React-based interface that provides visual forms for RO-Crate creation, step-by-step workflow guidance, package validation, and direct upload capabilities.
+</a>
 
-### [Command Line Client (CLI)](/components/CLI)
+<a href="/components/webserver" class="component-card">
+<h2>FAIRSCAPE Front-End Web Server</h2>
+A React-based web interface for browsing, managing, and sharing RO-Crates uploaded to FAIRSCAPE. Features package visualization, metadata management, and provenance graph display.
+</a>
 
-A pip-installable validation and packaging utility that allows:
-
-- Creation and management of RO-Crates
-- Association of descriptive metadata using schema.org vocabulary
-- Direct packaging or URI referencing of data
-
-### [Graphical User Interface (GUI)](/components/GUI)
-
-A user-friendly interface based on electron, React, and javascript that provides:
-
-- Visual forms for RO-Crate creation
-- Step-by-step package creation workflow
-- Package review and validation
-- Direct upload capabilities
-
-### [FAIRSCAPE Front-End Web Server](/components/webserver)
-
-The FAIRSCAPE Web Server provides a React-based interface for viewing metadata and managing RO-Crates uploaded to FAIRSCAPE.
+</div>
 
 ## Use Cases
 
 FAIRSCAPE has been successfully deployed in various contexts:
 
-- Critical care medicine at the UVA Center for Advanced Medical Analytics
-- NIH Bridge2AI program for functional genomics and clinical applications
-- Cell Maps for Artificial Intelligence (CM4AI) project
-
----
+<div class="component-card">
+<ul>
+    <li><strong>Critical Care Medicine</strong>: Deployed at the UVA Center for Advanced Medical Analytics</li>
+    <li><strong>Functional Genomics</strong>: Supporting the NIH Bridge2AI program for clinical applications</li>
+    <li><strong>Cell Mapping</strong>: Powering the Cell Maps for Artificial Intelligence (CM4AI) project</li>
+</ul>
+</div>
 
 [^1]: Al Manir, S., Levinson, M.A., Niestroy, J., Churas, C., Parker, J.A., & Clark, T. (2024). FAIRSCAPE: An Evolving AI-readiness Framework for Biomedical Research
 [^2]: Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific data, 3, 160018. https://doi.org/10.1038/sdata.2016.18
