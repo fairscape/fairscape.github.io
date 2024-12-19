@@ -148,14 +148,8 @@ After uploading, you can view your RO-Crate's metadata and contents:
 1. Navigate to the "Dashboard" section in the web interface
 2. Find and click on "My First RO-Crate" in the list
 3. Explore the metadata, including:
-   - Basic RO-Crate information
-   - Dataset metadata and relationships
-   - Software details
-   - Computation provenance
+    - Basic RO-Crate information
+    - Dataset metadata and relationships
+    - Software details
+    - Computation provenance
 
-## Next Steps
-
-For more detailed information, check out:
-
-- [FAIRSCAPE CLI Documentation](https://fairscape.github.io/fairscape-cli/)
-- [MDS FAIRSCAPE Documentation](https://fairscape.net/api/docs)
