@@ -20,7 +20,7 @@ docker compose up --build
 
 When the services are running, you'll have access to:
 
-- FAIRSCAPE Metadata Service (MDS) at `http://localhost:8080/api/healthz`
+- FAIRSCAPE Server at `http://localhost:8080/api/healthz`
 - FAIRSCAPE Web Interface at `http://localhost:5173`
 
 ## 2. Installing the FAIRSCAPE CLI
