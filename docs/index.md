@@ -23,7 +23,7 @@ FAIRSCAPE provides a command line client tool to package and validate the compon
 
 <div class="components-container">
 <a href="/components/server" class="component-card">
-<h2>FAIRSCAPE MDS Server</h2>
+<h2>FAIRSCAPE Server</h2>
 The core backend service (MDS - Metadata Service) responsible for metadata management, implemented in Python using FastAPI. Handles package storage, metadata extraction, provenance tracking, and provides a REST API interface.
 </a>
 

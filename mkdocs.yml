@@ -32,7 +32,7 @@ nav:
   - Getting Started:
       - Local Install: getting-started/getting-started.md
   - Packages:
-      - MDS Server: components/server.md
+      - FAIRSCAPE Server: components/server.md
       - Command Line Client: components/CLI.md
       - Electron GUI Tool: components/GUI.md
       - Front-End Web Server: components/webserver.md
