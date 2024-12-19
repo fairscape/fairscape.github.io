@@ -1,9 +1,9 @@
 <div class="documentation-page">
-  <h1>FAIRSCAPE Server (MDS)</h1>
+  <h1>FAIRSCAPE Server</h1>
   
   <div class="component-card intro-card">
     <h2>Overview</h2>
-    <p>The Metadata Service (MDS) is the core backend service of FAIRSCAPE, responsible for metadata management and digital object handling. As the foundation of the FAIRSCAPE ecosystem, it provides robust data management capabilities and REST API access for seamless integration.</p>
+    <p>The Metadata Service is the core backend service of FAIRSCAPE, responsible for metadata management and digital object handling. As the foundation of the FAIRSCAPE ecosystem, it provides robust data management capabilities and REST API access for seamless integration.</p>
   </div>
 
   <div class="feature-grid">
@@ -27,7 +27,7 @@
       <h3>Provenance Tracking</h3>
       <div class="feature-content">
         <div class="feature-icon">🔗</div>
-        <p>Sophisticated provenance graph handling with capabilities for interpolation, reasoning, and extension. Maintains complete lineage of data transformations and relationships.</p>
+        <p>Sophisticated provenance graph handling with capabilities. Maintains complete lineage of data transformations and relationships.</p>
       </div>
     </div>
   </div>

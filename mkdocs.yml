@@ -30,12 +30,12 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Getting Started:
-      - Local Install: getting-started/getting-started.md
-  - Packages:
+      - Deploying on Localhost: getting-started/getting-started.md
+  - Component Overviews:
       - FAIRSCAPE Server: components/server.md
       - Command Line Client: components/CLI.md
-      - Electron GUI Tool: components/GUI.md
-      - Front-End Web Server: components/webserver.md
+      - Electron GUI Client: components/GUI.md
+      - Web Client: components/webserver.md
 
 plugins:
   - search

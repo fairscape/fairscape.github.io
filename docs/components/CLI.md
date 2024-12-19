@@ -1,5 +1,5 @@
 <div class="documentation-page">
-  <h1>FAIRSCAPE Command Line Interface (CLI)</h1>
+  <h1>FAIRSCAPE Command Line Client (CLI)</h1>
   
   <div class="component-card intro-card">
     <h2>Overview</h2>

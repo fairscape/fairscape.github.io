@@ -2,7 +2,7 @@
 
 FAIRSCAPE is a computational framework written in Python that implements the FAIR[^1] data principles on components such as datasets, software, computations, runtime parameters, environment and personnel involved in a computational analysis. It generates fully FAIR evidence of correctness of the analysis by recording formal representations of the components and their interactions in the form of a graph called Evidence Graph. For every computational result, FAIRSCAPE creates a machine interpretable Evidence Graph whose nodes and edges may contain persistent identifiers with metadata resolvable to the underling components.
 
-FAIRSCAPE provides a command line client tool to package and validate the components with metadata, a schema generation and validation component for the datasets, a graphical user interface (GUI) for creating RO-Crate packages, and a REST API to perform various operations on the server-side. Together, these tools enable users to interact with FAIRSCAPE in ways that best suit their workflow and technical preferences.
+FAIRSCAPE provides a [command line client tool](/components/CLI) and a [graphical user interface (GUI)](/components/GUI) to package and validate the components with metadata, a schema generation and validation component for the datasets, a REST API to perform various operations on the [server-side](/components/server), and a [front-end web server](/components/webserver) to visualize the posted metadata. Together, these tools enable users to interact with FAIRSCAPE in the way that best suits their workflow.
 
 <div class="component-cards">
 <a href="/getting-started/getting-started" class="component-card getting-started-card">
@@ -19,12 +19,12 @@ FAIRSCAPE provides a command line client tool to package and validate the compon
 
 <div class="section-divider"></div>
 
-## FAIRSCAPE Key Components
+## Key Components
 
 <div class="components-container">
 <a href="/components/server" class="component-card">
 <h2>FAIRSCAPE Server</h2>
-The core backend service (MDS - Metadata Service) responsible for metadata management, implemented in Python using FastAPI. Handles package storage, metadata extraction, provenance tracking, and provides a REST API interface.
+The core backend service responsible for metadata management, implemented in Python using FastAPI. Handles package storage, metadata extraction, provenance tracking, and provides a REST API interface.
 </a>
 
 <a href="/components/CLI" class="component-card">
@@ -38,7 +38,7 @@ A user-friendly electron and React-based interface that provides visual forms fo
 </a>
 
 <a href="/components/webserver" class="component-card">
-<h2>FAIRSCAPE Front-End Web Server</h2>
+<h2>Web Client</h2>
 A React-based web interface for browsing, managing, and sharing RO-Crates uploaded to FAIRSCAPE. Features package visualization, metadata management, and provenance graph display.
 </a>
 </div>

@@ -1,5 +1,5 @@
 <div class="documentation-page">
-  <h1>FAIRSCAPE GUI</h1>
+  <h1>FAIRSCAPE GUI Client</h1>
   
   <div class="component-card intro-card">
     <h2>Overview</h2>
@@ -42,6 +42,10 @@
       <div class="step">
         <span class="step-number">2</span>
         <p>Download and run the latest version for your operating system (Windows, macOS, or Linux)</p>
+      </div>
+      <div class="step">
+        <span class="step-number">3</span>
+        <p>Note: You may have to open the application on Mac from a finder window due to Mac permissioning rules.</p>
       </div>
     </div>
   </div>
