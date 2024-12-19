@@ -24,7 +24,7 @@ FAIRSCAPE provides a [command line client tool](/components/CLI) and a [graphica
 <div class="components-container">
 <a href="/components/server" class="component-card">
 <h2>FAIRSCAPE Server</h2>
-The core backend service responsible for metadata management, implemented in Python using FastAPI. Handles package storage, metadata extraction, provenance tracking, and provides a REST API interface.
+The FAIRSCAPE server is responsible for metadata management, implemented in Python using FastAPI. Handles package storage, metadata extraction, provenance tracking, and provides a REST API interface.
 </a>
 
 <a href="/components/CLI" class="component-card">
