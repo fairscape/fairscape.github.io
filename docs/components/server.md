@@ -3,7 +3,7 @@
   
   <div class="component-card intro-card">
     <h2>Overview</h2>
-    <p>The Metadata Service is the core backend service of FAIRSCAPE, responsible for metadata management and digital object handling. As the foundation of the FAIRSCAPE ecosystem, it provides robust data management capabilities and REST API access for seamless integration.</p>
+    <p>The FAIRSCAPE Server is the core backend service of FAIRSCAPE, responsible for metadata management and digital object handling. As the foundation of the FAIRSCAPE ecosystem, it provides robust data management capabilities and REST API access for seamless integration.</p>
   </div>
 
   <div class="feature-grid">
