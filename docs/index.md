@@ -1,6 +1,6 @@
 # Welcome to FAIRSCAPE
 
-FAIRSCAPE[^1] is a computational framework written in Python that implements the FAIR[^2] data principles on components such as datasets, software, computations, runtime parameters, environment and personnel involved in a computational analysis. It generates fully FAIR evidence of correctness of the analysis by recording formal representations of the components and their interactions in the form of a graph called Evidence Graph. For every computational result, FAIRSCAPE creates a machine interpretable Evidence Graph whose nodes and edges may contain persistent identifiers with metadata resolvable to the underling components.
+FAIRSCAPE is a computational framework written in Python that implements the FAIR[^1] data principles on components such as datasets, software, computations, runtime parameters, environment and personnel involved in a computational analysis. It generates fully FAIR evidence of correctness of the analysis by recording formal representations of the components and their interactions in the form of a graph called Evidence Graph. For every computational result, FAIRSCAPE creates a machine interpretable Evidence Graph whose nodes and edges may contain persistent identifiers with metadata resolvable to the underling components.
 
 FAIRSCAPE provides a command line client tool to package and validate the components with metadata, a schema generation and validation component for the datasets, a graphical user interface (GUI) for creating RO-Crate packages, and a REST API to perform various operations on the server-side. Together, these tools enable users to interact with FAIRSCAPE in ways that best suit their workflow and technical preferences.
 
@@ -48,15 +48,13 @@ A React-based web interface for browsing, managing, and sharing RO-Crates upload
 
 ## Use Cases
 
-FAIRSCAPE has been successfully deployed in various contexts:
+FAIRSCAPE was initially created to support fully-provenanced complex computations in predictive analytics for clinical research[^2]. The current version supports the NIH Bridge2AI program’s Functional Genomics Grand Challenge[^3], as well as ongoing clinical work in predictive analytics. We believe it is a useful tool for developing pre-model explainability in AI applications[^4], and plan to extend it further in this direction.
 
-<div class="component-card">
-<ul>
- <li><strong>Critical Care Medicine</strong>: Deployed at the UVA Center for Advanced Medical Analytics</li>
- <li><strong>Cell Mapping</strong>: Powering the Cell Maps for Artificial Intelligence (CM4AI) project</li>
-</ul>
-</div>
+## Funding
 
-[^1]: Al Manir, S., Levinson, M.A., Niestroy, J., Churas, C., Parker, J.A., & Clark, T. (2024). FAIRSCAPE: An Evolving AI-readiness Framework for Biomedical Research
-[^2]: Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific data, 3, 160018. https://doi.org/10.1038/sdata.2016.18
-[^3]: Clark T, Schaffer LV, Obernier K, et al. Cell Maps for Artificial Intelligence: AI-Ready Maps of Human Cell Architecture from Disease-Relevant Cell Lines. Published online May 6, 2024. https://doi.org/10.1101/2024.05.21.589311
+FAIRSCAPE was developed with funding from the U.S. National Institutes of Health awards OT2OD032742, OT2OD032701, 5R01HD072071-10; and from the University of Virginia’s Frederick Thomas Fund.
+
+[^1]: Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific data, 3, 160018. https://doi.org/10.1038/sdata.2016.18
+[^2]: Niestroy JC, Moorman JR, Levinson MA, et al. Discovery of signatures of fatal neonatal illness in vital signs using highly comparative time-series analysis. npj Digit Med. 2022;5(1):6. doi:10.1038/s41746-021-00551-z
+[^3]: Clark T, Schaffer LV, Obernier K, et al. Cell Maps for Artificial Intelligence: AI-Ready Maps of Human Cell Architecture from Disease-Relevant Cell Lines. Published online May 6, 2024.
+[^4]: Clark T, Caufield H, Parker JA, et al. AI-readiness for Biomedical Data: Bridge2AI Recommendations. Published online October 25, 2024. doi:10.1101/2024.10.23.619844
