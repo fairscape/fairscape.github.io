@@ -3,7 +3,7 @@
 This guide will walk you through setting up a local FAIRSCAPE environment and creating your first Research Object Crate (RO-Crate). By the end, you'll have:
 
 - A running local FAIRSCAPE instance
-- Created and validated an RO-Crate with a dataset
+- Created and validated an RO-Crate with connected datasets and software
 - Uploaded and viewed your RO-Crate through the web interface
 
 ## 1. Setting Up Your Local FAIRSCAPE Environment
@@ -12,11 +12,10 @@ First, let's get FAIRSCAPE running locally using Docker Compose. This will set u
 
 ```bash
 # Pull the latest server code and compose yaml from git
-git clone https://github.com/fairscape/mds_python
+git clone git@github.com:fairscape/mds_python.git
 cd mds_python
-
 # Start the FAIRSCAPE services
-docker-compose up -f compose.yaml
+docker compose up --build
 ```
 
 When the services are running, you'll have access to:
@@ -34,7 +33,7 @@ pip install fairscape-cli
 
 ## 3. Creating Your First RO-Crate
 
-Let's create a simple RO-Crate containing a dataset.
+Let's create an RO-Crate for a simple processing pipeline with an input dataset, some software, and an output dataset.
 
 ### Step 1: Create the RO-Crate
 
@@ -48,19 +47,72 @@ fairscape-cli rocrate create \
   "./my-first-rocrate"
 ```
 
-### Step 2: Add a dataset to the RO-Crate
+### Step 2: Add the Input Dataset
 
 ```bash
-fairscape-cli rocrate add dataset \
-  --name "Example Dataset" \
+# Add input dataset and store the returned GUID
+INPUT_GUID=$(fairscape-cli rocrate add dataset \
+  --name "Input Data" \
   --author "Your Name" \
   --version "1.0" \
   --date-published "2024-12-18" \
-  --description "An example dataset for testing" \
+  --description "Input data for testing" \
   --keywords "test" \
   --data-format "CSV" \
-  --source-filepath "./path/to/your/data.csv" \
-  --destination-filepath "./my-first-rocrate/data.csv" \
+  --source-filepath "./path/to/your/input.csv" \
+  --destination-filepath "./my-first-rocrate/input.csv" \
+  "./my-first-rocrate")
+```
+
+### Step 3: Add Processing Software
+
+```bash
+# Add processing software and store the GUID
+SOFTWARE_GUID=$(fairscape-cli rocrate add software \
+  --name "Processing Software" \
+  --author "Your Name" \
+  --version "1.0" \
+  --description "Software for processing the data" \
+  --keywords "test" \
+  --file-format "py" \
+  --source-filepath "./path/to/your/process.py" \
+  --destination-filepath "./my-first-rocrate/process.py" \
+  --date-modified "2024-12-18" \
+  "./my-first-rocrate")
+```
+
+### Step 4: Add the Output Dataset
+
+```bash
+# Add output dataset with reference to input
+OUTPUT_GUID=$(fairscape-cli rocrate add dataset \
+  --name "Output Data" \
+  --author "Your Name" \
+  --version "1.0" \
+  --date-published "2024-12-18" \
+  --description "Output data from processing" \
+  --keywords "test" \
+  --data-format "CSV" \
+  --source-filepath "./path/to/your/output.csv" \
+  --destination-filepath "./my-first-rocrate/output.csv" \
+  --derived-from "$INPUT_GUID" \
+  "./my-first-rocrate")
+```
+
+### Step 5: Register the Computation
+
+```bash
+# Register computation to connect everything together
+fairscape-cli rocrate register computation \
+  --name "Data Processing" \
+  --run-by "Your Name" \
+  --command "python process.py input.csv output.csv" \
+  --date-created "2024-12-18" \
+  --description "Process input data to create output data" \
+  --keywords "test" \
+  --used-software "$SOFTWARE_GUID" \
+  --used-dataset "$INPUT_GUID" \
+  --generated "$OUTPUT_GUID" \
   "./my-first-rocrate"
 ```
 
@@ -75,7 +127,6 @@ First, compress your RO-Crate folder into a zip file. You can do this using your
 ```bash
 # On Linux/Mac:
 zip -r my-first-rocrate.zip my-first-rocrate/
-
 # On Windows (PowerShell):
 Compress-Archive -Path my-first-rocrate -DestinationPath my-first-rocrate.zip
 ```
@@ -98,15 +149,11 @@ After uploading, you can view your RO-Crate's metadata and contents:
 2. Find and click on "My First RO-Crate" in the list
 3. Explore the metadata, including:
    - Basic RO-Crate information
-   - Dataset metadata
+   - Dataset metadata and relationships
+   - Software details
+   - Computation provenance
 
 ## Next Steps
-
-Now that you've created and uploaded your first RO-Crate, you can:
-
-- Add more datasets and software to your RO-Crate
-- Register computations to track data transformations
-- Explore the schema creation and validation
 
 For more detailed information, check out:
 
