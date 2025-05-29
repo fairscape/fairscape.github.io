@@ -15,10 +15,13 @@ jobs:
             - uses: actions/setup-python@v4
               with:
                 python-version: 3.x
-            - uses: actions/cache@v2
+            - name: Cache Python dependencies
+              uses: actions/cache@v2
               with:
-                key: ${{ github.ref }}
                 path: .cache
+                key: ${{ runner.os }}-python-${{ hashFiles('**/requirements.txt') }}
+                restore-keys: |
+                    ${{ runner.os }}-python-
             - run: pip install mkdocs-material==9.5.41
             - run: pip install mkdocs-rtd-dropdown
             - run: pip install mkdocs-render-swagger-plugin
