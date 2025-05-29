@@ -48,7 +48,7 @@ A React-based web interface for browsing, managing, and sharing RO-Crates upload
 
 ## Use Cases
 
-FAIRSCAPE was initially created to support fully-provenanced complex computations in predictive analytics for clinical research[^2]. The current version supports the NIH Bridge2AI program’s Functional Genomics Grand Challenge[^3], as well as ongoing clinical work in predictive analytics. We believe it is a useful tool for developing pre-model explainability in AI applications[^4], and plan to extend it further in this direction.
+FAIRSCAPE was initially created to support fully-provenanced complex computations in predictive analytics for clinical research[^2]. The current version supports the NIH Bridge2AI program’s Functional Genomics Grand Challenge[^3], as well as ongoing clinical work in predictive analytics. We believe it is a useful tool for developing pre-model explainability in AI applications[^4], and plan to extend it further in this direction. It creates and provides rich, human-readable Datasheets in html, extending the basic conceptions of Gebru et al. 2021 [^5] to cover additional metadata required for biomedical AI-readiness.
 
 ## Funding
 
@@ -57,4 +57,5 @@ FAIRSCAPE was developed with funding from the U.S. National Institutes of Health
 [^1]: Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific data, 3, 160018. https://doi.org/10.1038/sdata.2016.18
 [^2]: Niestroy JC, Moorman JR, Levinson MA, et al. Discovery of signatures of fatal neonatal illness in vital signs using highly comparative time-series analysis. npj Digit Med. 2022;5(1):6. doi:10.1038/s41746-021-00551-z
 [^3]: Clark T, Schaffer LV, Obernier K, et al. Cell Maps for Artificial Intelligence: AI-Ready Maps of Human Cell Architecture from Disease-Relevant Cell Lines. Published online May 6, 2024.
-[^4]: Clark T, Caufield H, Parker JA, et al. AI-readiness for Biomedical Data: Bridge2AI Recommendations. Published online October 25, 2024. doi:10.1101/2024.10.23.619844
+[^4]: Clark T, Caufield H, Parker JA, et al. AI-readiness for Biomedical Data: Bridge2AI Recommendations. Published online October 25, 2024. doi:10.1101/2024.10.23.619844.
+[^5]: Al Manir S, Levinson MA, Niestroy J, Churas C, Parker JA, Clark T.  FAIRSCAPE: An Evolving AI-readiness Framework for Biomedical Research. doi: https://doi.org/10.1101/2024.12.23.629818. Published online May 6, 2025. doi:[10.1101/2024.10.23.619844](https://doi.org/10.1101/2024.12.23.629818).
