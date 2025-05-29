@@ -19,7 +19,7 @@ jobs:
               uses: actions/cache@v2
               with:
                 path: .cache
-                key: ${{ runner.os }}-python-${{ hashFiles('**/requirements.txt') }}
+                key: ${{ runner.os }}-python-${{ hashFiles('**/mkdocs.yaml') }}
                 restore-keys: |
                     ${{ runner.os }}-python-
             - run: pip install mkdocs-material==9.5.41
