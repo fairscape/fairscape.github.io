@@ -12,8 +12,8 @@ First, let's get FAIRSCAPE running locally using Docker Compose. This will set u
 
 ```bash
 # Pull the latest server code and compose yaml from git
-git clone http://github.com/fairscape/mds_python
-cd mds_python
+git clone http://github.com/fairscape/fairscape_server
+cd fairscape_server
 # Start the FAIRSCAPE services
 docker compose up --build
 ```
