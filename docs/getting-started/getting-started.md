@@ -116,6 +116,13 @@ fairscape-cli rocrate register computation \
   "./my-first-rocrate"
 ```
 
+### Step 6: Complete the Build
+
+```bash
+# Builds html preview, croissant, and fills in inverse properties
+fairscape-cli build subcrate "./my-first-rocrate"
+```
+
 ## 4. Uploading Your RO-Crate
 
 Now that we have created an RO-Crate, let's prepare it for upload and submit it to our local FAIRSCAPE instance:
@@ -148,8 +155,7 @@ After uploading, you can view your RO-Crate's metadata and contents:
 1. Navigate to the "Dashboard" section in the web interface
 2. Find and click on "My First RO-Crate" in the list
 3. Explore the metadata, including:
-    - Basic RO-Crate information
-    - Dataset metadata and relationships
-    - Software details
-    - Computation provenance
-
+   - Basic RO-Crate information
+   - Dataset metadata and relationships
+   - Software details
+   - Computation provenance
