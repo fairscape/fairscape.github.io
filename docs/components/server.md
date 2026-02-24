@@ -38,8 +38,11 @@
       <a href="/getting-started/installation" class="link-button">
         Installation Guide
       </a>
+      <a href="https://fairscape.github.io/fairscape_server/" class="link-button">
+        Server API Docs
+      </a>
       <a href="https://fairscape.net/api/docs" class="link-button">
-        API Documentation
+        Interactive API (Swagger)
       </a>
       <a href="https://github.com/fairscape/mds_python" class="link-button">
         GitHub Repository
