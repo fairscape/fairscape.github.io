@@ -23,6 +23,8 @@ When the services are running, you'll have access to:
 - FAIRSCAPE Server at `http://localhost:8080/api/healthz`
 - FAIRSCAPE Web Interface at `http://localhost:5173`
 
+See the [Installation guide](installation.md) for a full breakdown of services, ports, default credentials, and optional environment variables.
+
 ## 2. Installing the FAIRSCAPE CLI
 
 The FAIRSCAPE Command Line Interface (CLI) allows you to create and manage RO-Crates. Install it using pip:
