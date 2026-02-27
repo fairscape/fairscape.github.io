@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://fairscape.github.io/components/webserver/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Web Client - FAIRSCAPE</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Web Client";
+        var mkdocs_page_input_path = "components/webserver.md";
+        var mkdocs_page_url = "/components/webserver/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> FAIRSCAPE
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/getting-started/">Deploying on Localhost</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/configuration/">Configuration</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Component Overviews</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../server/">FAIRSCAPE Server</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../CLI/">Command Line Client</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../GUI/">Electron GUI Client</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Web Client</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">FAIRSCAPE</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Component Overviews</li>
+      <li class="breadcrumb-item active">Web Client</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="documentation-page">
+  <h1>FAIRSCAPE Web Server</h1>
+
+  <div class="component-card intro-card">
+    <h2>Overview</h2>
+    <p>The FAIRSCAPE Web Server provides a React-based interface for viewing metadata and managing RO-Crates uploaded to FAIRSCAPE. It offers comprehensive visualization and management capabilities for your research objects.</p>
+  </div>
+
+  <div class="feature-grid">
+    <div class="component-card feature-card">
+      <div class="feature-content">
+        <div class="feature-icon">📊</div>
+        <h3>Dashboard Interface</h3>
+        <p>Access a centralized dashboard to view and manage all uploaded RO-Crates. Get quick access to downloads and detailed landing pages for each research object in your collection.</p>
+      </div>
+    </div>
+
+    <div class="component-card feature-card">
+      <div class="feature-content">
+        <div class="feature-icon">📋</div>
+        <h3>Metadata Visualization</h3>
+        <p>Explore comprehensive landing pages featuring JSON-LD metadata summaries, file listings, and interactive evidence graph visualizations. View metadata in multiple formats including JSON-LD, RDF, and Turtle.</p>
+      </div>
+    </div>
+
+    <div class="component-card feature-card">
+      <div class="feature-content">
+        <div class="feature-icon">🔄</div>
+        <h3>Publication Support</h3>
+        <p>Streamline your research sharing with direct publication support to Harvard Dataverse instances. Easily make your research objects available to the wider scientific community.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="component-card links-section">
+    <h2>Quick Links</h2>
+    <div class="quick-links">
+      <a href="/getting-started/WebServerInstall" class="link-button">
+        Installation Guide
+      </a>
+      <a href="/tutorial/publish/" class="link-button">
+        Publish to Dataverse
+      </a>
+      <a href="https://github.com/fairscape/FairscapeFrontEnd" class="link-button">
+        GitHub Repository
+      </a>
+    </div>
+  </div>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../GUI/" class="btn btn-neutral float-left" title="Electron GUI Client"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright &copy; 2024 THE RECTOR AND VISITORS OF THE UNIVERSITY OF VIRGINIA</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../GUI/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

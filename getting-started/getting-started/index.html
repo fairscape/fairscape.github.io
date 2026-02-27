@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://fairscape.github.io/getting-started/getting-started/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Deploying on Localhost - FAIRSCAPE</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Deploying on Localhost";
+        var mkdocs_page_input_path = "getting-started/getting-started.md";
+        var mkdocs_page_url = "/getting-started/getting-started/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> FAIRSCAPE
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Deploying on Localhost</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-setting-up-your-local-fairscape-environment">1. Setting Up Your Local FAIRSCAPE Environment</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-installing-the-fairscape-cli">2. Installing the FAIRSCAPE CLI</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-creating-your-first-ro-crate">3. Creating Your First RO-Crate</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#step-1-create-the-ro-crate">Step 1: Create the RO-Crate</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-2-add-the-input-dataset">Step 2: Add the Input Dataset</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-3-add-processing-software">Step 3: Add Processing Software</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-4-add-the-output-dataset">Step 4: Add the Output Dataset</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-5-register-the-computation">Step 5: Register the Computation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-6-complete-the-build">Step 6: Complete the Build</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-uploading-your-ro-crate">4. Uploading Your RO-Crate</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#step-1-zip-the-ro-crate">Step 1: Zip the RO-Crate</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-2-upload-to-fairscape">Step 2: Upload to FAIRSCAPE</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-viewing-your-ro-crate">5. Viewing Your RO-Crate</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Component Overviews</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../components/server/">FAIRSCAPE Server</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../components/CLI/">Command Line Client</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../components/GUI/">Electron GUI Client</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../components/webserver/">Web Client</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">FAIRSCAPE</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Getting Started</li>
+      <li class="breadcrumb-item active">Deploying on Localhost</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="getting-started-with-fairscape">Getting Started with FAIRSCAPE<a class="headerlink" href="#getting-started-with-fairscape" title="Permanent link">&para;</a></h1>
+<p>This guide will walk you through setting up a local FAIRSCAPE environment and creating your first Research Object Crate (RO-Crate). By the end, you'll have:</p>
+<ul>
+<li>A running local FAIRSCAPE instance</li>
+<li>Created and validated an RO-Crate with connected datasets and software</li>
+<li>Uploaded and viewed your RO-Crate through the web interface</li>
+</ul>
+<h2 id="1-setting-up-your-local-fairscape-environment">1. Setting Up Your Local FAIRSCAPE Environment<a class="headerlink" href="#1-setting-up-your-local-fairscape-environment" title="Permanent link">&para;</a></h2>
+<p>First, let's get FAIRSCAPE running locally using Docker Compose. This will set up all necessary services including the metadata server, storage, and web interface.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Pull the latest server code and compose yaml from git</span>
+git<span class="w"> </span>clone<span class="w"> </span>http://github.com/fairscape/fairscape_server
+<span class="nb">cd</span><span class="w"> </span>fairscape_server
+<span class="c1"># Start the FAIRSCAPE services</span>
+docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>--build
+</code></pre></div>
+<p>When the services are running, you'll have access to:</p>
+<ul>
+<li>FAIRSCAPE Server at <code>http://localhost:8080/api/healthz</code></li>
+<li>FAIRSCAPE Web Interface at <code>http://localhost:5173</code></li>
+</ul>
+<p>See the <a href="../installation/">Installation guide</a> for a full breakdown of services, ports, default credentials, and optional environment variables.</p>
+<h2 id="2-installing-the-fairscape-cli">2. Installing the FAIRSCAPE CLI<a class="headerlink" href="#2-installing-the-fairscape-cli" title="Permanent link">&para;</a></h2>
+<p>The FAIRSCAPE Command Line Interface (CLI) allows you to create and manage RO-Crates. Install it using pip:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>fairscape-cli
+</code></pre></div>
+<h2 id="3-creating-your-first-ro-crate">3. Creating Your First RO-Crate<a class="headerlink" href="#3-creating-your-first-ro-crate" title="Permanent link">&para;</a></h2>
+<p>Let's create an RO-Crate for a simple processing pipeline with an input dataset, some software, and an output dataset.</p>
+<h3 id="step-1-create-the-ro-crate">Step 1: Create the RO-Crate<a class="headerlink" href="#step-1-create-the-ro-crate" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>fairscape-cli<span class="w"> </span>rocrate<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span><span class="s2">&quot;My First RO-Crate&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--description<span class="w"> </span><span class="s2">&quot;A test RO-Crate containing example data&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--organization-name<span class="w"> </span><span class="s2">&quot;MyOrg&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project-name<span class="w"> </span><span class="s2">&quot;Test Project&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--keywords<span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;./my-first-rocrate&quot;</span>
+</code></pre></div>
+<h3 id="step-2-add-the-input-dataset">Step 2: Add the Input Dataset<a class="headerlink" href="#step-2-add-the-input-dataset" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add input dataset and store the returned GUID</span>
+<span class="nv">INPUT_GUID</span><span class="o">=</span><span class="k">$(</span>fairscape-cli<span class="w"> </span>rocrate<span class="w"> </span>add<span class="w"> </span>dataset<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span><span class="s2">&quot;Input Data&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--author<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--version<span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--date-published<span class="w"> </span><span class="s2">&quot;2024-12-18&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--description<span class="w"> </span><span class="s2">&quot;Input data for testing&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--keywords<span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data-format<span class="w"> </span><span class="s2">&quot;CSV&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--source-filepath<span class="w"> </span><span class="s2">&quot;./path/to/your/input.csv&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--destination-filepath<span class="w"> </span><span class="s2">&quot;./my-first-rocrate/input.csv&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;./my-first-rocrate&quot;</span><span class="k">)</span>
+</code></pre></div>
+<h3 id="step-3-add-processing-software">Step 3: Add Processing Software<a class="headerlink" href="#step-3-add-processing-software" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add processing software and store the GUID</span>
+<span class="nv">SOFTWARE_GUID</span><span class="o">=</span><span class="k">$(</span>fairscape-cli<span class="w"> </span>rocrate<span class="w"> </span>add<span class="w"> </span>software<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span><span class="s2">&quot;Processing Software&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--author<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--version<span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--description<span class="w"> </span><span class="s2">&quot;Software for processing the data&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--keywords<span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--file-format<span class="w"> </span><span class="s2">&quot;py&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--source-filepath<span class="w"> </span><span class="s2">&quot;./path/to/your/process.py&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--destination-filepath<span class="w"> </span><span class="s2">&quot;./my-first-rocrate/process.py&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--date-modified<span class="w"> </span><span class="s2">&quot;2024-12-18&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;./my-first-rocrate&quot;</span><span class="k">)</span>
+</code></pre></div>
+<h3 id="step-4-add-the-output-dataset">Step 4: Add the Output Dataset<a class="headerlink" href="#step-4-add-the-output-dataset" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add output dataset with reference to input</span>
+<span class="nv">OUTPUT_GUID</span><span class="o">=</span><span class="k">$(</span>fairscape-cli<span class="w"> </span>rocrate<span class="w"> </span>add<span class="w"> </span>dataset<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span><span class="s2">&quot;Output Data&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--author<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--version<span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--date-published<span class="w"> </span><span class="s2">&quot;2024-12-18&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--description<span class="w"> </span><span class="s2">&quot;Output data from processing&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--keywords<span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data-format<span class="w"> </span><span class="s2">&quot;CSV&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--source-filepath<span class="w"> </span><span class="s2">&quot;./path/to/your/output.csv&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--destination-filepath<span class="w"> </span><span class="s2">&quot;./my-first-rocrate/output.csv&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--derived-from<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$INPUT_GUID</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;./my-first-rocrate&quot;</span><span class="k">)</span>
+</code></pre></div>
+<h3 id="step-5-register-the-computation">Step 5: Register the Computation<a class="headerlink" href="#step-5-register-the-computation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Register computation to connect everything together</span>
+fairscape-cli<span class="w"> </span>rocrate<span class="w"> </span>register<span class="w"> </span>computation<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span><span class="s2">&quot;Data Processing&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--run-by<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--command<span class="w"> </span><span class="s2">&quot;python process.py input.csv output.csv&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--date-created<span class="w"> </span><span class="s2">&quot;2024-12-18&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--description<span class="w"> </span><span class="s2">&quot;Process input data to create output data&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--keywords<span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--used-software<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SOFTWARE_GUID</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--used-dataset<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$INPUT_GUID</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--generated<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$OUTPUT_GUID</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;./my-first-rocrate&quot;</span>
+</code></pre></div>
+<h3 id="step-6-complete-the-build">Step 6: Complete the Build<a class="headerlink" href="#step-6-complete-the-build" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Builds html preview, croissant, and fills in inverse properties</span>
+fairscape-cli<span class="w"> </span>build<span class="w"> </span>subcrate<span class="w"> </span><span class="s2">&quot;./my-first-rocrate&quot;</span>
+</code></pre></div>
+<h2 id="4-uploading-your-ro-crate">4. Uploading Your RO-Crate<a class="headerlink" href="#4-uploading-your-ro-crate" title="Permanent link">&para;</a></h2>
+<p>Now that we have created an RO-Crate, let's prepare it for upload and submit it to our local FAIRSCAPE instance:</p>
+<h3 id="step-1-zip-the-ro-crate">Step 1: Zip the RO-Crate<a class="headerlink" href="#step-1-zip-the-ro-crate" title="Permanent link">&para;</a></h3>
+<p>First, compress your RO-Crate folder into a zip file. You can do this using your command line:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># On Linux/Mac:</span>
+zip<span class="w"> </span>-r<span class="w"> </span>my-first-rocrate.zip<span class="w"> </span>my-first-rocrate/
+<span class="c1"># On Windows (PowerShell):</span>
+Compress-Archive<span class="w"> </span>-Path<span class="w"> </span>my-first-rocrate<span class="w"> </span>-DestinationPath<span class="w"> </span>my-first-rocrate.zip
+</code></pre></div>
+<h3 id="step-2-upload-to-fairscape">Step 2: Upload to FAIRSCAPE<a class="headerlink" href="#step-2-upload-to-fairscape" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open your web browser and navigate to <code>http://localhost:5173</code></li>
+<li>Log in using the default credentials:</li>
+<li>Username: <code>test@fairscape.org</code></li>
+<li>Password: <code>password</code></li>
+<li>Click on the "Upload" button in the navigation bar</li>
+<li>Select your zipped RO-Crate file (<code>my-first-rocrate.zip</code>)</li>
+<li>Click "Upload" to submit your RO-Crate</li>
+</ol>
+<h2 id="5-viewing-your-ro-crate">5. Viewing Your RO-Crate<a class="headerlink" href="#5-viewing-your-ro-crate" title="Permanent link">&para;</a></h2>
+<p>After uploading, you can view your RO-Crate's metadata and contents:</p>
+<ol>
+<li>Navigate to the "Dashboard" section in the web interface</li>
+<li>Find and click on "My First RO-Crate" in the list</li>
+<li>Explore the metadata, including:</li>
+<li>Basic RO-Crate information</li>
+<li>Dataset metadata and relationships</li>
+<li>Software details</li>
+<li>Computation provenance</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../.." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../installation/" class="btn btn-neutral float-right" title="Installation">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright &copy; 2024 THE RECTOR AND VISITORS OF THE UNIVERSITY OF VIRGINIA</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../installation/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

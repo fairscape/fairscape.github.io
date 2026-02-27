@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://fairscape.github.io/getting-started/installation/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Installation - FAIRSCAPE</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Installation";
+        var mkdocs_page_input_path = "getting-started/installation.md";
+        var mkdocs_page_url = "/getting-started/installation/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> FAIRSCAPE
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/">Deploying on Localhost</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Installation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#install-using-docker-compose">Install using Docker Compose</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#services-started-by-docker-compose">Services Started by Docker Compose</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#default-test-credentials">Default Test Credentials</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#optional-api-keys-docker-compose-warnings">Optional API Keys (Docker Compose Warnings)</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Component Overviews</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../components/server/">FAIRSCAPE Server</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../components/CLI/">Command Line Client</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../components/GUI/">Electron GUI Client</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../components/webserver/">Web Client</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">FAIRSCAPE</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Getting Started</li>
+      <li class="breadcrumb-item active">Installation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="installation-options">Installation Options<a class="headerlink" href="#installation-options" title="Permanent link">&para;</a></h1>
+<h2 id="install-using-docker-compose">Install using Docker Compose<a class="headerlink" href="#install-using-docker-compose" title="Permanent link">&para;</a></h2>
+<p>The quickest way to run a local FAIRSCAPE instance is with Docker Compose. This starts all required services — the API server, web interface, database, object storage, and job queue — in a single command.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Pull the latest server code and compose yaml from git</span>
+git<span class="w"> </span>clone<span class="w"> </span>http://github.com/fairscape/mds_python
+<span class="nb">cd</span><span class="w"> </span>mds_python
+<span class="c1"># Start the FAIRSCAPE services</span>
+docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>--build
+</code></pre></div>
+<h3 id="services-started-by-docker-compose">Services Started by Docker Compose<a class="headerlink" href="#services-started-by-docker-compose" title="Permanent link">&para;</a></h3>
+<p>The compose file (<code>compose.yaml</code>) starts the following services:</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Description</th>
+<th>Local Port</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fairscape-api</code></td>
+<td>FAIRSCAPE REST API server</td>
+<td><code>8080</code></td>
+</tr>
+<tr>
+<td><code>fairscape-frontend</code></td>
+<td>Web UI (React)</td>
+<td><code>5173</code></td>
+</tr>
+<tr>
+<td><code>mongo</code></td>
+<td>MongoDB metadata store</td>
+<td><code>27017</code> (internal)</td>
+</tr>
+<tr>
+<td><code>mongo-express</code></td>
+<td>MongoDB admin web UI</td>
+<td><code>8081</code></td>
+</tr>
+<tr>
+<td><code>minio</code></td>
+<td>S3-compatible object storage</td>
+<td><code>9000</code> (API), <code>9001</code> (console)</td>
+</tr>
+<tr>
+<td><code>redis</code></td>
+<td>Job queue for async uploads</td>
+<td><code>6379</code> (internal)</td>
+</tr>
+<tr>
+<td><code>fairscape-worker</code></td>
+<td>Background job processor</td>
+<td>— (no external port)</td>
+</tr>
+</tbody>
+</table>
+<p>Once running, the key interfaces are:</p>
+<ul>
+<li><strong>FAIRSCAPE API</strong>: <code>http://localhost:8080/api</code> — REST API; health check at <code>/api/healthz</code></li>
+<li><strong>FAIRSCAPE API Docs</strong>: <code>http://localhost:8080/api/docs</code> — Interactive Swagger UI</li>
+<li><strong>Web Interface</strong>: <code>http://localhost:5173</code> — Browser-based GUI</li>
+<li><strong>MinIO Console</strong>: <code>http://localhost:9001</code> — Object storage admin UI</li>
+<li><strong>Mongo Express</strong>: <code>http://localhost:8081</code> — Database admin UI (login: <code>meadmin</code> / <code>meadmin</code>)</li>
+</ul>
+<h3 id="default-test-credentials">Default Test Credentials<a class="headerlink" href="#default-test-credentials" title="Permanent link">&para;</a></h3>
+<p>The compose setup uses these default test credentials (defined in <code>deploy/docker_compose.env</code> and <code>compose.yaml</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Username</th>
+<th>Password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Web UI / API</td>
+<td><code>test@fairscape.org</code></td>
+<td><code>password</code></td>
+</tr>
+<tr>
+<td>MongoDB</td>
+<td><code>mongotestaccess</code></td>
+<td><code>mongotestsecret</code></td>
+</tr>
+<tr>
+<td>MinIO</td>
+<td><code>miniotestadmin</code></td>
+<td><code>miniotestsecret</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Test credentials only</p>
+<p>Do not use these defaults in any internet-accessible deployment. Update all credentials in <code>deploy/docker_compose.env</code> before deploying to a shared or production environment.</p>
+</div>
+<h3 id="optional-api-keys-docker-compose-warnings">Optional API Keys (Docker Compose Warnings)<a class="headerlink" href="#optional-api-keys-docker-compose-warnings" title="Permanent link">&para;</a></h3>
+<p>When starting, Docker Compose may print warnings such as:</p>
+<div class="highlight"><pre><span></span><code>WARN: The &quot;GEMINI_API_KEY&quot; variable is not set. Defaulting to a blank string.
+WARN: The &quot;GITHUB_TOKEN&quot; variable is not set. Defaulting to a blank string.
+</code></pre></div>
+<p>These warnings are <strong>informational</strong> — the server starts and functions normally without them. They indicate optional integrations that are not configured:</p>
+<ul>
+<li><strong><code>GEMINI_API_KEY</code></strong> — Required for LLM-assisted metadata features (server-side AI enrichment and the <code>fairscape-cli track</code> command).</li>
+<li><strong><code>GITHUB_TOKEN</code></strong> — Required for the D4D (Data Datasheet for Datasets) GitHub integration (<code>/api/github/*</code> endpoints). Without it those endpoints return HTTP 503.</li>
+</ul>
+<p>To enable these features, add the keys to <code>deploy/docker_compose.env</code> and restart. See the <a href="../configuration/#optional-features">Configuration page</a> for full details.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../getting-started/" class="btn btn-neutral float-left" title="Deploying on Localhost"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../configuration/" class="btn btn-neutral float-right" title="Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright &copy; 2024 THE RECTOR AND VISITORS OF THE UNIVERSITY OF VIRGINIA</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../getting-started/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../configuration/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

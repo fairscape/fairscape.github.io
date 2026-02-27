@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://fairscape.github.io/getting-started/configuration/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Configuration - FAIRSCAPE</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Configuration";
+        var mkdocs_page_input_path = "getting-started/configuration.md";
+        var mkdocs_page_url = "/getting-started/configuration/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> FAIRSCAPE
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/">Deploying on Localhost</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Configuration</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#required-environment-variables">Required Environment Variables</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#optional-features">Optional Features</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#llm-assistance-gemini_api_key">LLM Assistance (GEMINI_API_KEY)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#github-d4d-integration-github_token-github_repo_name">GitHub / D4D Integration (GITHUB_TOKEN, GITHUB_REPO_NAME)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#observability-fairscape_logfire_token-fairscape_logfire_env">Observability (FAIRSCAPE_LOGFIRE_TOKEN, FAIRSCAPE_LOGFIRE_ENV)</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Component Overviews</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../components/server/">FAIRSCAPE Server</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../components/CLI/">Command Line Client</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../components/GUI/">Electron GUI Client</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../components/webserver/">Web Client</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">FAIRSCAPE</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Getting Started</li>
+      <li class="breadcrumb-item active">Configuration</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="configuration-documentation">Configuration Documentation<a class="headerlink" href="#configuration-documentation" title="Permanent link">&para;</a></h1>
+<p>This document provides a reference for all environment variables used by FAIRSCAPE, along with their default values. Before running fairscape, ensure these variables are set in your <code>.env</code> file (or <code>deploy/docker_compose.env</code> for Docker Compose). You can specify the path to a custom <code>.env</code> file using the <code>--config</code> option.</p>
+<div class="admonition note">
+<p class="admonition-title">About Docker Compose startup warnings</p>
+<p>When running <code>docker compose up</code>, you may see warnings like:
+<div class="highlight"><pre><span></span><code>WARN: The &quot;GEMINI_API_KEY&quot; variable is not set. Defaulting to a blank string.
+WARN: The &quot;GITHUB_TOKEN&quot; variable is not set. Defaulting to a blank string.
+</code></pre></div>
+These are informational — they indicate optional features that are not currently configured. The server starts and operates normally without them. See the <a href="#optional-features">Optional Features</a> section below for details on enabling these integrations.</p>
+</div>
+<h2 id="required-environment-variables">Required Environment Variables<a class="headerlink" href="#required-environment-variables" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>FAIRSCAPE_HOST</strong>: The host address for FAIRSCAPE. Default is "0.0.0.0".</p>
+</li>
+<li>
+<p><strong>FAIRSCAPE_PORT</strong>: The port on which FAIRSCAPE listens. Default is "8080".</p>
+</li>
+<li>
+<p><strong>FAIRSCAPE_MONGO_HOST</strong>: The hostname or IP address of the MongoDB server. Default is "localhost".</p>
+</li>
+<li>
+<p><strong>FAIRSCAPE_MONGO_PORT</strong>: The port on which the MongoDB server is running. Default is "27017".</p>
+</li>
+<li>
+<p><strong>FAIRSCAPE_MONGO_ACCESS_KEY</strong>: The access key used for MongoDB authentication. Default is "mongotestaccess".</p>
+</li>
+<li>
+<p><strong>FAIRSCAPE_MONGO_SECRET_KEY</strong>: The secret key used for MongoDB authentication. Default is "mongotestsecret".</p>
+</li>
+<li>
+<p><strong>FAIRSCAPE_MONGO_DATABASE</strong>: The name of the MongoDB database used by FAIRSCAPE. Default is "**FAIRSCAPE".</p>
+</li>
+<li>
+<p><strong>FAIRSCAPE_MONGO_IDENTIFIER_COLLECTION</strong>: The name of the MongoDB collection used for storing identifiers. Default is "mds".</p>
+</li>
+<li>
+<p><strong>FAIRSCAPE_MONGO_USER_COLLECTION</strong>: The name of the MongoDB collection used for storing user information. Default is "users".</p>
+</li>
+<li>
+<p><strong>FAIRSCAPE_MONGO_ROCRATE_COLLECTION</strong>: The name of the MongoDB collection used for storing RO-Crate metadata. Default is "rocrate".</p>
+</li>
+<li>
+<p><strong>FAIRSCAPE_MINIO_URI</strong>: The URI of the MinIO server. Default is "localhost".</p>
+</li>
+<li>
+<p><strong>FAIRSCAPE_MINIO_PORT</strong>: The port on which the MinIO server is running. Default is "9000".</p>
+</li>
+<li>
+<p><strong>FAIRSCAPE_MINIO_ACCESS_KEY</strong>: The access key used for MinIO authentication. Default is "miniotestadmin".</p>
+</li>
+<li>
+<p><strong>FAIRSCAPE_MINIO_SECRET_KEY</strong>: The secret key used for MinIO authentication. Default is "miniotestsecret".</p>
+</li>
+<li>
+<p><strong>FAIRSCAPE_MINIO_DEFAULT_BUCKET</strong>: The default bucket name used in MinIO. Default is "default".</p>
+</li>
+<li>
+<p><strong>FAIRSCAPE_MINIO_ROCRATE_BUCKET</strong>: The bucket name used for storing RO-Crate zip files in MinIO. Default is "rocrate".</p>
+</li>
+<li>
+<p><strong>FAIRSCAPE_MINIO_SECURE</strong>: Specifies whether to use secure (HTTPS) connection for MinIO. Default is "False".</p>
+</li>
+<li>
+<p><strong>FAIRSCAPE_ARK_NAAN</strong>: The Name Assigning Authority Number (NAAN) used for ARK identifiers. Default is "99999" which is for testing. Use <code>59853</code> for production.</p>
+</li>
+</ul>
+<h2 id="optional-features">Optional Features<a class="headerlink" href="#optional-features" title="Permanent link">&para;</a></h2>
+<p>These variables are not required for FAIRSCAPE to start. When they are absent, the corresponding features are disabled gracefully. Docker Compose will warn about unset optional variables at startup — this is normal and expected.</p>
+<h3 id="llm-assistance-gemini_api_key">LLM Assistance (<code>GEMINI_API_KEY</code>)<a class="headerlink" href="#llm-assistance-gemini_api_key" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong><code>GEMINI_API_KEY</code></strong>: A Google Gemini API key. Enables AI-assisted metadata generation in two places:</p>
+<ol>
+<li><strong>FAIRSCAPE Server</strong> — powers server-side LLM assist endpoints (e.g., AI-Ready scoring, automated metadata enrichment for uploaded RO-Crates).</li>
+<li><strong>FAIRSCAPE CLI</strong> — enables the <code>fairscape-cli track</code> command and Jupyter magic to automatically generate descriptions for datasets, software, and computations using Gemini.</li>
+</ol>
+<p>Without this key the server runs normally but LLM-assisted features return errors or are skipped. The CLI prints an info message and continues without LLM descriptions.</p>
+<p>Obtain a key at <a href="https://aistudio.google.com/apikey">Google AI Studio</a> and set it in your environment or <code>docker_compose.env</code>:
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">GEMINI_API_KEY</span><span class="o">=</span><span class="s2">&quot;your-key-here&quot;</span>
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="github-d4d-integration-github_token-github_repo_name">GitHub / D4D Integration (<code>GITHUB_TOKEN</code>, <code>GITHUB_REPO_NAME</code>)<a class="headerlink" href="#github-d4d-integration-github_token-github_repo_name" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong><code>GITHUB_TOKEN</code></strong>: A GitHub personal access token (PAT). Enables the D4D (Data Datasheet for Datasets) interactive creation workflow. This integration connects FAIRSCAPE to GitHub Issues for collaborative, agent-assisted data sheet authoring via the <code>/api/github/*</code> endpoints.</p>
+<p>Without this token, all <code>/api/github/*</code> endpoints return <code>HTTP 503 Service Unavailable</code> with the message: <em>"GitHub integration is not configured. Please set GITHUB_TOKEN environment variable."</em></p>
+<p>Create a PAT at <a href="https://github.com/settings/tokens">GitHub Settings → Developer Settings → Personal Access Tokens</a> with <code>repo</code> scope, then set it:
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">GITHUB_TOKEN</span><span class="o">=</span><span class="s2">&quot;ghp_your-token-here&quot;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong><code>GITHUB_REPO_NAME</code></strong>: The GitHub repository used by the D4D agent for issue management. Default is <code>bridge2ai/data-sheets-schema</code>. Override this if you are running the D4D workflow against a different repository.</p>
+</li>
+</ul>
+<h3 id="observability-fairscape_logfire_token-fairscape_logfire_env">Observability (<code>FAIRSCAPE_LOGFIRE_TOKEN</code>, <code>FAIRSCAPE_LOGFIRE_ENV</code>)<a class="headerlink" href="#observability-fairscape_logfire_token-fairscape_logfire_env" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><code>FAIRSCAPE_LOGFIRE_TOKEN</code></strong>: A <a href="https://logfire.pydantic.dev/">Logfire</a> token for structured observability and tracing. Optional — omit to disable Logfire integration.</li>
+<li><strong><code>FAIRSCAPE_LOGFIRE_ENV</code></strong>: The Logfire environment label (e.g., <code>"production"</code>, <code>"staging"</code>). Only used when <code>FAIRSCAPE_LOGFIRE_TOKEN</code> is set.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../installation/" class="btn btn-neutral float-left" title="Installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../components/server/" class="btn btn-neutral float-right" title="FAIRSCAPE Server">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright &copy; 2024 THE RECTOR AND VISITORS OF THE UNIVERSITY OF VIRGINIA</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../installation/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../components/server/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

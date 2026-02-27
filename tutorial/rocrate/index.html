@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://fairscape.github.io/tutorial/rocrate/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Rocrate - FAIRSCAPE</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Rocrate";
+        var mkdocs_page_input_path = "tutorial/rocrate.md";
+        var mkdocs_page_url = "/tutorial/rocrate/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> FAIRSCAPE
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/getting-started/">Deploying on Localhost</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/configuration/">Configuration</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Component Overviews</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../components/server/">FAIRSCAPE Server</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../components/CLI/">Command Line Client</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../components/GUI/">Electron GUI Client</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../components/webserver/">Web Client</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">FAIRSCAPE</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Rocrate</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="upload-a-rocrate">Upload a rocrate<a class="headerlink" href="#upload-a-rocrate" title="Permanent link">&para;</a></h2>
+<p>=== "python"</p>
+<pre><code>``` python
+import json
+import requests
+from requests_toolbelt.multipart.encoder import MultipartEncoder
+
+root_url = "https://fairscape.net/api/"
+crate_path = '/Path/to/zip/file.zip'
+token = "your_bearer_token_here"
+
+mp_encoder = MultipartEncoder(
+    fields={
+        'file': ('file.zip', open(crate_path, 'rb'), 'application/zip')
+    }
+)
+
+# upload a rocrate to minio object store
+rocrate_transfer = requests.post(
+    url=request_url + 'rocrate/upload',
+    data=mp_encoder,
+    # The MultipartEncoder provides the content-type header with the boundary:
+    headers={'Authorization': f'Bearer {token}'}
+)
+
+rocrate_transfer.json()
+```
+</code></pre>
+<p>=== "curl"</p>
+<pre><code>``` shell
+curl -X POST -F "file=@/Path/to/zip/file.zip" https://fairscape.net/api/rocrate/upload \ -H "Authorization: Bearer your_bearer_token_here"
+
+```
+</code></pre>
+<h2 id="list-all-rocrates">List all rocrates<a class="headerlink" href="#list-all-rocrates" title="Permanent link">&para;</a></h2>
+<p>=== "python"</p>
+<pre><code>``` python
+import json
+import requests
+
+root_url = "https://fairscape.net/api/"
+
+# fetch rocrate
+get_rocrate = requests.get(root_url + "rocrate", headers={'Authorization': f'Bearer {token}'})
+get_rocrate.json()
+```
+</code></pre>
+<p>=== "curl"</p>
+<pre><code>``` shell
+curl -X 'GET' 'https://fairscape.net/api/rocrate' \
+     -H 'accept: application/json'
+```
+</code></pre>
+<h2 id="fetch-a-rocrate-metadata-record">Fetch a rocrate metadata record<a class="headerlink" href="#fetch-a-rocrate-metadata-record" title="Permanent link">&para;</a></h2>
+<p>=== "python"</p>
+<pre><code>``` python
+import json
+import requests
+
+root_url = "https://fairscape.net/api/"
+
+# fetch rocrate
+get_rocrate = requests.get(root_url + f"rocrate/{rocrate_transfer['@id']}", headers={'Authorization': f'Bearer {token}'})
+get_rocrate.json()
+```
+</code></pre>
+<p>=== "curl"</p>
+<pre><code>``` shell
+curl -X 'GET' 'https://fairscape.net/api/rocrate/ark:99999/test-rocrate' \
+     -H 'accept: application/json'
+```
+</code></pre>
+<h2 id="download-an-archived-rocrate">Download an archived rocrate<a class="headerlink" href="#download-an-archived-rocrate" title="Permanent link">&para;</a></h2>
+<p>=== "python"</p>
+<pre><code>``` python
+import json
+import requests
+
+root_url = "https://fairscape.net/api/"
+
+response = requests.get(
+    url=request_url + 'rocrate/archived/download/' + rocrate_transfer['@id'],
+    headers={'Authorization': f'Bearer {token}'}
+)
+
+with open('/Path/to/output.zip', 'wb') as file:
+        file.write(response.content)
+```
+</code></pre>
+<p>=== "curl"</p>
+<pre><code>``` shell
+curl -o /Path/to/output.zip https://fairscape.net/api/rocrate/archived/download/your_rocrate_id_here
+
+```
+</code></pre>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright &copy; 2024 THE RECTOR AND VISITORS OF THE UNIVERSITY OF VIRGINIA</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

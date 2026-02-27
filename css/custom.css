@@ -1,0 +1,296 @@
+/* Base layout styles */
+.wy-nav-content {
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+.rst-content {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Documentation page container */
+.documentation-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Component card base styles */
+.component-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  display: block;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.component-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+/* Component card content styles */
+.component-card h2 {
+  margin-top: 0;
+  color: #2d3748;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.component-card ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.component-card li {
+  margin-bottom: 0.5rem;
+}
+
+/* Feature grid layout */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Feature card specific styles */
+.feature-card {
+  height: 100%;
+}
+
+.feature-card h3 {
+  color: #2d3748;
+  margin-top: 0;
+  font-size: 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Introduction card styles */
+.intro-card {
+  margin-bottom: 2rem;
+}
+
+/* Links section styles */
+.links-section {
+  text-align: center;
+}
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.link-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #f8f9fa;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  color: #2d3748 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.link-button:hover {
+  background-color: #e2e8f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Code block styling */
+.highlight {
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+/* Use case card specific styles */
+.use-case-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.use-case-card li {
+  margin-bottom: 0.75rem;
+}
+
+/* Section divider styles */
+.section-divider {
+  margin: 1.5rem 0;
+  border-bottom: 2px solid #e2e8f0;
+  width: 100%;
+}
+
+/* Section header styles */
+.section-header {
+  margin: 0 0 0.5rem 0;
+  padding: 0;
+  color: #1a202c;
+}
+
+.section-header h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+/* Getting started card specific styles */
+.component-cards .getting-started-card {
+  background: linear-gradient(to right bottom, #f7fafc, #edf2f7);
+  border-left: 4px solid #4299e1;
+  cursor: pointer;
+  text-decoration: none !important;
+  color: inherit !important;
+  display: block;
+  position: relative;
+  transform: translateZ(0);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.component-cards .getting-started-card h2 {
+  color: #2b6cb0 !important;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.component-cards .getting-started-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Components container styles */
+.components-container {
+  margin-top: 0.5rem;
+}
+
+/* Updated spacing for component cards */
+.component-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transform-origin: 0 0;
+  transform: scale(1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-links {
+    grid-template-columns: 1fr;
+  }
+
+  .documentation-page {
+    padding: 1rem;
+  }
+
+  .component-card {
+    padding: 1rem;
+  }
+
+  .nested-content {
+    padding: 0.75rem 0;
+  }
+
+  .primary-list {
+    padding-left: 1.25rem;
+  }
+
+  .secondary-list {
+    padding-left: 1.25rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .component-card {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+
+  .link-button {
+    border: 1px solid #000;
+    background: none;
+  }
+}
+.installation-card {
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.installation-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.step-number {
+  background-color: #2d3748;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 500;
+}
+
+.step p {
+  margin: 0;
+  padding-top: 4px;
+}
+
+.step a {
+  color: #4299e1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.step a:hover {
+  color: #2b6cb0;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments for installation section */
+@media (max-width: 768px) {
+  .installation-card {
+    padding: 1.5rem;
+  }
+
+  .step {
+    gap: 0.75rem;
+  }
+
+  .step-number {
+    width: 24px;
+    height: 24px;
+    font-size: 0.875rem;
+  }
+}

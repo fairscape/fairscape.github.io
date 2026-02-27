@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="A Framework for FAIR and Reproducible Biomedical Analytics" /><link rel="canonical" href="https://fairscape.github.io/" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>FAIRSCAPE</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Home";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = "/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> FAIRSCAPE
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#key-components">Key Components</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#use-cases">Use Cases</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#funding">Funding</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="getting-started/getting-started/">Deploying on Localhost</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="getting-started/installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="getting-started/configuration/">Configuration</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Component Overviews</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="components/server/">FAIRSCAPE Server</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="components/CLI/">Command Line Client</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="components/GUI/">Electron GUI Client</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="components/webserver/">Web Client</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">FAIRSCAPE</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Home</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="welcome-to-fairscape">Welcome to FAIRSCAPE<a class="headerlink" href="#welcome-to-fairscape" title="Permanent link">&para;</a></h1>
+<p>FAIRSCAPE is a computational framework in Python that implements the Bridge2AI AI-readiness principles on biomedical datasets and provides ethical FAIRness <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> with deep semantic provenance graphs on components such as datasets, software, computations, runtime parameters, environment and personnel involved in a computational analysis. FAIRSCAPE generates detailed human- and machine-readable biomedical Datasheets including Croissant and Croissant RAI metadata for direct interface to Kaggle and other AI/ML Ops packages, including all AI-readiness criteria, and provides a rich data commons environment for biomedical AI researchers. </p>
+<p>FAIRSCAPE provides a <a href="/components/CLI">command line client tool</a> and a <a href="/components/GUI">graphical user interface (GUI)</a> to package and validate the components with metadata, a schema generation and validation component for the datasets, a REST API to perform various operations on the <a href="/components/server">server-side</a>, and a <a href="/components/webserver">front-end web server</a> to visualize the posted metadata. Together, these tools enable users to interact with FAIRSCAPE in the way that best suits their workflow.</p>
+<div class="component-cards">
+<a href="/getting-started/getting-started" class="component-card getting-started-card">
+<h2>Ready to Get Started?</h2>
+<p>Follow our Getting Started Guide to quickly set up a local FAIRSCAPE environment and create your first Research Object Crate (RO-Crate). You'll learn how to:</p>
+<ul>
+ <li>Deploy FAIRSCAPE locally using Docker Compose</li>
+ <li>Create and package your first RO-Crate</li>
+ <li>Upload and view your research objects through our web interface</li>
+</ul>
+</a>
+
+</div>
+
+<div class="section-divider"></div>
+
+<h2 id="key-components">Key Components<a class="headerlink" href="#key-components" title="Permanent link">&para;</a></h2>
+<div class="components-container">
+<a href="/components/server" class="component-card">
+<h2>FAIRSCAPE Server</h2>
+The FAIRSCAPE server is responsible for metadata management, implemented in Python using FastAPI. Handles package storage, metadata extraction, provenance tracking, and provides a REST API interface.
+</a>
+
+<a href="/components/CLI" class="component-card">
+<h2>Command Line Client (CLI)</h2>
+A pip-installable validation and packaging utility for creating and managing RO-Crates with descriptive metadata using schema.org vocabulary. Supports both direct packaging and URI referencing of data.
+</a>
+
+<a href="/components/GUI" class="component-card">
+<h2>Graphical User Interface (GUI)</h2>
+A user-friendly electron and React-based interface that provides visual forms for RO-Crate creation, step-by-step workflow guidance, package validation, and direct upload capabilities.
+</a>
+
+<a href="/components/webserver" class="component-card">
+<h2>Web Client</h2>
+A React-based web interface for browsing, managing, and sharing RO-Crates uploaded to FAIRSCAPE. Features package visualization, metadata management, and provenance graph display.
+</a>
+</div>
+</div>
+<div class="section-divider"></div>
+
+<h2 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
+<p>FAIRSCAPE was initially created to support fully-provenanced complex computations in predictive analytics for clinical research <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. The current version supports the NIH Bridge2AI program’s Functional Genomics Grand Challenge <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>, as well as ongoing clinical work in predictive analytics. We believe it is a useful tool for developing pre-model explainability in AI applications <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>, and plan to extend it further in this direction. It creates and provides rich, human-readable Datasheets in html, extending the basic conceptions of Gebru et al. 2021 <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> to cover additional metadata required for biomedical AI-readiness.</p>
+<h2 id="funding">Funding<a class="headerlink" href="#funding" title="Permanent link">&para;</a></h2>
+<p>FAIRSCAPE was developed with funding from the U.S. National Institutes of Health awards OT2OD032742, OT2OD032701, 5R01HD072071-10; and from the University of Virginia’s Frederick Thomas Fund.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific data, 3, 160018. doi:<a href="https://doi.org/10.1038/sdata.2016.18">10.1038/sdata.2016.18</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Niestroy JC, Moorman JR, Levinson MA, et al. Discovery of signatures of fatal neonatal illness in vital signs using highly comparative time-series analysis. npj Digit Med. 2022;5(1):6. doi:<a href="https://doi.org/10.1038/s41746-021-00551-z">10.1038/s41746-021-00551-z</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Clark T, Schaffer LV, Obernier K, et al. Cell Maps for Artificial Intelligence: AI-Ready Maps of Human Cell Architecture from Disease-Relevant Cell Lines. doi: <a href="https://doi.org/10.1101/2024.05.21.589311">10.1101/2024.05.21.589311</a>. Published online May 6, 2024.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Clark T, Caufield H, Parker JA, et al. AI-readiness for Biomedical Data: Bridge2AI Recommendations. Published online October 25, 2024. doi:<a href="https://doi.org/10.1101/2024.10.23.619844">10.1101/2024.10.23.619844</a>.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Al Manir S, Levinson MA, Niestroy J, Churas C, Parker JA, Clark T.  FAIRSCAPE: An Evolving AI-readiness Framework for Biomedical Research. doi: doi:<a href="https://doi.org/10.1101/2024.12.23.629818">10.1101/2024.10.23.619844</a>. Published online May 6, 2025.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="getting-started/getting-started/" class="btn btn-neutral float-right" title="Deploying on Localhost">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright &copy; 2024 THE RECTOR AND VISITORS OF THE UNIVERSITY OF VIRGINIA</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+      <span><a href="getting-started/getting-started/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2026-02-27 20:51:53.627509+00:00
+-->
