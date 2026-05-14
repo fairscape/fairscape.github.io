@@ -1,0 +1,145 @@
+---
+title: User
+description: Create, fetch, and update a user via the FAIRSCAPE API.
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Create a user
+
+<Tabs>
+<TabItem label="python">
+
+```python
+import json
+import requests
+
+root_url = "https://fairscape.pods.uvarc.io/"
+
+user_data = {
+    "@id": "ark:99999/test-user",
+    "name": "John Doe",
+    "type": "Person",
+    "email": "testuser@example.org",
+    "password": "test",
+    "datasets": [],
+    "software": [],
+    "computations": [],
+    "evidencegraphs": []
+}
+
+# create user
+create_user = requests.post(root_url + "user", data=json.dumps(user_data))
+create_user.json()
+```
+
+</TabItem>
+<TabItem label="curl">
+
+```shell
+curl -X 'POST' \
+  'https://fairscape.pods.uvarc.io/user' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "evi": "https://w3id.org/EVI#"
+  },
+  "@type": "Person",
+  "email": "string",
+  "password": "string",
+  "datasets": [],
+  "rocrates": [],
+  "software": [],
+  "computations": [],
+  "evidencegraphs": [],
+  "additionalProp1": {}
+}'
+```
+
+</TabItem>
+</Tabs>
+
+## Fetch a user
+
+<Tabs>
+<TabItem label="python">
+
+```python
+import json
+import requests
+
+root_url = "https://fairscape.pods.uvarc.io/"
+
+# fetch user
+get_user = requests.get(root_url + f"user/{user_data['@id']}")
+get_user.json()
+```
+
+</TabItem>
+<TabItem label="curl">
+
+```shell
+curl -X 'GET' 'https://fairscape.pods.uvarc.io/user/ark:99999/test-user' \
+     -H 'accept: application/json'
+```
+
+</TabItem>
+</Tabs>
+
+## Update a user
+
+<Tabs>
+<TabItem label="python">
+
+```python
+import json
+import requests
+
+root_url = "https://fairscape.pods.uvarc.io/"
+
+updated_user_data = {
+    "@id": "ark:99999/test-user",
+    "name": "Updated User", # with a new name
+    "type": "Person",
+    "email": "testuser@example.org",
+    "password": "test",
+    "datasets": [],
+    "software": [],
+    "computations": [],
+    "evidencegraphs": []
+}
+
+# update user
+update_user = requests.put(root_url + "user", data=json.dumps(updated_user_data))
+update_user.json()
+```
+
+</TabItem>
+<TabItem label="curl">
+
+```shell
+curl -X 'PUT' \
+  'https://fairscape.pods.uvarc.io/user' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "evi": "https://w3id.org/EVI#"
+  },
+  "@type": "Person",
+  "email": "string",
+  "password": "string",
+  "datasets": [],
+  "rocrates": [],
+  "software": [],
+  "computations": [],
+  "evidencegraphs": [],
+  "additionalProp1": {}
+}'
+```
+
+</TabItem>
+</Tabs>

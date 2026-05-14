@@ -1,0 +1,32 @@
+---
+title: FAIRSCAPE Server
+description: The core backend service of FAIRSCAPE — metadata management, digital object handling, and REST API access.
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+The FAIRSCAPE Server is the core backend service of FAIRSCAPE, responsible for metadata management and digital object handling. As the foundation of the FAIRSCAPE ecosystem, it provides robust data management capabilities and REST API access for seamless integration.
+
+## Capabilities
+
+<CardGrid>
+  <Card title="Package Management" icon="document">
+    Comprehensive handling of RO-Crate packages including receiving, cataloging, indexing, and secure storage of uploaded content. Built-in validation ensures data integrity throughout the process.
+  </Card>
+  <Card title="Metadata Processing" icon="magnifier">
+    Advanced metadata extraction and registration system that processes components and their associated metadata. Enables rich semantic descriptions and efficient data discovery.
+  </Card>
+  <Card title="Provenance Tracking" icon="puzzle">
+    Sophisticated provenance graph handling with capabilities. Maintains complete lineage of data transformations and relationships.
+  </Card>
+</CardGrid>
+
+## Quick Links
+
+<CardGrid>
+  <LinkCard title="Installation Guide" href="/getting-started/installation/" />
+  <LinkCard title="Server API Docs" href="https://fairscape.github.io/fairscape_server/" />
+  <LinkCard title="Interactive API (Swagger)" href="https://fairscape.net/api/docs" />
+  <LinkCard title="GitHub Repository" href="https://github.com/fairscape/mds_python" />
+  <LinkCard title="Server Configuration" href="/getting-started/configuration/" />
+</CardGrid>

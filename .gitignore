@@ -1,4 +1,6 @@
-site/
+site/dist/
+site/node_modules/
+site/.astro/
 .venv-mkdocs/
 .DS_Store
 __pycache__/
