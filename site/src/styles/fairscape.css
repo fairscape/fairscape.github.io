@@ -64,7 +64,7 @@
   }
 }
 
-/* Home page pipeline: Create → RO-Crate → View & assess → Publish */
+/* Home page pipeline: Create → View & assess → Publish */
 .fs-flow {
   display: flex;
   flex-wrap: wrap;
