@@ -17,49 +17,30 @@ export default defineConfig({
       },
       sidebar: [
         { label: 'Home', link: '/' },
+        { label: 'Quick start', link: '/getting-started/quick-start/' },
         {
-          label: 'Getting Started',
-          collapsed: true,
+          label: 'Create',
           items: [
-            { label: 'Deploying on Localhost', link: '/getting-started/getting-started/' },
-            { label: 'Installation', link: '/getting-started/installation/' },
-            { label: 'Configuration', link: '/getting-started/configuration/' },
-            { label: 'Web Server Install', link: '/getting-started/webserver-install/' },
+            { label: 'fairscape-models', link: '/tools/models/' },
+            { label: 'fairscape-conversion', link: '/tools/conversion/' },
           ],
         },
         {
-          label: 'Component Overviews',
-          collapsed: true,
+          label: 'View & assess',
           items: [
-            { label: 'FAIRSCAPE Server', link: '/components/server/' },
-            { label: 'Command Line Client', link: '/components/cli/' },
-            { label: 'Electron GUI Client', link: '/components/gui/' },
-            { label: 'Web Client', link: '/components/webserver/' },
+            { label: 'fairscape-artifacts', link: '/tools/artifacts/' },
+            { label: 'AI-Readiness grader', link: '/tools/grader/' },
           ],
         },
         {
-          label: 'Tutorials',
-          collapsed: true,
+          label: 'Publish',
           items: [
-            { label: 'Login', link: '/tutorial/login/' },
-            { label: 'User', link: '/tutorial/user/' },
-            { label: 'Software', link: '/tutorial/software/' },
-            { label: 'Dataset', link: '/tutorial/dataset/' },
-            { label: 'RO-Crate', link: '/tutorial/rocrate/' },
-            { label: 'Publish to Dataverse', link: '/tutorial/publish/' },
-          ],
-        },
-        {
-          label: 'API',
-          collapsed: true,
-          items: [
-            { label: 'Overview', link: '/api/' },
-            { label: 'REST Reference', link: '/api/resultful/' },
+            { label: 'fairscape-publish', link: '/tools/publish/' },
+            { label: 'fairscape-lite', link: '/tools/lite/' },
           ],
         },
         {
           label: 'Resources',
-          collapsed: true,
           items: [
             { label: 'RO-Crate Profile', link: 'https://fairscape.github.io/profile/' },
             { label: 'FAIRSCAPE on GitHub', link: 'https://github.com/fairscape' },

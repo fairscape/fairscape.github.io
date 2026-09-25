@@ -63,3 +63,23 @@
     width: 13rem;
   }
 }
+
+/* Home page pipeline: Create → RO-Crate → View & assess → Publish */
+.fs-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+.fs-flow span:not(.fs-arrow) {
+  border: 1px solid var(--sl-color-accent);
+  border-radius: 999px;
+  padding: 0.25rem 0.9rem;
+  font-weight: 600;
+  color: var(--sl-color-accent-high);
+  background: var(--sl-color-accent-low);
+}
+.fs-flow .fs-arrow {
+  color: var(--sl-color-gray-3);
+}
