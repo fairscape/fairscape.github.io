@@ -3,17 +3,35 @@ title: FAIRSCAPE
 description: A Framework for FAIR and Reproducible Biomedical Analytics.
 ---
 
-import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import { LinkCard, CardGrid, LinkButton } from '@astrojs/starlight/components';
+import Pipeline from '../../components/Pipeline.astro';
+import Embed from '../../components/Embed.astro';
 
-FAIRSCAPE packages research data, software and computations as [RO-Crates](https://www.researchobject.org/ro-crate/) with deep provenance: what was used, what produced it, and who ran it. It implements the Bridge2AI AI-readiness principles and ethical FAIRness[^1], and produces human- and machine-readable datasheets, including Croissant and Croissant RAI metadata.
+<div class="fs-lead">
 
-FAIRSCAPE is a set of small Python packages. Each one does one step:
+FAIRSCAPE packages research data, software and computations as [RO-Crates](https://www.researchobject.org/ro-crate/) with deep provenance: what was used, what produced it, and who ran it. It renders them as datasheets and evidence graphs, grades them for AI-readiness, and publishes them. It implements the Bridge2AI AI-readiness principles and ethical FAIRness[^1], and produces human- and machine-readable datasheets, including Croissant and Croissant RAI metadata.
 
-<div class="fs-flow">
-  <span>Create</span><span class="fs-arrow">→</span><span>View &amp; assess</span><span class="fs-arrow">→</span><span>Publish</span>
 </div>
 
-<LinkCard title="Quick start" href="/getting-started/quick-start/" description="Install the packages, then go from a datasheet to a published crate in five commands." />
+<div class="fs-actions">
+  <LinkButton href="/getting-started/quick-start/" icon="right-arrow">Quick start</LinkButton>
+  <LinkButton href="/examples/snakemake-variant-calling/ro-crate-datasheet.html" variant="minimal" icon="external" target="_blank" rel="noopener">See an example crate</LinkButton>
+</div>
+
+FAIRSCAPE is a set of small Python packages. Each one does one step, and you can stop after any of them:
+
+<Pipeline />
+
+## What a crate looks like
+
+Every crate below was made from a real workflow run. This one is the Snakemake variant-calling tutorial, run for real, then converted, rendered and graded with the commands in the [quick start](/getting-started/quick-start/). Drag the graph, click a node.
+
+<Embed
+  src="/examples/snakemake-variant-calling/ro-crate-evidence-graph.html"
+  title="Evidence graph: variant calling on three sequenced samples"
+  height="40rem"
+  caption="13 computations, 22 datasets and 8 pieces of software, linked by what used and produced what. Built by fairscape-artifacts from the crate the Snakemake reporter wrote."
+/>
 
 ## 1. Create an RO-Crate
 

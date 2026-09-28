@@ -12,8 +12,9 @@ export default defineConfig({
         github: 'https://github.com/fairscape',
       },
       customCss: ['./src/styles/fairscape.css'],
+      tableOfContents: false,
       components: {
-        TableOfContents: './src/components/TableOfContents.astro',
+        SiteTitle: './src/components/SiteTitle.astro',
       },
       sidebar: [
         { label: 'Home', link: '/' },

@@ -3,6 +3,9 @@ title: fairscape-conversion
 description: "Turn metadata you already have into a FAIRSCAPE RO-Crate."
 ---
 
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import Embed from '../../../components/Embed.astro';
+
 Turns metadata you already have (a datasheet, a data package, a workflow
 engine's run output) into a FAIRSCAPE RO-Crate, so you don't have to type it
 in again. It can also export a crate to other formats.
@@ -18,22 +21,76 @@ pip install fairscape-conversion
 
 ## Example
 
-```bash
-mkdir my-crate
-python -m fairscape_conversion.core.cli convert d4d import datasheet.yaml my-crate/ro-crate-metadata.json
-```
+<Tabs>
+  <TabItem label="Command line">
+    ```bash
+    mkdir my-crate
+    python -m fairscape_conversion.core.cli convert d4d import datasheet.yaml my-crate/ro-crate-metadata.json
+    ```
+  </TabItem>
+  <TabItem label="Python">
+    ```python
+    import yaml
+    from fairscape_conversion.plugins import d4d
 
-From Python:
-
-```python
-import yaml
-from fairscape_conversion.plugins import d4d
-
-crate = d4d.convert("import", yaml.safe_load(open("datasheet.yaml")))
-```
+    crate = d4d.convert("import", yaml.safe_load(open("datasheet.yaml")))
+    ```
+  </TabItem>
+</Tabs>
 
 Every format works the same way:
 `convert <format> <import|export> INPUT [OUTPUT]`.
+
+## From a workflow run to a crate
+
+The Snakemake variant-calling tutorial, run with the FAIRSCAPE reporter. The
+Snakefile on the left is the only thing anyone wrote by hand; the crate, and
+the pages built from it, came out of the run.
+
+<Tabs>
+  <TabItem label="Snakefile (input)">
+    ```python
+    rule bwa_map:
+        """Align one sample's reads to the reference genome."""
+        input:
+            genome=GENOME,
+            reads="data/samples/{sample}.fastq",
+        output:
+            temp("results/mapped/{sample}.bam"),
+        conda:
+            "envs/mapping.yaml"
+        shell:
+            "bwa mem -t {threads} {input.genome} {input.reads} | samtools view -Sb - > {output}"
+
+    rule samtools_sort:
+        input:  "results/mapped/{sample}.bam",
+        output: "results/sorted/{sample}.bam",
+        shell:  "samtools sort -O bam {input} > {output}"
+
+    rule bcftools_call:
+        input:
+            fa=GENOME,
+            bam=expand("results/sorted/{sample}.bam", sample=SAMPLES),
+        output: "results/calls/all.vcf",
+        shell:  "bcftools mpileup -f {input.fa} {input.bam} | bcftools call -mv - > {output}"
+    ```
+
+    ```bash
+    snakemake --cores 4 --use-conda --reporter fairscape
+    ```
+  </TabItem>
+  <TabItem label="Crate (output)">
+    The reporter writes `ro-crate-metadata.json`: one `Computation` per job,
+    one `Dataset` per file, one `Software` per tool, all linked.
+    [Open the raw file](/examples/snakemake-variant-calling/ro-crate-metadata.json).
+
+    <Embed src="/examples/snakemake-variant-calling/ro-crate-preview.html" title="Entity preview of the converted crate" height="30rem" />
+  </TabItem>
+  <TabItem label="Datasheet">
+    <Embed src="/examples/snakemake-variant-calling/ro-crate-datasheet.html" title="Datasheet built from the converted crate" height="30rem"
+      caption="Built with fairscape-artifacts from the crate the reporter wrote. Nothing was typed in." />
+  </TabItem>
+</Tabs>
 
 ## Formats
 

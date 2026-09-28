@@ -3,6 +3,9 @@ title: fairscape-artifacts
 description: "Build datasheets, evidence graphs and previews from a finished RO-Crate."
 ---
 
+import { Tabs, TabItem, FileTree, Badge } from '@astrojs/starlight/components';
+import Embed from '../../../components/Embed.astro';
+
 Turns a finished RO-Crate into pages people can read: an HTML datasheet, an
 interactive evidence graph, a preview of every entity, and an AI-Ready review.
 It runs offline on a crate folder. You don't need a server.
@@ -24,16 +27,37 @@ pip install git+https://github.com/fairscape/fairscape_artifacts
 fairscape-artifacts all path/to/crate
 ```
 
-```
-path/to/crate/
-  ro-crate-datasheet.html         the datasheet
-  ro-crate-preview.html           every entity in the crate, grouped by kind
-  ro-crate-evidence-graph.html    interactive provenance graph
-  ro-crate-evidence-graph.json    the same graph as data
-```
+<FileTree>
+- path/to/crate/
+  - ro-crate-metadata.json the crate, unchanged
+  - **ro-crate-datasheet.html** the datasheet
+  - ro-crate-preview.html every entity in the crate, grouped by kind
+  - ro-crate-evidence-graph.html interactive provenance graph
+  - ro-crate-evidence-graph.json the same graph as data
+  - ai-ready-review.html the AI-Ready review, if the grader is installed
+</FileTree>
 
 Each HTML file is self-contained, so you can email it, put it in a Zenodo
 deposit or serve it from GitHub Pages.
+
+## What they look like
+
+The three pages, built from the Snakemake variant-calling tutorial crate.
+
+<Tabs>
+  <TabItem label="Datasheet">
+    <Embed src="/examples/snakemake-variant-calling/ro-crate-datasheet.html" title="Datasheet" height="32rem"
+      caption="Title, authors, license and summary at the top; then every dataset, software and computation, with an AI-Ready section when the grader is installed." />
+  </TabItem>
+  <TabItem label="Evidence graph">
+    <Embed src="/examples/snakemake-variant-calling/ro-crate-evidence-graph.html" title="Evidence graph" height="32rem"
+      caption="Every entity is a node; edges are usedDataset, usedSoftware and generated. Drag to pan, scroll to zoom, click a node for its metadata." />
+  </TabItem>
+  <TabItem label="Preview">
+    <Embed src="/examples/snakemake-variant-calling/ro-crate-preview.html" title="Entity preview" height="32rem"
+      caption="Every entity in the crate, grouped by type, with all its properties. The page an RO-Crate viewer would show." />
+  </TabItem>
+</Tabs>
 
 ## Commands
 
@@ -43,7 +67,7 @@ deposit or serve it from GitHub Pages.
 | `datasheet` | Builds the datasheet and preview pages. |
 | `evidence-graph` | Builds the graph page and its JSON. |
 | `review` | Runs the AI-Ready grader and writes the review page. |
-| `add-io` | Writes `EVI:inputs` / `EVI:outputs` onto the crate root. This is the only command that changes the crate. |
+| `add-io` <Badge text="writes to the crate" variant="caution" size="small" /> | Writes `EVI:inputs` / `EVI:outputs` onto the crate root. This is the only command that changes the crate. |
 | `interpret` | Has an LLM read the crate's provenance and code, then writes an annotated summary. `all` never runs it. |
 
 Outputs are written next to the crate unless you pass `-d DIR`.
@@ -61,6 +85,9 @@ Outputs are written next to the crate unless you pass `-d DIR`.
   sub-crate. A crate linked to an upstream crate gets one evidence graph that
   spans both. Use `--reference OTHER_CRATE` to look up ids in a related crate
   that this one doesn't point to.
+
+<Embed src="/examples/linked-crates/snakemake-count/ro-crate-evidence-graph.html" title="Evidence graph across two linked crates" height="26rem"
+  caption="A one-rule Snakemake run that counted the variants the pipeline above called. Its crate was linked to the upstream crate, so the graph follows the input table back through the whole variant-calling pipeline." />
 
 How the graph is built, what the datasheet contains and how PROV-only crates
 are handled: [`docs/DETAILS.md`](https://github.com/fairscape/fairscape_artifacts/blob/main/docs/DETAILS.md).

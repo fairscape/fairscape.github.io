@@ -1,0 +1,216 @@
+{
+ "dataset": "EndoTag AP-MS Profiling of Chromatin Modifier Interactome Rewiring in MDA-MB-468 Cells Upon Paclitaxel Perturbation",
+ "rubric": "Rubric for Review of AI-readiness Evaluation Criteria, v1.8 (2026-09-10)",
+ "domains": [
+  {
+   "title": "FAIRness",
+   "gating": true,
+   "criteria": [
+    {
+     "id": "0.a",
+     "name": "Findable",
+     "score": 1,
+     "gate_min": 2
+    },
+    {
+     "id": "0.b",
+     "name": "Accessible",
+     "score": null,
+     "gate_min": 1
+    },
+    {
+     "id": "0.c",
+     "name": "Interoperable",
+     "score": 2,
+     "gate_min": 1
+    },
+    {
+     "id": "0.d",
+     "name": "Reusable",
+     "score": 2,
+     "gate_min": 1
+    }
+   ]
+  },
+  {
+   "title": "Provenance",
+   "gating": true,
+   "criteria": [
+    {
+     "id": "1.a",
+     "name": "Transparent",
+     "score": 2,
+     "gate_min": 1
+    },
+    {
+     "id": "1.b",
+     "name": "Traceable",
+     "score": 1,
+     "gate_min": 1
+    },
+    {
+     "id": "1.c",
+     "name": "Interpretable",
+     "score": 0,
+     "gate_min": 1
+    },
+    {
+     "id": "1.d",
+     "name": "Key actors identified",
+     "score": 1,
+     "gate_min": 1
+    }
+   ]
+  },
+  {
+   "title": "Characterization",
+   "gating": false,
+   "criteria": [
+    {
+     "id": "2.a",
+     "name": "Semantics",
+     "score": 1,
+     "gate_min": null
+    },
+    {
+     "id": "2.b",
+     "name": "Statistics",
+     "score": 2,
+     "gate_min": null
+    },
+    {
+     "id": "2.c",
+     "name": "Standards",
+     "score": 2,
+     "gate_min": 1
+    },
+    {
+     "id": "2.d",
+     "name": "Potential Sources of Bias",
+     "score": null,
+     "gate_min": null
+    },
+    {
+     "id": "2.e",
+     "name": "Data quality",
+     "score": null,
+     "gate_min": null
+    }
+   ]
+  },
+  {
+   "title": "Pre-model Explainability",
+   "gating": false,
+   "criteria": [
+    {
+     "id": "3.a",
+     "name": "Data documentation template",
+     "score": 1,
+     "gate_min": null
+    },
+    {
+     "id": "3.b",
+     "name": "Fit for purpose",
+     "score": 2,
+     "gate_min": null
+    },
+    {
+     "id": "3.c",
+     "name": "Verifiable",
+     "score": 1,
+     "gate_min": null
+    }
+   ]
+  },
+  {
+   "title": "Ethics",
+   "gating": true,
+   "criteria": [
+    {
+     "id": "4.a",
+     "name": "Ethically acquired",
+     "score": null,
+     "gate_min": 1
+    },
+    {
+     "id": "4.b",
+     "name": "Ethically managed",
+     "score": null,
+     "gate_min": 1
+    },
+    {
+     "id": "4.c",
+     "name": "Ethically Disseminated",
+     "score": null,
+     "gate_min": 1
+    },
+    {
+     "id": "4.d",
+     "name": "Secure",
+     "score": 2,
+     "gate_min": 1
+    }
+   ]
+  },
+  {
+   "title": "Sustainability",
+   "gating": false,
+   "criteria": [
+    {
+     "id": "5.a",
+     "name": "Persistent",
+     "score": 2,
+     "gate_min": null
+    },
+    {
+     "id": "5.b",
+     "name": "Domain-appropriate",
+     "score": 2,
+     "gate_min": null
+    },
+    {
+     "id": "5.c",
+     "name": "Well-governed",
+     "score": null,
+     "gate_min": null
+    },
+    {
+     "id": "5.d",
+     "name": "Associated",
+     "score": 2,
+     "gate_min": null
+    }
+   ]
+  },
+  {
+   "title": "Computability",
+   "gating": false,
+   "criteria": [
+    {
+     "id": "6.a",
+     "name": "Standardized",
+     "score": 2,
+     "gate_min": null
+    },
+    {
+     "id": "6.b",
+     "name": "Computationally accessible",
+     "score": null,
+     "gate_min": null
+    },
+    {
+     "id": "6.c",
+     "name": "Portable",
+     "score": null,
+     "gate_min": null
+    },
+    {
+     "id": "6.d",
+     "name": "Contextualized",
+     "score": 1,
+     "gate_min": null
+    }
+   ]
+  }
+ ]
+}

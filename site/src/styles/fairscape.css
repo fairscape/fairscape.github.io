@@ -54,16 +54,6 @@
   padding-bottom: 0.3em;
 }
 
-/* Right "On this page" rail — narrower than the left nav. */
-@media (min-width: 72em) {
-  .right-sidebar-container {
-    width: 13rem;
-  }
-  .right-sidebar {
-    width: 13rem;
-  }
-}
-
 /* Home page pipeline: Create → View & assess → Publish */
 .fs-flow {
   display: flex;
@@ -82,4 +72,29 @@
 }
 .fs-flow .fs-arrow {
   color: var(--sl-color-gray-3);
+}
+
+/* Collapsible left navigation (desktop). The toggle lives in SiteTitle.astro and
+   sets data-fs-nav on <html>. Collapsed means the pane is gone and the content
+   column takes the full width. */
+@media (min-width: 50rem) {
+  :root[data-fs-nav='collapsed'] {
+    --sl-sidebar-width: 0px;
+  }
+  :root[data-fs-nav='collapsed'] .sidebar-pane {
+    display: none;
+  }
+}
+
+/* Home page intro: lead paragraph and action buttons in place of the Starlight hero. */
+.fs-lead {
+  font-size: var(--sl-text-lg);
+  line-height: 1.6;
+}
+.fs-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin: 1.5rem 0 2rem;
 }

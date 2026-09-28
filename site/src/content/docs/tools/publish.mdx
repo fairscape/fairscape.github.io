@@ -3,6 +3,8 @@ title: fairscape-publish
 description: "Push an RO-Crate and its files to Dataverse, Zenodo, Figshare or DataCite."
 ---
 
+import { Steps } from '@astrojs/starlight/components';
+
 Pushes a finished RO-Crate and all its local files to Dataverse, Zenodo or
 Figshare, or mints a DOI for it on DataCite.
 
@@ -18,19 +20,36 @@ pip install git+https://github.com/fairscape/fairscape_publish
 
 ## Example
 
-```bash
-# Is the crate ready? Nothing is sent over the network.
-fairscape-publish check ./my-crate
+A deposit to Zenodo, from first check to DOI. Nothing leaves your machine until step 3.
 
-# Rehearse: print every request, send nothing
-fairscape-publish zenodo ./my-crate --token $ZENODO_TOKEN --sandbox --dry-run
+<Steps>
 
-# Create the draft
-fairscape-publish zenodo ./my-crate --token $ZENODO_TOKEN --sandbox
+1. **Is the crate ready?** Nothing is sent over the network.
 
-# After you've reviewed the draft, publish it and write the DOI back into the crate
-fairscape-publish zenodo ./my-crate --token $ZENODO_TOKEN --sandbox --resume --publish --write-back
-```
+   ```bash
+   fairscape-publish check ./my-crate
+   ```
+
+2. **Rehearse.** Print every request, send nothing.
+
+   ```bash
+   fairscape-publish zenodo ./my-crate --token $ZENODO_TOKEN --sandbox --dry-run
+   ```
+
+3. **Create the draft.** You're asked to confirm before the first upload.
+
+   ```bash
+   fairscape-publish zenodo ./my-crate --token $ZENODO_TOKEN --sandbox
+   ```
+
+4. **Publish.** After you've reviewed the draft on Zenodo, publish it and write
+   the DOI back into the crate.
+
+   ```bash
+   fairscape-publish zenodo ./my-crate --token $ZENODO_TOKEN --sandbox --resume --publish --write-back
+   ```
+
+</Steps>
 
 ## Commands
 

@@ -3,6 +3,11 @@ title: AI-Readiness grader
 description: "Grade a dataset's metadata against the AI-Ready rubric, then improve it."
 ---
 
+import { FileTree } from '@astrojs/starlight/components';
+import Embed from '../../../components/Embed.astro';
+import Scorecard from '../../../components/Scorecard.astro';
+import scorecard from '../../../data/apms-scorecard.json';
+
 Grades a dataset's metadata against the *Rubric for Review of AI-readiness
 Evaluation Criteria*: 28 criteria in seven domains (FAIRness, Provenance,
 Characterization, Pre-model Explainability, Ethics, Sustainability,
@@ -25,14 +30,27 @@ pip install git+https://github.com/fairscape/AIreadiness-grader
 fairscape-evidence path/to/crate -o review
 ```
 
-```
-review/
-  ai-ready-review.html      review page: evidence and an automated estimate per criterion
-  ai-ready-evidence.json    the same evidence as data
-```
+<FileTree>
+- review/
+  - **ai-ready-review.html** review page: evidence and an automated estimate per criterion
+  - ai-ready-evidence.json the same evidence as data
+</FileTree>
 
 The input can also be a single JSON-LD file, a URL, `kaggle:owner/slug` or
 `hf:org/name`.
+
+## What a review looks like
+
+This is the review for a CM4AI proteomics dataset. Each of the 28 criteria
+gets the evidence the grader found in the metadata and an automated estimate.
+Gates are marked: here `0.a` scores 1 because the crate's ARK doesn't resolve
+to a recognised sustainable repository, so the result is *Gating FAIL* even
+though most domains score well.
+
+<Scorecard {...scorecard} reviewHref="/examples/apms-paclitaxel/ai-ready-review.html" />
+
+<Embed src="/examples/apms-paclitaxel/ai-ready-review.html" title="AI-Readiness review: EndoTag AP-MS profiling under paclitaxel" height="32rem"
+  caption="The full review page. Expand a criterion to see the questions the rubric asks, the evidence found, and what would raise the score." />
 
 ## Commands
 

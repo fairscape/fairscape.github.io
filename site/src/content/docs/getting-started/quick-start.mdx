@@ -3,8 +3,11 @@ title: Quick start
 description: "Go from a datasheet to a validated, viewable and published RO-Crate."
 ---
 
+import { Steps, Tabs, TabItem } from '@astrojs/starlight/components';
+import Embed from '../../../components/Embed.astro';
+
 This walks one crate through every step: create it, check it, view it,
-grade it and publish it.
+grade it and publish it. The pages at the bottom are what you end up with.
 
 ## Install
 
@@ -15,57 +18,74 @@ pip install git+https://github.com/fairscape/AIreadiness-grader
 pip install git+https://github.com/fairscape/fairscape_publish
 ```
 
-## 1. Create
+## The five steps
 
-Convert a Datasheet for Datasets into a crate with
-[fairscape-conversion](/tools/conversion/). Other formats (Snakemake,
-Cromwell, Galaxy, MLflow, REDCap, …) work the same way.
+<Steps>
 
-```bash
-mkdir my-crate
-python -m fairscape_conversion.core.cli convert d4d import datasheet.yaml my-crate/ro-crate-metadata.json
-```
+1. **Create.** Convert a Datasheet for Datasets into a crate with
+   [fairscape-conversion](/tools/conversion/). Other formats (Snakemake,
+   Cromwell, Galaxy, MLflow, REDCap, …) work the same way.
 
-## 2. Validate
+   ```bash
+   mkdir my-crate
+   python -m fairscape_conversion.core.cli convert d4d import datasheet.yaml my-crate/ro-crate-metadata.json
+   ```
 
-Check it against the data model in [fairscape-models](/tools/models/):
+2. **Validate.** Check it against the data model in
+   [fairscape-models](/tools/models/):
 
-```python
-import json
-from fairscape_models import ROCrateV1_2
+   ```python
+   import json
+   from fairscape_models import ROCrateV1_2
 
-ROCrateV1_2.model_validate(json.load(open("my-crate/ro-crate-metadata.json")))
-```
+   ROCrateV1_2.model_validate(json.load(open("my-crate/ro-crate-metadata.json")))
+   ```
 
-## 3. View
+3. **View.** Build the datasheet, evidence graph and preview with
+   [fairscape-artifacts](/tools/artifacts/):
 
-Build the datasheet, evidence graph and preview with
-[fairscape-artifacts](/tools/artifacts/):
+   ```bash
+   fairscape-artifacts all my-crate
+   # writes ro-crate-datasheet.html, ro-crate-evidence-graph.html and ro-crate-preview.html into my-crate/
+   ```
 
-```bash
-fairscape-artifacts all my-crate
-# my-crate/ro-crate-datasheet.html, ro-crate-evidence-graph.html, ro-crate-preview.html
-```
+4. **Assess.** Grade it against the AI-Ready rubric with the
+   [AI-Readiness grader](/tools/grader/):
 
-## 4. Assess
+   ```bash
+   fairscape-evidence my-crate -o review
+   # writes review/ai-ready-review.html
+   ```
 
-Grade it against the AI-Ready rubric with the
-[AI-Readiness grader](/tools/grader/):
+5. **Publish.** Check that it's ready, then create a draft deposit with
+   [fairscape-publish](/tools/publish/):
 
-```bash
-fairscape-evidence my-crate -o review
-# review/ai-ready-review.html
-```
+   ```bash
+   fairscape-publish check my-crate
+   fairscape-publish zenodo my-crate --token $ZENODO_TOKEN --sandbox
+   ```
 
-## 5. Publish
+   To host crates on your own server instead, use
+   [fairscape-lite](/tools/lite/).
 
-Check that it's ready, then create a draft deposit with
-[fairscape-publish](/tools/publish/):
+</Steps>
 
-```bash
-fairscape-publish check my-crate
-fairscape-publish zenodo my-crate --token $ZENODO_TOKEN --sandbox
-```
+## What you end up with
 
-To host crates on your own server instead, use
-[fairscape-lite](/tools/lite/).
+These are the pages steps 3 and 4 produce, for a crate that came out of the
+Snakemake variant-calling tutorial. Each is a single HTML file.
+
+<Tabs>
+  <TabItem label="Datasheet">
+    <Embed src="/examples/snakemake-variant-calling/ro-crate-datasheet.html" title="Datasheet" height="32rem" />
+  </TabItem>
+  <TabItem label="Evidence graph">
+    <Embed src="/examples/snakemake-variant-calling/ro-crate-evidence-graph.html" title="Evidence graph" height="32rem" />
+  </TabItem>
+  <TabItem label="Preview">
+    <Embed src="/examples/snakemake-variant-calling/ro-crate-preview.html" title="Entity preview" height="32rem" />
+  </TabItem>
+  <TabItem label="AI-Ready review">
+    <Embed src="/examples/snakemake-variant-calling/ai-ready-review.html" title="AI-Ready review" height="32rem" />
+  </TabItem>
+</Tabs>

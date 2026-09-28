@@ -1,0 +1,74 @@
+---
+/**
+ * A live example page (datasheet, evidence graph, review) embedded in the docs.
+ * The page itself is served from /public/examples and opens full-size in a new tab.
+ */
+import { Icon } from '@astrojs/starlight/components';
+
+interface Props {
+  src: string;
+  title: string;
+  height?: string;
+  caption?: string;
+}
+const { src, title, height = '30rem', caption } = Astro.props;
+---
+
+<figure class="fs-embed not-content">
+  <div class="fs-embed-bar">
+    <span class="fs-embed-title">{title}</span>
+    <a class="fs-embed-open" href={src} target="_blank" rel="noopener">
+      Open full page <Icon name="external" size="1em" />
+    </a>
+  </div>
+  <iframe src={src} title={title} loading="lazy" style={`height:${height}`}></iframe>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
+
+<style>
+  .fs-embed {
+    margin: 1.5rem 0;
+    border: 1px solid var(--sl-color-hairline);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: var(--sl-color-bg);
+  }
+  .fs-embed-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.45rem 0.85rem;
+    font-size: var(--sl-text-sm);
+    background: var(--sl-color-gray-6);
+    border-bottom: 1px solid var(--sl-color-hairline);
+  }
+  .fs-embed-title {
+    font-weight: 600;
+    color: var(--sl-color-white);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .fs-embed-open {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    white-space: nowrap;
+    color: var(--sl-color-accent-high);
+    text-decoration: none;
+  }
+  .fs-embed-open:hover { text-decoration: underline; }
+  iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+    background: #fff;
+  }
+  figcaption {
+    padding: 0.5rem 0.85rem;
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-2);
+    border-top: 1px solid var(--sl-color-hairline);
+  }
+</style>

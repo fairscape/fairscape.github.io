@@ -1,0 +1,205 @@
+---
+/**
+ * The FAIRSCAPE pipeline: what you start with, the crate, the pages built
+ * from it, and where it can go. Every node links to the tool or example.
+ */
+const EX = '/examples/snakemake-variant-calling';
+---
+
+<div class="fs-pipe not-content">
+  <section class="stage">
+    <h3>You already have</h3>
+    <ul>
+      <li>Datasheet for Datasets</li>
+      <li>Snakemake</li>
+      <li>Cromwell</li>
+      <li>Galaxy</li>
+      <li>MLflow</li>
+      <li>REDCap</li>
+      <li>Frictionless</li>
+      <li>Croissant</li>
+      <li>Python</li>
+    </ul>
+  </section>
+
+  <div class="link">
+    <a href="/tools/conversion/">fairscape-conversion</a>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h16m-5-6 6 6-6 6" /></svg>
+  </div>
+
+  <section class="stage crate">
+    <h3><span class="num">1</span> Create</h3>
+    <div class="file">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l6 6v14H6z" /><path d="M14 2v6h6" /></svg>
+      <code>ro-crate-metadata.json</code>
+    </div>
+    <p>one JSON-LD file: every dataset, software and computation, linked by provenance</p>
+    <p class="via">validated by <a href="/tools/models/">fairscape-models</a></p>
+  </section>
+
+  <div class="link">
+    <a href="/tools/artifacts/">fairscape-artifacts</a>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h16m-5-6 6 6-6 6" /></svg>
+  </div>
+
+  <section class="stage">
+    <h3><span class="num">2</span> View &amp; assess</h3>
+    <ul>
+      <li><a href={`${EX}/ro-crate-datasheet.html`} target="_blank" rel="noopener">Datasheet</a></li>
+      <li><a href={`${EX}/ro-crate-evidence-graph.html`} target="_blank" rel="noopener">Evidence graph</a></li>
+      <li><a href={`${EX}/ro-crate-preview.html`} target="_blank" rel="noopener">Entity preview</a></li>
+      <li><a href="/examples/apms-paclitaxel/ai-ready-review.html" target="_blank" rel="noopener">AI-Ready review</a></li>
+    </ul>
+    <p class="via">scored by the <a href="/tools/grader/">AI-Readiness grader</a></p>
+  </section>
+
+  <div class="link">
+    <a href="/tools/publish/">fairscape-publish</a>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h16m-5-6 6 6-6 6" /></svg>
+  </div>
+
+  <section class="stage">
+    <h3><span class="num">3</span> Publish</h3>
+    <ul>
+      <li>Dataverse</li>
+      <li>Zenodo</li>
+      <li>Figshare</li>
+      <li>DataCite DOI</li>
+    </ul>
+    <p class="via">or host it yourself with <a href="/tools/lite/">fairscape-lite</a></p>
+  </section>
+</div>
+
+<style>
+  /* One stage per row, arrows between them. Inside a wide-enough column the
+     stage splits into a left column (name, description) and right column (chips). */
+  .fs-pipe {
+    container-type: inline-size;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin: 1.75rem 0 2rem;
+    font-size: var(--sl-text-sm);
+  }
+  .stage {
+    border: 1px solid var(--sl-color-hairline);
+    border-radius: 0.6rem;
+    padding: 0.85rem 1rem;
+    background: var(--sl-color-gray-6);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem 1.25rem;
+    align-items: start;
+  }
+  .stage.crate {
+    border-color: var(--sl-color-accent);
+    background: var(--sl-color-accent-low);
+  }
+  .stage h3 {
+    margin: 0;
+    font-size: var(--sl-text-base);
+    font-weight: 600;
+    color: var(--sl-color-white);
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+  .num {
+    display: inline-grid;
+    place-items: center;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    background: var(--sl-color-accent);
+    color: var(--sl-color-black);
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  .stage ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+  .stage li {
+    border: 1px solid var(--sl-color-hairline);
+    border-radius: 999px;
+    padding: 0.1rem 0.65rem;
+    background: var(--sl-color-bg);
+    color: var(--sl-color-gray-1);
+    line-height: 1.5;
+  }
+  .stage li a {
+    color: var(--sl-color-accent-high);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .stage li a:hover { text-decoration: underline; }
+  .stage p {
+    margin: 0;
+    color: var(--sl-color-gray-2);
+    line-height: 1.45;
+  }
+  .via a { color: var(--sl-color-accent-high); }
+  .file {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--sl-color-accent-high);
+  }
+  .file svg {
+    width: 1.4rem;
+    height: 1.4rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linejoin: round;
+    flex: none;
+  }
+  .file code {
+    font-size: 0.85em;
+    background: var(--sl-color-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: var(--sl-color-white);
+  }
+  .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.1rem 0;
+  }
+  .link a {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--sl-color-accent-high);
+    text-decoration: none;
+    border: 1px solid var(--sl-color-accent);
+    border-radius: 999px;
+    padding: 0.1rem 0.7rem;
+    background: var(--sl-color-bg);
+  }
+  .link a:hover { text-decoration: underline; }
+  .link svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: none;
+    stroke: var(--sl-color-gray-3);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transform: rotate(90deg);
+  }
+  @container (min-width: 34rem) {
+    .stage { grid-template-columns: 11rem 1fr; }
+    .stage h3 { grid-column: 1; }
+    .stage ul, .stage .file, .stage p:not(.via) { grid-column: 2; }
+    .stage .via { grid-column: 1; grid-row: 2; }
+    .stage ul { grid-row: 1 / span 2; align-self: center; }
+    .stage.crate .file { grid-row: 1; }
+    .stage.crate p:not(.via) { grid-row: 2; }
+  }
+</style>
