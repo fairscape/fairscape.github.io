@@ -43,7 +43,8 @@ export default defineConfig({
         {
           label: 'Resources',
           items: [
-            { label: 'RO-Crate Profile', link: 'https://fairscape.github.io/profile/' },
+            { label: 'RO-Crate Profile (v0.2)', link: 'https://fairscape.github.io/profile/0.2/' },
+            { label: 'Validation Rules (SHACL)', link: 'https://fairscape.github.io/profile/0.2/validation/' },
             { label: 'FAIRSCAPE on GitHub', link: 'https://github.com/fairscape' },
           ],
         },

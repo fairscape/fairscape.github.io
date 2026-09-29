@@ -48,10 +48,13 @@ crate = ROCrateV1_2.model_validate(json.load(open("ro-crate-metadata.json")))
 
 ## Details
 
-- **Profile.** Crates built from these models conform to the FAIRSCAPE Release
-  RO-Crate Profile v0.1 (`https://w3id.org/fairscape/profile/0.1`). The root
-  entity declares it with `dct:conformsTo`. The PROF manifest is
-  [`profiles/profile.ttl`](https://github.com/fairscape/fairscape_models/blob/main/profiles/profile.ttl) and the EVI vocabulary is
+- **Profile.** The current profile is the
+  [FAIRSCAPE Release RO-Crate Profile v0.2](https://fairscape.github.io/profile/0.2/)
+  (`https://w3id.org/fairscape/profile/0.2`). A crate declares it on its root
+  entity with `dct:conformsTo`. Besides the entity requirements the models
+  enforce, v0.2 adds [SHACL validation rules](https://fairscape.github.io/profile/0.2/validation/)
+  for how entities link. For example, `generatedBy` must point at a Computation
+  or Experiment. The EVI vocabulary is
   [`profiles/evi-vocabulary.ttl`](https://github.com/fairscape/fairscape_models/blob/main/profiles/evi-vocabulary.ttl).
 - **Generated files.** [`json-schemas/`](https://github.com/fairscape/fairscape_models/blob/main/json-schemas),
   [`typescript-types/`](https://github.com/fairscape/fairscape_models/blob/main/typescript-types) and the EVI vocabulary are all
