@@ -38,6 +38,7 @@ export default defineConfig({
           items: [
             { label: 'fairscape-publish', link: '/tools/publish/' },
             { label: 'fairscape-lite', link: '/tools/lite/' },
+            { label: 'fairscape-server', link: '/tools/server/' },
           ],
         },
         {

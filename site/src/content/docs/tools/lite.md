@@ -9,7 +9,8 @@ resolution and evidence graphs.
 
 It is the self-hosted **publish** step of [FAIRSCAPE](/),
 next to [fairscape_publish](/tools/publish/),
-which pushes crates to public repositories.
+which pushes crates to public repositories. For a shared, multi-user
+repository, use [fairscape-server](/tools/server/).
 
 ## Install
 

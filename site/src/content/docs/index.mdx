@@ -9,7 +9,7 @@ import Embed from '../../components/Embed.astro';
 
 <div class="fs-lead">
 
-FAIRSCAPE packages research data, software and computations as [RO-Crates](https://www.researchobject.org/ro-crate/) with deep provenance: what was used, what produced it, and who ran it. It renders them as datasheets and evidence graphs, grades them for AI-readiness, and publishes them. It implements the Bridge2AI AI-readiness principles and ethical FAIRness[^1], and produces human- and machine-readable datasheets, including Croissant and Croissant RAI metadata.
+FAIRSCAPE is a framework for packaging biomedical research data and its metadata as [RO-Crates](https://www.researchobject.org/ro-crate/) with full provenance: what data was used, what software was run, and who ran it. It provides a suite of Python packages to create, view, share and host RO-Crates, including a server for running your own data commons. Together they implement the Bridge2AI AI-readiness principles and ethical FAIRness[^1], and produce human- and machine-readable datasheets, including Croissant and Croissant RAI metadata.
 
 </div>
 
@@ -18,7 +18,7 @@ FAIRSCAPE packages research data, software and computations as [RO-Crates](https
   <LinkButton href="/examples/snakemake-variant-calling/ro-crate-datasheet.html" variant="minimal" icon="external" target="_blank" rel="noopener">See an example crate</LinkButton>
 </div>
 
-FAIRSCAPE is a set of small Python packages. Each one does one step, and you can stop after any of them:
+Each package does one step, and you can stop after any of them:
 
 <Pipeline />
 
@@ -52,6 +52,7 @@ Every crate below was made from a real workflow run. This one is the Snakemake v
 <CardGrid>
   <LinkCard title="fairscape-publish" href="/tools/publish/" description="Push the crate and its files to Dataverse, Zenodo or Figshare, or mint a DataCite DOI." />
   <LinkCard title="fairscape-lite" href="/tools/lite/" description="Run your own server: it indexes a folder of crates and gives you search, ARK resolution and evidence graphs." />
+  <LinkCard title="fairscape-server" href="/tools/server/" description="Run a shared data commons: accounts, object storage and ARKs for every crate a group uploads." />
 </CardGrid>
 
 ## Use Cases
