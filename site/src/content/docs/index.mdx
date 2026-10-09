@@ -9,7 +9,15 @@ import Embed from '../../components/Embed.astro';
 
 <div class="fs-lead">
 
-FAIRSCAPE is a framework for packaging biomedical research data and its metadata as [RO-Crates](https://www.researchobject.org/ro-crate/) with full provenance: what data was used, what software was run, and who ran it. It provides a suite of Python packages to create, view, share and host RO-Crates, including a server for running your own data commons. Together they implement the Bridge2AI AI-readiness principles and ethical FAIRness[^1], and produce human- and machine-readable datasheets, including Croissant and Croissant RAI metadata.
+FAIRSCAPE is a set of tools for creating, validating, interrogating and sharing AI-ready biomedical data. It provides facilities to:
+
+- Package biomedical research data and its metadata as [RO-Crates](https://www.researchobject.org/ro-crate/) with full provenance, shown as W3C PROV- or EVI-compliant lineage graphs.
+- Robustly characterize the entities in the provenance graph, using formal ontology terms for each one.
+- Specify the instruments, reagents, samples, processing, software, outputs, annotations, key actors and institutions involved.
+- Translate outputs from workflow engines (Snakemake, Cromwell, Galaxy), REDCap, MLflow and Datasheets for Datasets into FAIRSCAPE RO-Crates, and export them as Croissant, PROV or Frictionless.
+- Create, view, share and host RO-Crates with a suite of Python packages, including a server for running your own data commons.
+
+Together, these tools implement and validate the Bridge2AI AI-readiness principles for ethical, AI-ready FAIRness[^1], and produce human- and machine-readable datasheets, Croissant and Croissant RAI metadata, and LinkML schemas.
 
 </div>
 
