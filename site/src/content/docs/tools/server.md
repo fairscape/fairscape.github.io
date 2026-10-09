@@ -3,7 +3,7 @@ title: fairscape-server
 description: "A shared FAIRSCAPE repository with accounts, object storage and ARKs."
 ---
 
-A shared FAIRSCAPE repository for a lab or consortium, run as a data commons.
+A shared FAIRSCAPE repository for a lab or consortium, run as a cloud ready data commons.
 People sign in and upload RO-Crates. The server mints an ARK for every
 dataset, software and computation in a crate, keeps the files in object
 storage and serves search, evidence graphs and AI-Ready scores across
